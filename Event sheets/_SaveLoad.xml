@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_SaveLoad</name>
+    <events>
+        <event-block sid="965368195482611">
+            <conditions>
+                <condition id="0" name="On function" sid="930958086892503" type="Function">
+                    <param id="0" name="Name">&quot;SaveGame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Add key" sid="335194756697770" type="SecureData">
+                    <param id="0" name="Key">&quot;Damage&quot;</param>
+                    <param id="1" name="Value">Damage</param>
+                </action>
+                <action id="0" name="Add key" sid="624661115327415" type="SecureData">
+                    <param id="0" name="Key">&quot;ClockTime&quot;</param>
+                    <param id="1" name="Value">ClockTime</param>
+                </action>
+                <action id="0" name="Add key" sid="479785926600447" type="SecureData">
+                    <param id="0" name="Key">&quot;Defence&quot;</param>
+                    <param id="1" name="Value">Defence</param>
+                </action>
+                <action id="0" name="Add key" sid="977055667232242" type="SecureData">
+                    <param id="0" name="Key">&quot;Heal&quot;</param>
+                    <param id="1" name="Value">Heal</param>
+                </action>
+                <action id="0" name="Add key" sid="906263860339498" type="SecureData">
+                    <param id="0" name="Key">&quot;HealCount&quot;</param>
+                    <param id="1" name="Value">HealCount</param>
+                </action>
+                <action id="0" name="Add key" sid="310735345215135" type="SecureData">
+                    <param id="0" name="Key">&quot;LabaCount&quot;</param>
+                    <param id="1" name="Value">LabaCount</param>
+                </action>
+                <action id="0" name="Add key" sid="876951601425490" type="SecureData">
+                    <param id="0" name="Key">&quot;Money&quot;</param>
+                    <param id="1" name="Value">Money</param>
+                </action>
+                <action id="0" name="Add key" sid="601395581031499" type="SecureData">
+                    <param id="0" name="Key">&quot;PracticCount&quot;</param>
+                    <param id="1" name="Value">PracticCount</param>
+                </action>
+                <action id="0" name="Add key" sid="407273467189183" type="SecureData">
+                    <param id="0" name="Key">&quot;SkillPoints&quot;</param>
+                    <param id="1" name="Value">SkillPoints</param>
+                </action>
+                <action id="0" name="Add key" sid="377814336058049" type="SecureData">
+                    <param id="0" name="Key">&quot;Stealth&quot;</param>
+                    <param id="1" name="Value">Stealth</param>
+                </action>
+                <action id="0" name="Add key" sid="442105065028452" type="SecureData">
+                    <param id="0" name="Key">&quot;victorie&quot;</param>
+                    <param id="1" name="Value">victorie</param>
+                </action>
+                <action id="0" name="Add key" sid="263917768258948" type="SecureData">
+                    <param id="0" name="Key">&quot;UserName&quot;</param>
+                    <param id="1" name="Value">UserName</param>
+                </action>
+                <action id="0" name="Add key" sid="602902055065528" type="SecureData">
+                    <param id="0" name="Key">&quot;save&quot;</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="928112528575669">
+            <conditions>
+                <condition id="0" name="On function" sid="520927113276032" type="Function">
+                    <param id="0" name="Name">&quot;LoadGame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="158021537807690" type="System">
+                    <param id="0" name="Variable">ClockTime</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;ClockTime&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="619619268712140" type="System">
+                    <param id="0" name="Variable">Damage</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;Damage&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="389584554510520" type="System">
+                    <param id="0" name="Variable">Defence</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;Defence&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="629400478739095" type="System">
+                    <param id="0" name="Variable">Heal</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;Heal&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="596712355202010" type="System">
+                    <param id="0" name="Variable">HealCount</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;HealCount&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="412614311619725" type="System">
+                    <param id="0" name="Variable">LabaCount</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;LabaCount&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="205389692638981" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;Money&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="263724953461175" type="System">
+                    <param id="0" name="Variable">PracticCount</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;PracticCount&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="851689072693785" type="System">
+                    <param id="0" name="Variable">SkillPoints</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;SkillPoints&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="993451005640327" type="System">
+                    <param id="0" name="Variable">Stealth</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;Stealth&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="111504644553983" type="System">
+                    <param id="0" name="Variable">UserName</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;UserName&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="550595482198779" type="System">
+                    <param id="0" name="Variable">victorie</param>
+                    <param id="1" name="Value">SecureData.Get(&quot;victorie&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

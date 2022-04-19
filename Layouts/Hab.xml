@@ -848,7 +848,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="DirectionBotton" uid="387">
+                <instance type="DirectionButton" uid="387">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -870,7 +870,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="DirectionBotton" uid="388">
+                <instance type="DirectionButton" uid="388">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -892,7 +892,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="DirectionBotton" uid="389">
+                <instance type="DirectionButton" uid="389">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -4052,6 +4052,12 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="SecureData" uid="514">
+            <properties>
+                <secure-key>AaBbCcDd</secure-key>
+            </properties>
+        </instance>
+    </nonworld-instances>
     <effects />
 </c2layout>

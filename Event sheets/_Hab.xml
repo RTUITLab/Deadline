@@ -61,7 +61,7 @@
                 <event-block sid="404856660824124">
                     <conditions>
                         <condition id="4" name="Is touching object" sid="761059977735098" type="Touch">
-                            <param id="0" name="Object">DirectionBotton</param>
+                            <param id="0" name="Object">DirectionButton</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -74,7 +74,7 @@
                     <sub-events>
                         <event-block sid="695166260698295">
                             <conditions>
-                                <condition id="-5" inverted="1" name="Compare width" sid="186154786081885" type="DirectionBotton">
+                                <condition id="-5" inverted="1" name="Compare width" sid="186154786081885" type="DirectionButton">
                                     <param id="0" name="Comparison">4</param>
                                     <param id="1" name="Width">0</param>
                                 </condition>
@@ -90,7 +90,7 @@
                         </event-block>
                         <event-block sid="606512058430430">
                             <conditions>
-                                <condition id="-5" name="Compare width" sid="218402785418148" type="DirectionBotton">
+                                <condition id="-5" name="Compare width" sid="218402785418148" type="DirectionButton">
                                     <param id="0" name="Comparison">4</param>
                                     <param id="1" name="Width">0</param>
                                 </condition>

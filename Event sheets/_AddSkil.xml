@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_AddSkil</name>
+    <events>
+        <event-block sid="823769984069594">
+            <conditions>
+                <condition id="0" name="On function" sid="162048515848883" type="Function">
+                    <param id="0" name="Name">&quot;Show_Stats&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="204785967051962">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="838230643488395" type="System">
+                            <param id="0" name="Variable">SkillPoints</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="169605114542067" type="PlusButton">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="709661487453403">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="962779576842928" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Player_Damage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="405331537919101" type="Stats">
+                            <param id="0" name="Text">Damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="840972093570168">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="768659148227231" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Player_Defence&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="464219163294141" type="Stats">
+                            <param id="0" name="Text">Defence</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="435103552213012">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="556700201661287" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Player_Heal&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="623983081890290" type="Stats">
+                            <param id="0" name="Text">Heal</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="100281016859008">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="875411763610553" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Player_Stealth&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="957958651723654" type="Stats">
+                            <param id="0" name="Text">Stealth</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="608044437975353">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="395694064725443" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Player_Skill&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="192463739956577" type="Stats">
+                            <param id="0" name="Text">SkillPoints</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="943651488470166">
+            <conditions>
+                <condition id="0" name="On function" sid="346270534719489" type="Function">
+                    <param id="0" name="Name">&quot;Add Point&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="Rand" sid="790291049641883" static="0" type="number">0</variable>
+                <event-block sid="761801951802063">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="844488298137179" type="System">
+                            <param id="0" name="Count">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="518709943019887" type="System">
+                            <param id="0" name="Variable">Rand</param>
+                            <param id="1" name="Value">int(random(0,4))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="981099146559494">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="186624920417315" type="System">
+                                    <param id="0" name="Variable">Rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="176676546741999" type="System">
+                                    <param id="0" name="Variable">Damage</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="698535126893516">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="968265510810282" type="System">
+                                    <param id="0" name="Variable">Rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="767726865165975" type="System">
+                                    <param id="0" name="Variable">Defence</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="164868463940106">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="720082012477070" type="System">
+                                    <param id="0" name="Variable">Rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="880869862981073" type="System">
+                                    <param id="0" name="Variable">Stealth</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="250929846998673">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="776570276062042" type="System">
+                                    <param id="0" name="Variable">Rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="282311912174714" type="System">
+                                    <param id="0" name="Variable">Heal</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="879182039522960">
+            <conditions>
+                <condition id="17" name="On tap object" sid="439658409225812" type="Touch">
+                    <param id="0" name="Object">PlusButton</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="455774110496642" type="System">
+                    <param id="0" name="Variable">SkillPoints</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="303076540408457" type="System">
+                    <param id="0" name="Variable">SkillPoints</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="0" name="Play" sid="561403672091172" type="Audio">
+                    <param id="0" name="Audio file">button (online-audio-converter.com)</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="385786140213840">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="419802951607891" type="PlusButton">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;damage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="835530316182487" type="System">
+                            <param id="0" name="Variable">Damage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="683075316804659">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="710988647275438" type="PlusButton">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;defence&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="205793337095970" type="System">
+                            <param id="0" name="Variable">Defence</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="659635241617174">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="267623497413752" type="PlusButton">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;heal&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="155807881035713" type="System">
+                            <param id="0" name="Variable">Heal</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="756045022517949">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="750272197632445" type="PlusButton">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;stealth&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="640652279373387" type="System">
+                            <param id="0" name="Variable">Stealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="389762225937244">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="193412721321625" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="109164132358861" type="Function">
+                            <param id="0" name="Name">&quot;Show_Stats&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_Unit</name>
+    <events>
+        <event-block sid="930037379225981">
+            <conditions>
+                <condition id="0" name="On function" sid="478167579314137" type="Function">
+                    <param id="0" name="Name">&quot;Stamp&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="459331221319111" type="System">
+                    <param id="0" name="Object to create">Stamp</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">720/4+random(0,720/2)</param>
+                    <param id="3" name="Y">1280/4+random(0,1280/2)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="486643601446585" type="Stamp">
+                    <param id="0" name="Angle">int(random(270,400))</param>
+                </action>
+                <action id="5" name="Set frame" sid="699770678611859" type="Stamp">
+                    <param id="0" name="Frame number">Function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="266430290482088">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="635912356303408" type="System">
+                            <param id="0" name="First value">Function.Param(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="EaseTween" id="19" name="Set target X" sid="684157063392688" type="Stamp">
+                            <param id="0" name="Target X">450</param>
+                        </action>
+                        <action behavior="EaseTween" id="20" name="Set target Y" sid="675080853204410" type="Stamp">
+                            <param id="0" name="Target Y">240</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="800474533041938">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="239376748417983" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action behavior="EaseTween" id="10" name="Start" sid="723759618735243" type="Stamp" />
+                        <action id="-16" name="Wait" sid="421981864881458" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="0" name="Play" sid="359308015838543" type="Audio">
+                            <param id="0" name="Audio file">stamp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="742269216982794">
+            <conditions>
+                <condition id="0" name="On function" sid="516692883539036" type="Function">
+                    <param id="0" name="Name">&quot;RefreshTime&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="980878560658122">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="183445148814791" type="Stats">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Time&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="455138757813680" type="Stats">
+                            <param id="0" name="Text">zeropad( int(ClockTime/60),2)&amp;&quot;:&quot;&amp;zeropad( int(ClockTime%60),2)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="184591417091056">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="978573789785175" type="System">
+                                    <param id="0" name="Variable">ClockTime</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">24*60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="633088920933160" type="System">
+                                    <param id="0" name="Variable">ClockTime</param>
+                                    <param id="1" name="Value">24*60</param>
+                                </action>
+                                <action id="0" name="Set text" sid="347892002154348" type="Stats">
+                                    <param id="0" name="Text">zeropad( int(ClockTime/60),2)&amp;&quot;:&quot;&amp;zeropad( int(ClockTime%60),2)</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="809399060778733" type="System">
+                                    <param id="0" name="Layout">End</param>
+                                </action>
+                                <action id="6" name="Stop" sid="264497776417090" type="Audio">
+                                    <param id="0" name="Tag">&quot;fon&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Генерация успеха/неуспеха</comment>
+        <comment></comment>
+        <event-block sid="839163216019482">
+            <conditions>
+                <condition id="0" name="On function" sid="840684767497697" type="Function">
+                    <param id="0" name="Name">&quot;Random_Event&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="649616872906346" type="Function">
+                    <param id="0" name="Value">((random(0,100)+1)&lt;=Function.Param(0))?1:0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>(X,Y,Текст,Цвет)</comment>
+        <comment></comment>
+        <comment></comment>
+        <event-block sid="374930139955031">
+            <conditions>
+                <condition id="0" name="On function" sid="154632905846552" type="Function">
+                    <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="917088880155812" type="System">
+                    <param id="0" name="Object to create">DamageStatus</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Function.Param(0)</param>
+                    <param id="3" name="Y">Function.Param(1)</param>
+                </action>
+                <action id="0" name="Set text" sid="163393351967044" type="DamageStatus">
+                    <param id="0" name="Text">Function.Param(2)</param>
+                </action>
+                <action id="4" name="Set font color" sid="144131564441804" type="DamageStatus">
+                    <param id="0" name="Color">Function.Param(3)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="822594801749666">
+            <conditions>
+                <condition id="0" name="On function" sid="818364178216049" type="Function">
+                    <param id="0" name="Name">&quot;Green&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="213057359661522" type="Function">
+                    <param id="0" name="Value">rgb(62,234,63)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="502363177910064">
+            <conditions>
+                <condition id="0" name="On function" sid="105095467306490" type="Function">
+                    <param id="0" name="Name">&quot;Red&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="743896994641127" type="Function">
+                    <param id="0" name="Value">rgb(232,12,70)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="598880033812042">
+            <conditions>
+                <condition behavior="EaseTween" id="4" name="On tween end" sid="622566553234357" type="Stamp" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="705136102458434">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="573880272287865" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="109283082899699" type="Audio">
+                    <param id="0" name="Tag">&quot;fon&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

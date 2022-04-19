@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_PracticMan</name>
+    <events>
+        <include>Fight</include>
+        <event-block sid="783636727969839">
+            <conditions>
+                <condition id="0" name="On function" sid="870210416231987" type="Function">
+                    <param id="0" name="Name">&quot;CustomAttack&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="453985474573938" type="Function">
+                    <param id="0" name="Value">choose(0,0,0,0,1,3,3)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

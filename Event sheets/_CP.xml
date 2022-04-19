@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_CP</name>
+    <events>
+        <include>_AddSkil</include>
+        <event-block sid="909921139869982">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="519785958263549" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set CSS style" sid="206296275061256" type="TextBox">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;1em&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="847083449219022" type="Function">
+                    <param id="0" name="Name">&quot;Add Point&quot;</param>
+                    <param id="1" name="Parameter {n}">5</param>
+                </action>
+                <action id="0" name="Call function" sid="198185908536011" type="Function">
+                    <param id="0" name="Name">&quot;Show_Stats&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="458799031024618">
+            <conditions>
+                <condition id="0" inverted="1" name="Compare text" sid="233467992312351" type="TextBox">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="209281702946746" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="834906443112335" type="Button">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="213244292903939">
+            <conditions>
+                <condition id="0" name="Compare text" sid="514035769883046" type="TextBox">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="319201832011799" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="529369714072899" type="Button">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="274157923592061">
+            <conditions>
+                <condition id="17" name="On tap object" sid="114121107101190" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="529688981867715" type="Button">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="327548417801238" type="System">
+                    <param id="0" name="Variable">UserName</param>
+                    <param id="1" name="Value">TextBox.Text</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="947538348369232" type="System">
+                    <param id="0" name="Layout">BeginScreen</param>
+                </action>
+                <action id="0" name="Play" sid="690794277474307" type="Audio">
+                    <param id="0" name="Audio file">button (online-audio-converter.com)</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -13,6 +13,7 @@
                         <condition id="17" name="On tap object" sid="560101007914900" type="Touch">
                             <param id="0" name="Object">Button</param>
                         </condition>
+                        <condition id="11" name="Collisions enabled" sid="684435199870880" type="Button" />
                         <condition id="3" name="Compare frame" sid="416766727991596" type="Button">
                             <param id="0" name="Comparison">2</param>
                             <param id="1" name="Number">2</param>
@@ -103,6 +104,9 @@
                                     <param id="0" name="Group name">&quot;PlayerControll&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
+                                <action id="-42" name="Signal" sid="729129901711821" type="System">
+                                    <param id="0" name="Tag">&quot;FinishDamage&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -125,6 +129,11 @@
                 <condition id="-2" name="On start of layout" sid="440574135767975" type="System" />
             </conditions>
             <actions>
+                <action disabled="1" id="3" name="Clear storage" sid="424418896823321" type="LocalStorage" />
+                <action id="4" name="Set animation" sid="279660801839561" type="Player">
+                    <param id="0" name="Animation">gender</param>
+                    <param id="1" name="From">1</param>
+                </action>
                 <action id="-12" name="Set group active" sid="993615056124838" type="System">
                     <param id="0" name="Group name">&quot;PlayerControll&quot;</param>
                     <param id="1" name="State">1</param>
@@ -167,6 +176,10 @@
                 </action>
                 <action id="0" name="Call function" sid="158289923947572" type="Function">
                     <param id="0" name="Name">&quot;RefreshPractic&amp;Laba&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="789056811925232" type="Function">
+                    <param id="0" name="Name">&quot;RefreshTime&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
@@ -1659,6 +1672,8 @@
                             </actions>
                         </event-block>
                         <comment>Попался/ непопаля на списыване со шпоры</comment>
+                        <comment>Для обучения</comment>
+                        <variable constant="0" name="isLearn" sid="582514639264118" static="0" type="number">0</variable>
                         <event-block sid="914820871826662">
                             <conditions>
                                 <condition id="0" name="On function" sid="128809574915471" type="Function">
@@ -1666,8 +1681,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="332928928759297" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.stealt=1?1:0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="371104321765236" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">Enemy.Distruct=1?isLearn:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="415181342149714" type="Function">
-                                    <param id="0" name="Value">Function.Param(0) &gt;0?max(0,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
+                                    <param id="0" name="Value">Function.Param(0) &gt;0?max(0,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):isLearn=1?0:Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1707,8 +1730,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="180661080740367" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.stealt=1?1:0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="564610013509383" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">Enemy.Distruct=1?isLearn:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="311362048872125" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?max(0,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):Function.Call(&quot;Random_Event&quot;,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?max(0,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):(isLearn=1?0:Function.Call(&quot;Random_Event&quot;,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1776,8 +1807,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="238544781038471" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.distruct?1:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="854342557909867" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?DISTRUCT_BASE_CHANCE+Player.Defence*5:Function.Call(&quot;Random_Event&quot;,DISTRUCT_BASE_CHANCE+Player.Defence*5) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?DISTRUCT_BASE_CHANCE+Player.Defence*5:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,DISTRUCT_BASE_CHANCE+Player.Defence*5) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1859,8 +1894,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="763387834712994" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.heal?1:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="117622031418693" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?15+Player.Defence*5:Function.Call(&quot;Random_Event&quot;,15+Player.Defence*5) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?15+Player.Defence*5:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,15+Player.Defence*5) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2317,6 +2356,12 @@
                             <param id="3" name="Volume">-15</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
+                        <action id="-41" name="Wait for signal" sid="580220324997303" type="System">
+                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="776730126530265" type="System">
+                            <param id="0" name="Tag">&quot;Fail&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Списывание успешно</comment>
@@ -2373,6 +2418,7 @@
                 <condition id="4" name="Is touching object" sid="638203918158304" type="Touch">
                     <param id="0" name="Object">Button</param>
                 </condition>
+                <condition id="11" name="Collisions enabled" sid="718999585762894" type="Button" />
                 <condition id="3" name="Compare frame" sid="646238653653230" type="Button">
                     <param id="0" name="Comparison">0</param>
                     <param id="1" name="Number">0</param>
@@ -2599,6 +2645,9 @@
                                                         <action id="-42" name="Signal" sid="417744491546865" type="System">
                                                             <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
                                                         </action>
+                                                        <action id="-42" name="Signal" sid="677450444996571" type="System">
+                                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -2741,6 +2790,9 @@
                                                         </action>
                                                         <action id="-42" name="Signal" sid="576527354102706" type="System">
                                                             <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                                        </action>
+                                                        <action id="-42" name="Signal" sid="738022970617182" type="System">
+                                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>

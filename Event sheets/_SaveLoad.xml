@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_SaveLoad</name>
+    <events>
+        <event-block sid="965368195482611">
+            <conditions>
+                <condition id="0" name="On function" sid="930958086892503" type="Function">
+                    <param id="0" name="Name">&quot;SaveGame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="335194756697770" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Damage&quot;</param>
+                    <param id="1" name="Value">Damage</param>
+                </action>
+                <action id="0" name="Set item" sid="624661115327415" type="LocalStorage">
+                    <param id="0" name="Key">&quot;ClockTime&quot;</param>
+                    <param id="1" name="Value">ClockTime</param>
+                </action>
+                <action id="0" name="Set item" sid="479785926600447" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Defence&quot;</param>
+                    <param id="1" name="Value">Defence</param>
+                </action>
+                <action id="0" name="Set item" sid="977055667232242" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Heal&quot;</param>
+                    <param id="1" name="Value">Heal</param>
+                </action>
+                <action id="0" name="Set item" sid="906263860339498" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HealCount&quot;</param>
+                    <param id="1" name="Value">HealCount</param>
+                </action>
+                <action id="0" name="Set item" sid="310735345215135" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LabaCount&quot;</param>
+                    <param id="1" name="Value">LabaCount</param>
+                </action>
+                <action id="0" name="Set item" sid="876951601425490" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Money&quot;</param>
+                    <param id="1" name="Value">Money</param>
+                </action>
+                <action id="0" name="Set item" sid="601395581031499" type="LocalStorage">
+                    <param id="0" name="Key">&quot;PracticCount&quot;</param>
+                    <param id="1" name="Value">PracticCount</param>
+                </action>
+                <action id="0" name="Set item" sid="407273467189183" type="LocalStorage">
+                    <param id="0" name="Key">&quot;SkillPoints&quot;</param>
+                    <param id="1" name="Value">SkillPoints</param>
+                </action>
+                <action id="0" name="Set item" sid="377814336058049" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Stealth&quot;</param>
+                    <param id="1" name="Value">Stealth</param>
+                </action>
+                <action id="0" name="Set item" sid="442105065028452" type="LocalStorage">
+                    <param id="0" name="Key">&quot;victorie&quot;</param>
+                    <param id="1" name="Value">victorie</param>
+                </action>
+                <action id="0" name="Set item" sid="263917768258948" type="LocalStorage">
+                    <param id="0" name="Key">&quot;UserName&quot;</param>
+                    <param id="1" name="Value">UserName</param>
+                </action>
+                <action id="0" name="Set item" sid="602902055065528" type="LocalStorage">
+                    <param id="0" name="Key">&quot;save&quot;</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="928112528575669">
+            <conditions>
+                <condition id="0" name="On function" sid="520927113276032" type="Function">
+                    <param id="0" name="Name">&quot;LoadGame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="158021537807690" type="LocalStorage">
+                    <param id="0" name="Key">&quot;ClockTime&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="619619268712140" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Damage&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="389584554510520" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Defence&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="629400478739095" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Heal&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="596712355202010" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HealCount&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="412614311619725" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LabaCount&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="205389692638981" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Money&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="263724953461175" type="LocalStorage">
+                    <param id="0" name="Key">&quot;PracticCount&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="851689072693785" type="LocalStorage">
+                    <param id="0" name="Key">&quot;SkillPoints&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="993451005640327" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Stealth&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="111504644553983" type="LocalStorage">
+                    <param id="0" name="Key">&quot;UserName&quot;</param>
+                </action>
+                <action id="1" name="Get item" sid="550595482198779" type="LocalStorage">
+                    <param id="0" name="Key">&quot;victorie&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="823011671262683">
+            <conditions>
+                <condition id="1" name="On item get" sid="624100941228258" type="LocalStorage">
+                    <param id="0" name="Key">&quot;ClockTime&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="578694971656644" type="System">
+                    <param id="0" name="Variable">ClockTime</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="403907057337142">
+            <conditions>
+                <condition id="1" name="On item get" sid="768559589971134" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Damage&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="895384759940077" type="System">
+                    <param id="0" name="Variable">Damage</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="320677945443658">
+            <conditions>
+                <condition id="1" name="On item get" sid="249940984672967" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Defence&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="591464553436798" type="System">
+                    <param id="0" name="Variable">Defence</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="889657407729830">
+            <conditions>
+                <condition id="1" name="On item get" sid="894713572676892" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Heal&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="603565402020656" type="System">
+                    <param id="0" name="Variable">Heal</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="310653769318619">
+            <conditions>
+                <condition id="1" name="On item get" sid="176802513400965" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HealCount&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="949343208297510" type="System">
+                    <param id="0" name="Variable">HealCount</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="815424135039468">
+            <conditions>
+                <condition id="1" name="On item get" sid="704631956077043" type="LocalStorage">
+                    <param id="0" name="Key">&quot;LabaCount&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="520292529884424" type="System">
+                    <param id="0" name="Variable">LabaCount</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="511952732556109">
+            <conditions>
+                <condition id="1" name="On item get" sid="644422536831682" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Money&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="843432565661214" type="System">
+                    <param id="0" name="Variable">Money</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="966142713455633">
+            <conditions>
+                <condition id="1" name="On item get" sid="187957556788402" type="LocalStorage">
+                    <param id="0" name="Key">&quot;PracticCount&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="723984003619950" type="System">
+                    <param id="0" name="Variable">PracticCount</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353668747237921">
+            <conditions>
+                <condition id="1" name="On item get" sid="127277826595173" type="LocalStorage">
+                    <param id="0" name="Key">&quot;SkillPoints&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="497524123776359" type="System">
+                    <param id="0" name="Variable">SkillPoints</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="902607784613713">
+            <conditions>
+                <condition id="1" name="On item get" sid="754139595586018" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Stealth&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="993555921742222" type="System">
+                    <param id="0" name="Variable">Stealth</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="195411769844237">
+            <conditions>
+                <condition id="1" name="On item get" sid="556145871023125" type="LocalStorage">
+                    <param id="0" name="Key">&quot;UserName&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="416387578566818" type="System">
+                    <param id="0" name="Variable">UserName</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="-42" name="Signal" sid="371615307554833" type="System">
+                    <param id="0" name="Tag">&quot;Get&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="643154690870746">
+            <conditions>
+                <condition id="1" name="On item get" sid="769240808933368" type="LocalStorage">
+                    <param id="0" name="Key">&quot;victorie&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="373228211975671" type="System">
+                    <param id="0" name="Variable">victorie</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

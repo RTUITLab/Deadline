@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>_AddSkil</name>
     <events>
+        <variable constant="0" name="gender" sid="871074643852579" static="0" type="text">man</variable>
         <event-block sid="823769984069594">
             <conditions>
                 <condition id="0" name="On function" sid="162048515848883" type="Function">
@@ -280,6 +281,17 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="532580538121309">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="139257826625736" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="866292319495974" type="Player">
+                    <param id="0" name="Animation">gender</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

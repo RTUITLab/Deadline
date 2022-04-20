@@ -77,5 +77,54 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="805450321968950">
+            <conditions>
+                <condition id="17" name="On tap object" sid="574667721570054" type="Touch">
+                    <param id="0" name="Object">Decor</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="383874884434257" type="Decor">
+                    <param id="0" name="Animation">&quot;gender&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="732892351418319">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="507971248313318" type="Decor">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="734818635680802" type="System">
+                            <param id="0" name="Variable">gender</param>
+                            <param id="1" name="Value">&quot;man&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="340801900286673" type="Player">
+                            <param id="0" name="Animation">gender</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="591921115058035">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="586617517555717" type="Decor">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="546778654660720" type="System">
+                            <param id="0" name="Variable">gender</param>
+                            <param id="1" name="Value">&quot;woman&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="598125105615070" type="Player">
+                            <param id="0" name="Animation">gender</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

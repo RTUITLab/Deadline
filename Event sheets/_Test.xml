@@ -39,8 +39,17 @@
                             <param id="0" name="Duration">0.5</param>
                         </action>
                         <action behavior="EaseTween" id="10" name="Start" sid="522480670067345" type="MovingPanel" />
-                        <action id="11" name="Set collisions enabled" sid="655145694391096" type="Button">
-                            <param id="0" name="Collisions">0</param>
+                        <action id="-13" name="Set boolean" sid="191815750806058" type="VIKA">
+                            <param id="0" name="Instance variable">heal</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="687096778590443" type="VIKA">
+                            <param id="0" name="Instance variable">stealt</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="269540485879914" type="VIKA">
+                            <param id="0" name="Instance variable">distruct</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="116276339721973" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -62,6 +71,9 @@
                         <event-block sid="793915440416661">
                             <conditions />
                             <actions>
+                                <action id="11" name="Set collisions enabled" sid="655145694391096" type="Button">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
                                 <action id="-16" name="Wait" sid="921589351585436" type="System">
                                     <param id="0" name="Seconds">1.0</param>
                                 </action>
@@ -114,7 +126,7 @@
                                             <param id="0" name="Seconds">0.1</param>
                                         </action>
                                         <action id="-41" name="Wait for signal" sid="115667665940334" type="System">
-                                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
                                         </action>
                                         <action behavior="EaseTween" id="21" name="Group Start" sid="699465243365511" type="MovingPanel">
                                             <param id="0" name="Force Mode">0</param>
@@ -546,6 +558,7 @@
                                 <condition id="17" name="On tap object" sid="777698101299111" type="Touch">
                                     <param id="0" name="Object">Button</param>
                                 </condition>
+                                <condition id="11" name="Collisions enabled" sid="458294058632929" type="Button" />
                             </conditions>
                             <actions>
                                 <action id="-10" name="Set value" sid="830402440639150" type="VIKA">
@@ -561,6 +574,10 @@
                                 <action id="-3" name="Set position" sid="336759796416171" type="HandQlue">
                                     <param id="0" name="X">-192</param>
                                     <param id="1" name="Y">-704</param>
+                                </action>
+                                <action id="0" name="Call function" sid="572761517521357" type="Function">
+                                    <param id="0" name="Name">&quot;disableColision&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -593,6 +610,7 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">2</param>
                         </condition>
+                        <condition behavior="EaseTween" id="0" inverted="1" name="Is active" sid="253517465350355" type="VIKA" />
                     </conditions>
                     <actions />
                     <sub-events>
@@ -631,6 +649,10 @@
                                 <action id="-16" name="Set opacity" sid="735338514400097" type="HandQlue">
                                     <param id="0" name="Opacity">0</param>
                                 </action>
+                                <action id="-3" name="Set position" sid="384817782747726" type="HandQlue">
+                                    <param id="0" name="X">-192</param>
+                                    <param id="1" name="Y">-704</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="560902869001330">
@@ -660,6 +682,7 @@
                         <condition id="17" name="On tap object" sid="560056886745563" type="Touch">
                             <param id="0" name="Object">Button</param>
                         </condition>
+                        <condition id="11" name="Collisions enabled" sid="730130481074425" type="Button" />
                     </conditions>
                     <actions />
                     <sub-events>
@@ -727,5 +750,29 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="565112696077441">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="850491027159856" type="Keyboard">
+                    <param id="0" name="Key">82</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Remove item" sid="233974811407778" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="200908869118756">
+            <conditions>
+                <condition id="0" name="On function" sid="876844362850757" type="Function">
+                    <param id="0" name="Name">&quot;disableColision&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="123838017607211" type="Button">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

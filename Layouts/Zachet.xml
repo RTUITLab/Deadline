@@ -354,7 +354,7 @@
                 <instance type="Player" uid="59">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>woman</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -424,10 +424,10 @@
                         <x>144</x>
                         <y>552</y>
                         <z>0</z>
-                        <width>135</width>
+                        <width>114</width>
                         <height>193</height>
                         <depth>0</depth>
-                        <hotspotX>0.548148155</hotspotX>
+                        <hotspotX>0.552631557</hotspotX>
                         <hotspotY>0.818652868</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

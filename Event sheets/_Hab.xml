@@ -67,7 +67,7 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="100749304500103" type="PlayerMove">
-                            <param id="0" name="Animation">&quot;man_Walk&quot;</param>
+                            <param id="0" name="Animation">gender&amp;&quot;_Walk&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action behavior="EaseTween" id="13" name="Resume" sid="569042580399168" type="PlayerMove" />
@@ -168,8 +168,8 @@
                         <condition id="-4" name="Trigger once while true" sid="981029487038397" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="743515925160875" type="PlayerMove">
-                            <param id="0" name="Animation">&quot;man&quot;</param>
+                        <action id="4" name="Set animation" sid="608424619920543" type="PlayerMove">
+                            <param id="0" name="Animation">gender</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action behavior="EaseTween" id="12" name="Pause" sid="741690297410132" type="PlayerMove" />
@@ -954,6 +954,10 @@
                 <condition id="-2" name="On start of layout" sid="619719036668512" type="System" />
             </conditions>
             <actions>
+                <action id="4" name="Set animation" sid="380480840530711" type="Player">
+                    <param id="0" name="Animation">gender</param>
+                    <param id="1" name="From">1</param>
+                </action>
                 <action id="-10" name="Set value" sid="262309034806514" type="ButtonTrade">
                     <param id="0" name="Instance variable">Yorigin</param>
                     <param id="1" name="Value">ButtonTrade.Y</param>

@@ -13,6 +13,7 @@
                         <condition id="17" name="On tap object" sid="560101007914900" type="Touch">
                             <param id="0" name="Object">Button</param>
                         </condition>
+                        <condition id="11" name="Collisions enabled" sid="684435199870880" type="Button" />
                         <condition id="3" name="Compare frame" sid="416766727991596" type="Button">
                             <param id="0" name="Comparison">2</param>
                             <param id="1" name="Number">2</param>
@@ -129,6 +130,10 @@
             </conditions>
             <actions>
                 <action disabled="1" id="3" name="Clear storage" sid="424418896823321" type="LocalStorage" />
+                <action id="4" name="Set animation" sid="279660801839561" type="Player">
+                    <param id="0" name="Animation">gender</param>
+                    <param id="1" name="From">1</param>
+                </action>
                 <action id="-12" name="Set group active" sid="993615056124838" type="System">
                     <param id="0" name="Group name">&quot;PlayerControll&quot;</param>
                     <param id="1" name="State">1</param>
@@ -2413,6 +2418,7 @@
                 <condition id="4" name="Is touching object" sid="638203918158304" type="Touch">
                     <param id="0" name="Object">Button</param>
                 </condition>
+                <condition id="11" name="Collisions enabled" sid="718999585762894" type="Button" />
                 <condition id="3" name="Compare frame" sid="646238653653230" type="Button">
                     <param id="0" name="Comparison">0</param>
                     <param id="1" name="Number">0</param>
@@ -2639,6 +2645,9 @@
                                                         <action id="-42" name="Signal" sid="417744491546865" type="System">
                                                             <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
                                                         </action>
+                                                        <action id="-42" name="Signal" sid="677450444996571" type="System">
+                                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -2781,6 +2790,9 @@
                                                         </action>
                                                         <action id="-42" name="Signal" sid="576527354102706" type="System">
                                                             <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                                        </action>
+                                                        <action id="-42" name="Signal" sid="738022970617182" type="System">
+                                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>

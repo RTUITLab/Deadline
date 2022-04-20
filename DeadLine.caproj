@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="DeX" id="SecureData" version="1">SecureData</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -329,7 +330,7 @@
                     <instance-variable name="type" sid="347226923757793" type="string" />
                 </instance-variables>
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="load" pingpong="0" repeatcount="1" repeatto="0" sid="245060052886960" speed="5">
+                    <animation framecount="2" loop="0" name="load" pingpong="0" repeatcount="1" repeatto="0" sid="245060052886960" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
@@ -354,6 +355,9 @@
             </object-type>
             <object-type global="1" name="SecureData" sid="795914404321658">
                 <plugin id="SecureData" />
+            </object-type>
+            <object-type name="LocalStorage" sid="562560748127339">
+                <plugin id="LocalStorage" />
             </object-type>
         </object-folder>
         <object-folder name="UI">
@@ -637,6 +641,7 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="LocalStorage" uid="515" />
     </global-instances>
     <sounds-folder>
         <file name="stamp.ogg" />

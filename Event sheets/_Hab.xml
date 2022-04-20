@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>_Hab</name>
     <events>
+        <include>_SaveLoad</include>
         <variable constant="0" name="victorie" sid="419106155212477" static="0" type="number">0</variable>
         <variable constant="0" name="Money" sid="125666609902652" static="0" type="number">900</variable>
         <include>_Unit</include>
@@ -957,12 +958,20 @@
                     <param id="0" name="Instance variable">Yorigin</param>
                     <param id="1" name="Value">ButtonTrade.Y</param>
                 </action>
+                <action id="0" name="Call function" sid="743539512049273" type="Function">
+                    <param id="0" name="Name">&quot;RefreshTime&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action id="0" name="Call function" sid="612613042449064" type="Function">
                     <param id="0" name="Name">&quot;RefreshAllInfo&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
                 <action id="0" name="Call function" sid="458653193719165" type="Function">
                     <param id="0" name="Name">&quot;HideWindows&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="238832758622156" type="Function">
+                    <param id="0" name="Name">&quot;SaveGame&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>_Menu</name>
     <events>
+        <include>_SaveLoad</include>
         <event-block sid="528958559902549">
             <conditions>
                 <condition id="3" name="On touched object" sid="197310246890472" type="Touch">
@@ -24,8 +25,8 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="845503121586122" type="System">
-                            <param id="0" name="Layout">BeginScreen</param>
+                        <action id="-2" name="Go to layout" sid="733358408386836" type="System">
+                            <param id="0" name="Layout">CreatePerson</param>
                         </action>
                     </actions>
                 </event-block>
@@ -38,8 +39,15 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="589255987997728" type="System">
-                            <param id="0" name="Layout">BeginScreen</param>
+                        <action id="0" name="Call function" sid="228685346638520" type="Function">
+                            <param id="0" name="Name">&quot;LoadGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="756192929559635" type="System">
+                            <param id="0" name="Tag">&quot;Get&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="607231337058056" type="System">
+                            <param id="0" name="Layout">Hab</param>
                         </action>
                     </actions>
                 </event-block>
@@ -48,6 +56,18 @@
         <event-block sid="339632955903445">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="115463692294597" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="775002282894859" type="LocalStorage">
+                    <param id="0" name="Key">&quot;save&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="342967409744107">
+            <conditions>
+                <condition id="9" name="On item exists" sid="260638239158159" type="LocalStorage">
+                    <param id="0" name="Key">&quot;save&quot;</param>
+                </condition>
             </conditions>
             <actions />
             <sub-events>
@@ -58,9 +78,6 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;load&quot;</param>
                         </condition>
-                        <condition id="1" name="Has key" sid="124372653230557" type="SecureData">
-                            <param id="0" name="Key">&quot;save&quot;</param>
-                        </condition>
                     </conditions>
                     <actions>
                         <action id="5" name="Set frame" sid="207680175807272" type="MenuButtons">
@@ -68,22 +85,29 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="359168643426039">
+            </sub-events>
+        </event-block>
+        <event-block sid="303122802454664">
+            <conditions>
+                <condition id="10" name="On item missing" sid="336040439023947" type="LocalStorage">
+                    <param id="0" name="Key">&quot;save&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="928443403776484">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="503352567094725" type="MenuButtons">
+                        <condition id="-7" name="Compare instance variable" sid="963997975230467" type="MenuButtons">
                             <param id="0" name="Instance variable">type</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;load&quot;</param>
                         </condition>
-                        <condition id="1" inverted="1" name="Has key" sid="895181795286465" type="SecureData">
-                            <param id="0" name="Key">&quot;save&quot;</param>
-                        </condition>
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="414616587727290" type="MenuButtons">
+                        <action id="5" name="Set frame" sid="133788381184138" type="MenuButtons">
                             <param id="0" name="Frame number">1</param>
                         </action>
-                        <action id="-2" name="Go to layout" sid="689457801828763" type="System">
+                        <action id="-2" name="Go to layout" sid="273730114570795" type="System">
                             <param id="0" name="Layout">CreatePerson</param>
                         </action>
                     </actions>

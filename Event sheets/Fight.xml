@@ -125,6 +125,7 @@
                 <condition id="-2" name="On start of layout" sid="440574135767975" type="System" />
             </conditions>
             <actions>
+                <action disabled="1" id="3" name="Clear storage" sid="424418896823321" type="LocalStorage" />
                 <action id="-12" name="Set group active" sid="993615056124838" type="System">
                     <param id="0" name="Group name">&quot;PlayerControll&quot;</param>
                     <param id="1" name="State">1</param>

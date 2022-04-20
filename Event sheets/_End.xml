@@ -8,7 +8,9 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="910670026532643" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="3" name="Clear storage" sid="443280995941201" type="LocalStorage" />
+            </actions>
             <sub-events>
                 <event-block sid="467631478812090">
                     <conditions>

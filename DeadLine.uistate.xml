@@ -11,15 +11,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="2">Zachet</layout>
-        <layout order="4">Menu</layout>
-        <layout order="7">Hab</layout>
         <event-sheet order="0">Variables</event-sheet>
-        <event-sheet active="1" order="1">Fight</event-sheet>
-        <event-sheet order="3">_Test</event-sheet>
-        <event-sheet order="5">_Menu</event-sheet>
-        <event-sheet order="6">_SaveLoad</event-sheet>
-        <event-sheet order="8">_Hab</event-sheet>
-        <event-sheet order="9">_End</event-sheet>
+        <event-sheet order="1">Fight</event-sheet>
+        <event-sheet active="1" order="3">_Test</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -59,5 +53,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Player/" />
         <folder expanded="1" path="animation-folder/Enemy/" />
         <folder expanded="1" path="animation-folder/PlayerMove/" />
+        <folder expanded="1" path="animation-folder/MovingPanel/" />
     </folders-expanded>
 </c2uistate>

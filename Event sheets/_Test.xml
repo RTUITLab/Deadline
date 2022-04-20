@@ -16,5 +16,251 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="408490327014707" title="Learn">
+            <sub-events>
+                <variable constant="0" name="Stage" sid="660007473627685" static="0" type="number">0</variable>
+                <event-block sid="561146974695581">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="630961208821189" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="667734419824972" type="System">
+                            <param id="0" name="Variable">Stage</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="406855128550112" type="System">
+                            <param id="0" name="Variable">Stage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="419826755328164">
+                    <conditions>
+                        <condition behavior="EaseTween" id="0" name="Is active" sid="617308313757108" type="MovingPanel" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="418127397081692">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="807733196146626" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Actions&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="533725858985501">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="592330257515705" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Friend&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="105056146552890" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Phone&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="237872966419263" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Papper&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="780013048800170" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="805333465772884">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="849799596952175" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Distruction&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="977682398778788">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="139072668379792" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Distruct&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="597981076217599" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="616443142754316">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="743802835305587" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Cry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="698540288119069">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="383478579491269" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Cry&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="185695254584270" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="108393780820192">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="139730638025934" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Practic&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="714107417169767">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="836900083912896" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Practic&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="789609010809636" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Laba&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="965971662110042" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Heal&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="686900511287194" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;PracticCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="301200472021699" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;LabCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="542553651313215" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;HealCount&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="477844790024331" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="699283048674192" type="Stats">
+                                            <param id="0" name="X">MovingPanel.X+128</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="848863001725602">
+                    <conditions>
+                        <condition behavior="EaseTween" id="4" name="On tween end" sid="107042812293243" type="MovingPanel" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="295094861512382" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="462794475858636" type="MovingPanel" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="204177344455367">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="338226329263281" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="973630171189980">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="646125945335042" type="System">
+                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                        </action>
+                        <action behavior="EaseTween" id="21" name="Group Start" sid="178525411307504" type="MovingPanel">
+                            <param id="0" name="Force Mode">0</param>
+                            <param id="1" name="Group">&quot;Cry&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="761309190858302">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="932949573683769" type="System">
+                            <param id="0" name="Tag">&quot;FinishDamage&quot;</param>
+                        </action>
+                        <action behavior="EaseTween" id="21" name="Group Start" sid="307149811056851" type="MovingPanel">
+                            <param id="0" name="Force Mode">0</param>
+                            <param id="1" name="Group">&quot;Actions&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="966941205076789">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="573684005125716" type="System">
+                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="713952908374910" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="115667665940334" type="System">
+                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                        </action>
+                        <action behavior="EaseTween" id="21" name="Group Start" sid="699465243365511" type="MovingPanel">
+                            <param id="0" name="Force Mode">0</param>
+                            <param id="1" name="Group">&quot;Practic&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="891003194953079">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="106658310050173" type="System">
+                            <param id="0" name="Tag">&quot;Fail&quot;</param>
+                        </action>
+                        <action behavior="EaseTween" id="21" name="Group Start" sid="804478198450729" type="MovingPanel">
+                            <param id="0" name="Force Mode">0</param>
+                            <param id="1" name="Group">&quot;Distruction&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

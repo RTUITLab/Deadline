@@ -576,6 +576,22 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="MovingPanel" sid="503897207509364">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="type" sid="296787322482749" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="EaseTween" sid="366506586669199">
+                    <behavior id="lunarray_Tween" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="716972721876635" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

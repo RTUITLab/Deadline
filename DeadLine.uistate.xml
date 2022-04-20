@@ -24,13 +24,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="0" path="object-folder/Decor/" />
+        <folder expanded="1" path="object-folder/Decor/" />
         <folder expanded="1" path="object-folder/Buttons/" />
         <folder expanded="1" path="object-folder/System/" />
-        <folder expanded="0" path="object-folder/UI/" />
+        <folder expanded="1" path="object-folder/UI/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="0" path="layout-folder/Fight/" />
-        <folder expanded="0" path="layout-folder/UI/" />
+        <folder expanded="1" path="layout-folder/UI/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
@@ -54,5 +54,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Enemy/" />
         <folder expanded="1" path="animation-folder/PlayerMove/" />
         <folder expanded="1" path="animation-folder/MovingPanel/" />
+        <folder expanded="1" path="animation-folder/HandQlue/" />
+        <folder expanded="1" path="animation-folder/VIKA/" />
     </folders-expanded>
 </c2uistate>

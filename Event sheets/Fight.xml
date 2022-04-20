@@ -1667,6 +1667,8 @@
                             </actions>
                         </event-block>
                         <comment>Попался/ непопаля на списыване со шпоры</comment>
+                        <comment>Для обучения</comment>
+                        <variable constant="0" name="isLearn" sid="582514639264118" static="0" type="number">0</variable>
                         <event-block sid="914820871826662">
                             <conditions>
                                 <condition id="0" name="On function" sid="128809574915471" type="Function">
@@ -1674,8 +1676,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="332928928759297" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.stealt=1?1:0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="371104321765236" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">Enemy.Distruct=1?isLearn:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="415181342149714" type="Function">
-                                    <param id="0" name="Value">Function.Param(0) &gt;0?max(0,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
+                                    <param id="0" name="Value">Function.Param(0) &gt;0?max(0,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):isLearn=1?0:Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1715,8 +1725,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="180661080740367" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.stealt=1?1:0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="564610013509383" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">Enemy.Distruct=1?isLearn:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="311362048872125" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?max(0,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):Function.Call(&quot;Random_Event&quot;,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?max(0,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)):(isLearn=1?0:Function.Call(&quot;Random_Event&quot;,PHONE_BASE_DUNGEROUS-Player.Stealth*2-(Enemy.Distruct?Player.Defence*4:0)) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1784,8 +1802,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="238544781038471" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.distruct?1:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="854342557909867" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?DISTRUCT_BASE_CHANCE+Player.Defence*5:Function.Call(&quot;Random_Event&quot;,DISTRUCT_BASE_CHANCE+Player.Defence*5) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?DISTRUCT_BASE_CHANCE+Player.Defence*5:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,DISTRUCT_BASE_CHANCE+Player.Defence*5) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1867,8 +1889,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="763387834712994" type="System">
+                                    <param id="0" name="Variable">isLearn</param>
+                                    <param id="1" name="Value">VIKA.heal?1:0</param>
+                                </action>
                                 <action id="1" name="Set return value" sid="117622031418693" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?15+Player.Defence*5:Function.Call(&quot;Random_Event&quot;,15+Player.Defence*5) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?15+Player.Defence*5:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,15+Player.Defence*5) )</param>
                                 </action>
                             </actions>
                         </event-block>

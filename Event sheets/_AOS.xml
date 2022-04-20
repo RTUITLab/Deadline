@@ -39,6 +39,10 @@
                     <param id="0" name="Name">&quot;Show_Stats&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="0" name="Set item" sid="179155474323657" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
     </events>

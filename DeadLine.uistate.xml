@@ -11,15 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="2">Zachet</layout>
-        <layout order="4">Menu</layout>
-        <layout order="5">CreatePerson</layout>
-        <layout order="8">Hab</layout>
-        <event-sheet order="0">Variables</event-sheet>
+        <event-sheet active="1" order="0">Variables</event-sheet>
         <event-sheet order="1">Fight</event-sheet>
-        <event-sheet active="1" order="3">_Test</event-sheet>
-        <event-sheet order="6">_CP</event-sheet>
-        <event-sheet order="7">_AddSkil</event-sheet>
-        <event-sheet order="9">_Hab</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,9 +28,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/UI/" />
         <folder expanded="1" path="layout-folder/" />
-        <folder expanded="0" path="layout-folder/Fight/" />
-        <folder expanded="1" path="layout-folder/UI/" />
-        <folder expanded="0" path="event-folder/" />
+        <folder expanded="1" path="layout-folder/Fight/" />
+        <folder expanded="0" path="layout-folder/UI/" />
+        <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />

@@ -354,7 +354,7 @@
             <sub-events>
                 <event-group description="" sid="146868594036088" title="Function_Actions">
                     <sub-events>
-                        <comment bookmark="1">Базовая атака</comment>
+                        <comment>Базовая атака</comment>
                         <variable constant="0" name="CurrentDamage" sid="928050701374274" static="0" type="number">0</variable>
                         <event-block sid="989444905868406">
                             <conditions>
@@ -991,7 +991,7 @@
                 </event-group>
                 <event-group description="" sid="146720353656905" title="Function_Info">
                     <sub-events>
-                        <event-block bookmark="1" sid="861096088366376">
+                        <event-block sid="861096088366376">
                             <conditions>
                                 <condition id="0" name="On function" sid="987472436130476" type="Function">
                                     <param id="0" name="Name">&quot;Info_Atack&quot;</param>
@@ -1616,7 +1616,7 @@
                         <comment></comment>
                         <comment></comment>
                         <comment>Базовое здоровье</comment>
-                        <event-block bookmark="1" sid="105692602960420">
+                        <event-block sid="105692602960420">
                             <conditions>
                                 <condition id="0" name="On function" sid="107559956831262" type="Function">
                                     <param id="0" name="Name">&quot;Max_Hp&quot;</param>
@@ -1624,7 +1624,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="841542200319642" type="Function">
-                                    <param id="0" name="Value">Player.Heal*5+45</param>
+                                    <param id="0" name="Value">Player.Heal*6+44</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1654,12 +1654,12 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="774514465707960" type="Function">
-                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+Player.Stealth*4:Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+Player.Stealth*4) </param>
+                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;):Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;)) </param>
                                 </action>
                             </actions>
                         </event-block>
                         <comment>Величина крита шпоры</comment>
-                        <event-block sid="108376273772013">
+                        <event-block bookmark="1" sid="108376273772013">
                             <conditions>
                                 <condition id="0" name="On function" sid="903684216315641" type="Function">
                                     <param id="0" name="Name">&quot;Papper_Krit&quot;</param>
@@ -1667,7 +1667,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="388935862805306" type="Function">
-                                    <param id="0" name="Value">PAPPER_BASE_KRIT+Player.Stealth/2</param>
+                                    <param id="0" name="Value">round(PAPPER_BASE_KRIT+2*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(4/8)*10)/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2538,7 +2538,7 @@
         </event-block>
         <event-group description="" inactive="1" sid="686091013218831" title="EnemyAttack">
             <sub-events>
-                <event-block bookmark="1" sid="168410300639277">
+                <event-block sid="168410300639277">
                     <conditions>
                         <condition id="0" name="On function" sid="860211151828299" type="Function">
                             <param id="0" name="Name">&quot;EnemyAttack&quot;</param>

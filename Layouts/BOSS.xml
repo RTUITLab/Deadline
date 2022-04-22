@@ -482,7 +482,7 @@
                         <MaxHp>300</MaxHp>
                         <DistructTurn>0</DistructTurn>
                         <NextTurn>550</NextTurn>
-                        <WaitToAttack>30</WaitToAttack>
+                        <WaitToAttack>10</WaitToAttack>
                         <Damage>24</Damage>
                         <MaxPractic>4</MaxPractic>
                         <MaxLab>8</MaxLab>
@@ -1270,6 +1270,92 @@
                         <z>0</z>
                         <width>144</width>
                         <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fireball" uid="552">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>1</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <isPractic>false</isPractic>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="EaseTween">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>128, 512</target>
+                                <duration>0.2</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>P</tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>645</x>
+                        <y>337</y>
+                        <z>0</z>
+                        <width>55.425624847</width>
+                        <height>55.425624847</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fireball" uid="553">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <isPractic>true</isPractic>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="EaseTween">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>128, 512</target>
+                                <duration>0.2</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>P</tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>645</x>
+                        <y>289</y>
+                        <z>0</z>
+                        <width>55.425624847</width>
+                        <height>55.425624847</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

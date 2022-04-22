@@ -638,6 +638,23 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="fireball" sid="133410237907966">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="isPractic" sid="906620336316376" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="EaseTween" sid="143690505776079">
+                    <behavior id="lunarray_Tween" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="186544569952824" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -740,6 +757,8 @@
         <file name="walkMusic.ogg" />
         <file name="Warning.m4a" />
         <file name="Warning.ogg" />
+        <file name="bah_bah.m4a" />
+        <file name="bah_bah.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

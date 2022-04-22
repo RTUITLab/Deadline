@@ -142,7 +142,7 @@
                         <line-height>-10</line-height>
                     </properties>
                     <instance-variables>
-                        <Type>delay_Phone</Type>
+                        <Type>time</Type>
                         <Su_Text> мин</Su_Text>
                         <PreText>-</PreText>
                         <Forfunction>&quot;Time&quot;</Forfunction>

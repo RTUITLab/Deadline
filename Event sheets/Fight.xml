@@ -2663,16 +2663,20 @@
                                                         <condition id="-12" name="Repeat" sid="425295543924726" type="System">
                                                             <param id="0" name="Count">Enemy.MaxPractic-Enemy.CurrenPractic</param>
                                                         </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="599737815298299" type="fireball">
+                                                            <param id="0" name="Instance variable">isPractic</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-16" name="Wait" sid="435232001673109" type="System">
                                                             <param id="0" name="Seconds">loopindex*0.4</param>
                                                         </action>
-                                                        <action id="0" name="Play" sid="525705470835598" type="Audio">
-                                                            <param id="0" name="Audio file">blow</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">0</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        <action behavior="EaseTween" id="21" name="Group Start" sid="589685799028183" type="fireball">
+                                                            <param id="0" name="Force Mode">1</param>
+                                                            <param id="1" name="Group">&quot;P&quot;</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="123615896777299" type="fireball">
+                                                            <param id="0" name="Visibility">1</param>
                                                         </action>
                                                         <action id="5" name="Set frame" sid="127184070156347" type="Flag">
                                                             <param id="0" name="Frame number">1</param>
@@ -2692,8 +2696,17 @@
                                                         <action id="-16" name="Wait" sid="980127821971173" type="System">
                                                             <param id="0" name="Seconds">0.2</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="525705470835598" type="Audio">
+                                                            <param id="0" name="Audio file">blow</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
                                                         <action id="5" name="Set frame" sid="434830710399782" type="Flag">
                                                             <param id="0" name="Frame number">0</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="799575603033426" type="fireball">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2809,10 +2822,17 @@
                                                         <condition id="-12" name="Repeat" sid="247005106315900" type="System">
                                                             <param id="0" name="Count">Enemy.MaxLab-Enemy.CurrentLab</param>
                                                         </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="797902235774237" type="fireball">
+                                                            <param id="0" name="Instance variable">isPractic</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-16" name="Wait" sid="158213901662344" type="System">
                                                             <param id="0" name="Seconds">loopindex*0.4</param>
+                                                        </action>
+                                                        <action behavior="EaseTween" id="24" name="Force Start" sid="257042001573705" type="fireball" />
+                                                        <action id="-15" name="Set visible" sid="285881119229183" type="fireball">
+                                                            <param id="0" name="Visibility">1</param>
                                                         </action>
                                                         <action id="0" name="Play" sid="453003965827697" type="Audio">
                                                             <param id="0" name="Audio file">blow</param>
@@ -2840,6 +2860,9 @@
                                                         </action>
                                                         <action id="5" name="Set frame" sid="749239972094546" type="Flag">
                                                             <param id="0" name="Frame number">0</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="749205863300716" type="fireball">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3205,6 +3228,24 @@
         </event-group>
         <event-group description="" sid="380407515578473" title="Delay">
             <sub-events>
+                <event-block sid="902541972749547">
+                    <conditions>
+                        <condition id="0" name="On function" sid="998758208390760" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="306803990863886" type="DelayMask">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="996634290686402" type="DelayMask">
+                            <param id="0" name="Instance variable">delay</param>
+                            <param id="1" name="Value">ClockTime+Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="149184262371038">
                     <conditions>
                         <condition id="0" name="On function" sid="760034253717112" type="Function">
@@ -3296,23 +3337,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="902541972749547">
-            <conditions>
-                <condition id="0" name="On function" sid="998758208390760" type="Function">
-                    <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="306803990863886" type="DelayMask">
-                    <param id="0" name="Instance variable">type</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">Function.Param(0)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="996634290686402" type="DelayMask">
-                    <param id="0" name="Instance variable">delay</param>
-                    <param id="1" name="Value">ClockTime+Function.Param(1)</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

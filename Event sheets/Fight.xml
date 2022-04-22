@@ -2197,7 +2197,7 @@
                                             <param id="0" name="Audio file">victory</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                            <param id="1" name="Tag (optional)">&quot;victory&quot;</param>
                                         </action>
                                     </actions>
                                     <sub-events>

@@ -659,6 +659,7 @@
         </layout-folder>
         <layout>Hab.xml</layout>
         <layout>Menu.xml</layout>
+        <layout>Warning.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Fight.xml</event-sheet>
@@ -681,6 +682,7 @@
         <event-sheet>_Menu.xml</event-sheet>
         <event-sheet>_SaveLoad.xml</event-sheet>
         <event-sheet>_Debug.xml</event-sheet>
+        <event-sheet>_Warning.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="2">
@@ -736,6 +738,8 @@
         <file name="fight.ogg" />
         <file name="walkMusic.m4a" />
         <file name="walkMusic.ogg" />
+        <file name="Warning.m4a" />
+        <file name="Warning.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

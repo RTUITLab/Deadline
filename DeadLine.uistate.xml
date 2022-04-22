@@ -10,18 +10,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Zachet</layout>
-        <layout order="4">Menu</layout>
-        <layout order="5">Evil</layout>
-        <layout order="6">Norm</layout>
-        <layout order="7">LabaMan</layout>
-        <layout order="8">PracticMan</layout>
-        <layout order="10">End</layout>
-        <event-sheet order="0">Variables</event-sheet>
-        <event-sheet active="1" order="1">Fight</event-sheet>
-        <event-sheet order="3">_Debug</event-sheet>
-        <event-sheet order="9">_SaveLoad</event-sheet>
-        <event-sheet order="11">_End</event-sheet>
+        <layout order="1">Zachet</layout>
+        <layout order="3">Menu</layout>
+        <layout order="4">Evil</layout>
+        <layout order="5">Norm</layout>
+        <layout order="6">LabaMan</layout>
+        <layout order="7">PracticMan</layout>
+        <layout order="9">Warning</layout>
+        <layout order="11">AddOneSkil</layout>
+        <layout order="12">UpdateSkill</layout>
+        <event-sheet order="0">Fight</event-sheet>
+        <event-sheet order="2">_Debug</event-sheet>
+        <event-sheet order="8">_SaveLoad</event-sheet>
+        <event-sheet active="1" order="10">_Warning</event-sheet>
+        <event-sheet order="13">_Update</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -37,7 +39,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/UI/" />
         <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="layout-folder/Fight/" />
+        <folder expanded="0" path="layout-folder/Fight/" />
         <folder expanded="1" path="layout-folder/UI/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />

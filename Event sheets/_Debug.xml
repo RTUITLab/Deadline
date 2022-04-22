@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_Debug</name>
+    <events>
+        <event-block sid="157770178660347">
+            <conditions>
+                <condition id="0" name="On function" sid="889900216452312" type="Function">
+                    <param id="0" name="Name">&quot;Debug&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="571324140673536" type="Debug">
+                    <param id="0" name="Text">Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

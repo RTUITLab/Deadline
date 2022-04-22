@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Fight</name>
     <events>
+        <include>_Debug</include>
         <include>_Unit</include>
         <variable constant="0" name="ClockTime" sid="708823125823368" static="0" type="number">540</variable>
         <variable constant="0" name="Turn" sid="910224539115790" static="0" type="number">0</variable>
@@ -546,18 +547,6 @@
                                             <param id="0" name="Variable">Krit</param>
                                             <param id="1" name="Value">Function.Call(&quot;Phone_Chance&quot;)</param>
                                         </action>
-                                        <action id="-12" name="Subtract from" sid="774640509107090" type="Enemy">
-                                            <param id="0" name="Instance variable">Hp</param>
-                                            <param id="1" name="Value">(Function.Call(&quot;Atack_Damage&quot;)+Krit*Function.Call(&quot;Phone_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;))</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="344993281101699" type="Function">
-                                            <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="461878714034404" type="Function">
-                                            <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
-                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="990715444675426">
@@ -579,12 +568,38 @@
                                                     <param id="3" name="Volume">0</param>
                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="808072369198295" type="System">
-                                                    <param id="0" name="Seconds">0.2</param>
+                                                <action id="-12" name="Subtract from" sid="774640509107090" type="Enemy">
+                                                    <param id="0" name="Instance variable">Hp</param>
+                                                    <param id="1" name="Value">Krit*Function.Call(&quot;Phone_Krit&quot;)</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="344993281101699" type="Function">
+                                                    <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                                 <action id="0" name="Call function" sid="569159132264863" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
                                                     <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="618126448873259">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="899115578358615" type="System">
+                                                    <param id="0" name="Variable">Krit</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="350570453858505" type="Audio">
+                                                    <param id="0" name="Audio file">fail</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="269935687644303" type="Function">
+                                                    <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Player.ImagePointX(1){###}Player.ImagePointY(1){###}&quot;Не удалось списать!&quot;{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1165,10 +1180,19 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="656128186266823" type="InfoText">
+                                        <action disabled="1" id="0" name="Set text" sid="656128186266823" type="InfoText">
                                             <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)</param>
                                         </action>
-                                        <action id="4" name="Set font color" sid="540896405227682" type="InfoText">
+                                        <action disabled="1" id="4" name="Set font color" sid="540896405227682" type="InfoText">
+                                            <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="718055917961902" type="InfoText">
+                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; Function.Call(&quot;Phone_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="668636719292017" type="InfoText">
+                                            <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="359433483503329" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                     </actions>
@@ -1182,13 +1206,13 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="718055917961902" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; Function.Call(&quot;Phone_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                        <action id="0" name="Set text" sid="627383070751143" type="InfoText">
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Phone_Krit&quot;,5)</param>
                                         </action>
-                                        <action id="4" name="Set font color" sid="668636719292017" type="InfoText">
+                                        <action id="4" name="Set font color" sid="630951619500052" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
                                         </action>
-                                        <action id="4" name="Set font color" sid="359433483503329" type="InfoText">
+                                        <action id="4" name="Set font color" sid="113824300691654" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                     </actions>
@@ -1202,14 +1226,14 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="627383070751143" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Phone_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)</param>
+                                        <action id="0" name="Set text" sid="301006152936648" type="InfoText">
+                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; Function.Call(&quot;Phone_Dungerous&quot;,5)&amp;&quot;%&quot;</param>
                                         </action>
-                                        <action id="4" name="Set font color" sid="630951619500052" type="InfoText">
-                                            <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
-                                        </action>
-                                        <action id="4" name="Set font color" sid="113824300691654" type="InfoText">
+                                        <action id="4" name="Set font color" sid="734366173612250" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="321752767408845" type="InfoText">
+                                            <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1221,17 +1245,7 @@
                                             <param id="2" name="Value">&quot;info4&quot;</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Set text" sid="301006152936648" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; Function.Call(&quot;Phone_Dungerous&quot;,5)&amp;&quot;%&quot;</param>
-                                        </action>
-                                        <action id="4" name="Set font color" sid="734366173612250" type="InfoText">
-                                            <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
-                                        </action>
-                                        <action id="4" name="Set font color" sid="321752767408845" type="InfoText">
-                                            <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1639,7 +1653,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="635572187875608" type="Function">
-                                    <param id="0" name="Value">0.7+int(Player.Damage/3*10)/10</param>
+                                    <param id="0" name="Value">0.7+int(Player.Damage*0.3*10)/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1659,7 +1673,7 @@
                             </actions>
                         </event-block>
                         <comment>Величина крита шпоры</comment>
-                        <event-block bookmark="1" sid="108376273772013">
+                        <event-block sid="108376273772013">
                             <conditions>
                                 <condition id="0" name="On function" sid="903684216315641" type="Function">
                                     <param id="0" name="Name">&quot;Papper_Krit&quot;</param>
@@ -1705,7 +1719,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="367556131887372" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?PHONE_BASE_CHANCE+Player.Stealth*4:Function.Call(&quot;Random_Event&quot;,PHONE_BASE_CHANCE+Player.Stealth*4) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?PHONE_BASE_CHANCE+Player.Stealth*2:Function.Call(&quot;Random_Event&quot;,PHONE_BASE_CHANCE+Player.Stealth*2) </param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1718,12 +1732,12 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="629056247524474" type="Function">
-                                    <param id="0" name="Value">PHONE_BASE_KRIT+Player.Stealth/2</param>
+                                    <param id="0" name="Value">PHONE_BASE_KRIT+Player.Stealth^(3/4)</param>
                                 </action>
                             </actions>
                         </event-block>
                         <comment>Попался/ непопаля на списыване с телефона</comment>
-                        <event-block sid="117804452105979">
+                        <event-block bookmark="1" sid="117804452105979">
                             <conditions>
                                 <condition id="0" name="On function" sid="248327235420519" type="Function">
                                     <param id="0" name="Name">&quot;Phone_Dungerous&quot;</param>

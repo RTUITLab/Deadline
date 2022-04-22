@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>_End</name>
     <events>
+        <include>_SaveLoad</include>
         <include>_Unit</include>
         <event-block sid="229637239702757">
             <conditions>
@@ -10,10 +11,6 @@
             </conditions>
             <actions>
                 <action id="3" name="Clear storage" sid="443280995941201" type="LocalStorage" />
-                <action id="0" name="Set item" sid="557961258788077" type="LocalStorage">
-                    <param id="0" name="Key">&quot;Learn&quot;</param>
-                    <param id="1" name="Value">1</param>
-                </action>
             </actions>
             <sub-events>
                 <event-block sid="467631478812090">

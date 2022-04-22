@@ -22,6 +22,10 @@
                         <condition id="2" inverted="1" name="Is playing" sid="869778139467082" type="Button">
                             <param id="0" name="Animation">&quot;NA&quot;</param>
                         </condition>
+                        <condition id="4" name="Is touching object" sid="632780157930760" type="Touch">
+                            <param id="0" name="Object">DelayMask</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Is visible" sid="417274308791626" type="DelayMask" />
                     </conditions>
                     <actions>
                         <action id="-12" name="Set group active" sid="873109151806995" type="System">
@@ -91,6 +95,10 @@
                                     <param id="0" name="Name">&quot;EnemyAttack&quot;</param>
                                     <param id="1" name="Parameter {n}">Function.Call(&quot;CustomAttack&quot;)</param>
                                 </action>
+                                <action id="0" name="Call function" sid="167284245293400" type="Function">
+                                    <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="414934711811059">
@@ -107,6 +115,10 @@
                                 </action>
                                 <action id="-42" name="Signal" sid="729129901711821" type="System">
                                     <param id="0" name="Tag">&quot;FinishDamage&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="570942185391207" type="Function">
+                                    <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
@@ -130,6 +142,10 @@
                 <condition id="-2" name="On start of layout" sid="440574135767975" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="108747816646828" type="Function">
+                    <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action disabled="1" id="3" name="Clear storage" sid="424418896823321" type="LocalStorage" />
                 <action id="4" name="Set animation" sid="279660801839561" type="Player">
                     <param id="0" name="Animation">gender</param>
@@ -614,7 +630,12 @@
                                     <param id="0" name="Name">&quot;Do_Friend&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Call function" sid="597535025705859" type="Function">
+                                    <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;delay_Friend&quot;{###}5+10</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <variable constant="0" name="Krit" sid="315476165391619" static="0" type="number">0</variable>
                                 <event-block sid="768992494418668">
@@ -750,6 +771,10 @@
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="224051647406169" type="Function">
+                                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;delay_Distruct&quot;{###}3+Player.Defence*2+1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="793988478197289">
@@ -771,6 +796,10 @@
                                             <param id="3" name="Volume">-15</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="244889778585305" type="Function">
+                                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;delay_Distruct&quot;{###}1+1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -782,6 +811,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="442387302829934" type="Function">
+                                    <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;delay_Cry&quot;{###}5+2</param>
+                                </action>
                                 <action behavior="Atake" id="10" name="Start" sid="200413209846379" type="Player" />
                                 <action id="0" name="Call function" sid="148324359348034" type="Function">
                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
@@ -1925,7 +1958,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="174905142172302" type="Function">
-                                    <param id="0" name="Value">5*Player.Heal+5</param>
+                                    <param id="0" name="Value">7*Player.Heal+3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2376,6 +2409,14 @@
                         <action id="-42" name="Signal" sid="776730126530265" type="System">
                             <param id="0" name="Tag">&quot;Fail&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="699650517367847" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;delay_Papper&quot;{###}5</param>
+                        </action>
+                        <action id="0" name="Call function" sid="753152893519507" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;delay_Phone&quot;{###}5</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Списывание успешно</comment>
@@ -2450,6 +2491,9 @@
                         <condition id="-9" name="Layer is visible" sid="158494738162212" type="System">
                             <param id="0" name="Layer">&quot;Helper&quot;</param>
                         </condition>
+                        <condition id="-16" inverted="1" name="Is on layer" sid="442335611110313" type="InfoText">
+                            <param id="0" name="Layer">&quot;Block&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="404119787515894" type="InfoText">
@@ -2494,6 +2538,9 @@
                                 <condition id="2" name="Is in touch" sid="694373268642672" type="Touch" />
                                 <condition id="4" name="Is touching object" sid="503756742294043" type="Touch">
                                     <param id="0" name="Object">Button</param>
+                                </condition>
+                                <condition id="-16" inverted="1" name="Is on layer" sid="377013532052407" type="InfoText">
+                                    <param id="0" name="Layer">&quot;Block&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -3156,5 +3203,116 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="380407515578473" title="Delay">
+            <sub-events>
+                <event-block sid="149184262371038">
+                    <conditions>
+                        <condition id="0" name="On function" sid="760034253717112" type="Function">
+                            <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="521623864548426">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="545042100246497" type="System">
+                                    <param id="0" name="Object">DelayMask</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="267720932741159">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="228348084373813" type="DelayMask">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">ClockTime</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="704927860069996" type="DelayMask">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="341886834488339">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="967254124485583" type="System">
+                                                    <param id="0" name="Object">InfoText</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="628165157819581" type="InfoText">
+                                                    <param id="0" name="Instance variable">Type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">DelayMask.type</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="726424785850652" type="InfoText">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="420172565368512">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="105875021545658" type="DelayMask">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">ClockTime</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="225429136095787" type="DelayMask">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="776440727413513">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="465820873637416" type="InfoText">
+                                                    <param id="0" name="Instance variable">Type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">DelayMask.type</param>
+                                                </condition>
+                                                <condition id="-11" name="For Each" sid="389998037589259" type="System">
+                                                    <param id="0" name="Object">InfoText</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="857608400467650" type="InfoText">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="778906949654865" type="InfoText">
+                                                    <param id="0" name="Text">DelayMask.delay-ClockTime&amp;&quot; мин.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="902541972749547">
+            <conditions>
+                <condition id="0" name="On function" sid="998758208390760" type="Function">
+                    <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="306803990863886" type="DelayMask">
+                    <param id="0" name="Instance variable">type</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Function.Param(0)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="996634290686402" type="DelayMask">
+                    <param id="0" name="Instance variable">delay</param>
+                    <param id="1" name="Value">ClockTime+Function.Param(1)</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

@@ -1452,6 +1452,464 @@
             </instances>
             <effects />
         </layer>
+        <layer name="Block" sid="200138823245561">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>1</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="DelayMask" uid="527">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>delay_Distruct</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>192</x>
+                        <y>1056</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="528">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>delay_Friend</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>192</x>
+                        <y>960</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="529">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>delay_Phone</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>192</x>
+                        <y>864</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="530">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>delay_Papper</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>192</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="531">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>delay_Cry</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>544</x>
+                        <y>672</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="532">
+                    <properties>
+                        <text>5 минут</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-27,900,0</font>
+                        <color>180,180,180</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Bottom-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>delay_Papper</Type>
+                        <Su_Text> мин</Su_Text>
+                        <PreText>-</PreText>
+                        <Forfunction>&quot;Time&quot;</Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>176</x>
+                        <y>816</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="533">
+                    <properties>
+                        <text>5 минут</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-27,900,0</font>
+                        <color>180,180,180</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Bottom-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>delay_Phone</Type>
+                        <Su_Text> мин</Su_Text>
+                        <PreText>-</PreText>
+                        <Forfunction>&quot;Time&quot;</Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>176</x>
+                        <y>912</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="534">
+                    <properties>
+                        <text>5 минут</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-27,900,0</font>
+                        <color>180,180,180</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Bottom-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>delay_Friend</Type>
+                        <Su_Text> мин</Su_Text>
+                        <PreText>-</PreText>
+                        <Forfunction>&quot;Time&quot;</Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>176</x>
+                        <y>1008</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="535">
+                    <properties>
+                        <text>5 минут</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-27,900,0</font>
+                        <color>180,180,180</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Bottom-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>delay_Distruct</Type>
+                        <Su_Text> мин</Su_Text>
+                        <PreText>-</PreText>
+                        <Forfunction>&quot;Time&quot;</Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>176</x>
+                        <y>1104</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="536">
+                    <properties>
+                        <text>5 минут</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Black,-27,900,0</font>
+                        <color>180,180,180</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Bottom-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>delay_Cry</Type>
+                        <Su_Text> мин</Su_Text>
+                        <PreText>-</PreText>
+                        <Forfunction>&quot;Time&quot;</Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>528</x>
+                        <y>720</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="537">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>q</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>192</x>
+                        <y>672</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="538">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>q</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>544</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="539">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>q</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>544</x>
+                        <y>864</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DelayMask" uid="540">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>q</type>
+                        <delay>0</delay>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>544</x>
+                        <y>960</y>
+                        <z>0</z>
+                        <width>316</width>
+                        <height>78</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
         <layer name="Helper" sid="175643998633894">
             <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
@@ -1912,7 +2370,7 @@
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
+                        <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
@@ -1942,14 +2400,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>960</x>
-                        <y>416</y>
+                        <x>1088</x>
+                        <y>560</y>
                         <z>0</z>
-                        <width>356.063140869</width>
-                        <height>356.063140869</height>
+                        <width>357.48739624</width>
+                        <height>357.48739624</height>
                         <depth>0</depth>
-                        <hotspotX>0.501999974</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

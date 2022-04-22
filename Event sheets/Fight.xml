@@ -1841,7 +1841,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="721167678026782" type="Function">
-                                    <param id="0" name="Value">max(Function.Param(0)-Player.Defence/4,Function.Param(0)*0.1)</param>
+                                    <param id="0" name="Value">max(Function.Param(0)-Player.Defence/4+0.25,Function.Param(0)*0.1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1869,7 +1869,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="435045371790396" type="Function">
-                                    <param id="0" name="Value">PRACTIC_DAMAGE*Player.Heal</param>
+                                    <param id="0" name="Value">5*Player.Heal</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1882,7 +1882,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="326591357222520" type="Function">
-                                    <param id="0" name="Value">15*PRACTIC_DAMAGE</param>
+                                    <param id="0" name="Value">25</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1895,7 +1895,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="933794532453396" type="Function">
-                                    <param id="0" name="Value">HEAL_DAMAGE*Player.Heal</param>
+                                    <param id="0" name="Value">5*Player.Heal+10</param>
                                 </action>
                             </actions>
                         </event-block>

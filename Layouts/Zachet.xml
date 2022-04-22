@@ -468,7 +468,7 @@
                     </properties>
                     <instance-variables>
                         <Type>Papper</Type>
-                        <Time>6</Time>
+                        <Time>5</Time>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1380,7 +1380,7 @@
                     </properties>
                     <instance-variables>
                         <Type>Cry</Type>
-                        <Time>5</Time>
+                        <Time>2</Time>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

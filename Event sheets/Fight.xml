@@ -1913,7 +1913,7 @@
                                     <param id="1" name="Value">VIKA.heal?1:0</param>
                                 </action>
                                 <action id="1" name="Set return value" sid="117622031418693" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?15+Player.Defence*5:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,15+Player.Defence*5) )</param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?14+Player.Defence*6:(isLearn=1?1:Function.Call(&quot;Random_Event&quot;,14+Player.Defence*6) )</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1925,7 +1925,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="174905142172302" type="Function">
-                                    <param id="0" name="Value">3*Player.Heal+2</param>
+                                    <param id="0" name="Value">5*Player.Heal+5</param>
                                 </action>
                             </actions>
                         </event-block>

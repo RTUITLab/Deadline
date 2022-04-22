@@ -1737,7 +1737,7 @@
                             </actions>
                         </event-block>
                         <comment>Попался/ непопаля на списыване с телефона</comment>
-                        <event-block bookmark="1" sid="117804452105979">
+                        <event-block sid="117804452105979">
                             <conditions>
                                 <condition id="0" name="On function" sid="248327235420519" type="Function">
                                     <param id="0" name="Name">&quot;Phone_Dungerous&quot;</param>
@@ -1768,7 +1768,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="666064751065247" type="Function">
-                                    <param id="0" name="Value">Function.Param(0)&gt;0?FRIEND_BASE_CHANCE+Player.Heal*10:Function.Call(&quot;Random_Event&quot;,FRIEND_BASE_CHANCE+Player.Heal*10) </param>
+                                    <param id="0" name="Value">Function.Param(0)&gt;0?FRIEND_BASE_CHANCE+Player.Heal*5:Function.Call(&quot;Random_Event&quot;,FRIEND_BASE_CHANCE+Player.Heal*5) </param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1794,7 +1794,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="925339002268387" type="Function">
-                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal/2</param>
+                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal^(1/2)</param>
                                 </action>
                             </actions>
                         </event-block>

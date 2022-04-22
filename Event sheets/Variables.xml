@@ -8,11 +8,11 @@
         <variable comment="Базовый шанс быть замеченным со шпорой" constant="1" name="PAPPER_BASE_DUNGEROUS" sid="777724519968852" static="0" type="number">20</variable>
         <comment></comment>
         <variable comment="Шанс списать с телефона" constant="1" name="PHONE_BASE_CHANCE" sid="362546196725656" static="0" type="number">28</variable>
-        <variable comment="Множитель урона со шпоры" constant="1" name="PHONE_BASE_KRIT" sid="618702526364605" static="0" type="number">1.5</variable>
+        <variable comment="Множитель урона со шпоры" constant="1" name="PHONE_BASE_KRIT" sid="618702526364605" static="0" type="number">2.5</variable>
         <variable comment="Базовый шанс быть замеченным с телефоном" constant="1" name="PHONE_BASE_DUNGEROUS" sid="785371224767865" static="0" type="number">36</variable>
         <comment></comment>
         <variable comment="Шанс списать у соседа" constant="1" name="FRIEND_BASE_CHANCE" sid="825489213053189" static="0" type="number">10</variable>
-        <variable comment="Базовый урон от соседа" constant="1" name="FRIEND_BASE_KRIT" sid="990034984577005" static="0" type="number">3.5</variable>
+        <variable comment="Базовый урон от соседа" constant="1" name="FRIEND_BASE_KRIT" sid="990034984577005" static="0" type="number">4.5</variable>
         <variable comment="Базовый шанс быть замеченным на списывание у соседа" constant="1" name="FRIEND_BASE_DUNGEROUS" sid="271105679401614" static="0" type="number">40</variable>
         <comment></comment>
         <variable comment="Шанс отвлечь" constant="1" name="DISTRUCT_BASE_CHANCE" sid="694864218177699" static="0" type="number">10</variable>

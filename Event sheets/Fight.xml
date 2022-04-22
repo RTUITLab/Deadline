@@ -57,7 +57,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="481306437910756" type="Enemy">
                                     <param id="0" name="Instance variable">DistructTurn</param>
                                     <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">Turn</param>
+                                    <param id="2" name="Value">ClockTime</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -578,7 +578,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="569159132264863" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;){###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1373,7 +1373,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="311471421219889" type="InfoText">
-                                            <param id="0" name="Text">&quot;Длительность отвлечения &quot; &amp; 1+int(Player.Defence/3)&amp;&quot; ходов&quot;</param>
+                                            <param id="0" name="Text">&quot;Длительность отвлечения &quot; &amp; 3+Player.Defence*2 &amp;&quot; минут&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="956437395958128" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1681,7 +1681,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="388935862805306" type="Function">
-                                    <param id="0" name="Value">round(PAPPER_BASE_KRIT+2*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(4/8)*10)/10</param>
+                                    <param id="0" name="Value">max(round(PAPPER_BASE_KRIT+2*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(4/8)*10)/10,1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1732,7 +1732,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="629056247524474" type="Function">
-                                    <param id="0" name="Value">PHONE_BASE_KRIT+Player.Stealth^(3/4)</param>
+                                    <param id="0" name="Value">round((PHONE_BASE_KRIT+Player.Stealth^(3/4))*10)/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2388,7 +2388,7 @@
                     <actions />
                 </event-block>
                 <comment>Отвлечение успешнно</comment>
-                <event-block sid="789712390460609">
+                <event-block bookmark="1" sid="789712390460609">
                     <conditions>
                         <condition id="0" name="On function" sid="671254312591828" type="Function">
                             <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
@@ -2402,9 +2402,9 @@
                             <param id="0" name="Instance variable">Distruct</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-11" name="Add to" sid="736682193781099" type="Enemy">
+                        <action id="-10" name="Set value" sid="736682193781099" type="Enemy">
                             <param id="0" name="Instance variable">DistructTurn</param>
-                            <param id="1" name="Value">Turn+1+int(Player.Defence/3)</param>
+                            <param id="1" name="Value">ClockTime+3+Player.Defence*2</param>
                         </action>
                     </actions>
                 </event-block>

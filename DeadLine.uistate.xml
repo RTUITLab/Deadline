@@ -11,6 +11,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="2">Zachet</layout>
+        <layout order="4">Menu</layout>
         <event-sheet order="0">Variables</event-sheet>
         <event-sheet active="1" order="1">Fight</event-sheet>
         <event-sheet order="3">_Debug</event-sheet>

@@ -21,6 +21,7 @@
         <variable constant="1" name="GlobalDamageMulti" sid="419965224946635" static="0" type="number">1.5</variable>
         <variable comment="Уровень лечения" constant="1" name="HEAL_DAMAGE" sid="173110917445281" static="0" type="number">10</variable>
         <comment></comment>
+        <variable comment="Уровень лечения" constant="1" name="DamageMultiplay" sid="329809891127705" static="0" type="number">1.5</variable>
         <comment></comment>
         <comment></comment>
         <variable constant="0" name="Damage" sid="991867382352258" static="0" type="number">1</variable>

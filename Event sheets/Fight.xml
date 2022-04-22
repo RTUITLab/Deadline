@@ -377,7 +377,7 @@
                                 </action>
                                 <action id="-12" name="Subtract from" sid="382602744182278" type="Enemy">
                                     <param id="0" name="Instance variable">Hp</param>
-                                    <param id="1" name="Value">Function.Call(&quot;Atack_Damage&quot;)</param>
+                                    <param id="1" name="Value">Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
                                 </action>
                                 <action id="0" name="Call function" sid="212368193812159" type="Function">
                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -385,7 +385,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="117320167329149" type="Function">
                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -450,7 +450,7 @@
                                         </action>
                                         <action id="-12" name="Subtract from" sid="395157999903367" type="Enemy">
                                             <param id="0" name="Instance variable">Hp</param>
-                                            <param id="1" name="Value">(Function.Call(&quot;Atack_Damage&quot;)+Krit*Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;))</param>
+                                            <param id="1" name="Value">((Function.Call(&quot;Atack_Damage&quot;)+Krit*Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)))*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="0" name="Call function" sid="570673112328871" type="Function">
                                             <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -458,7 +458,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="329320651871257" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -486,7 +486,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="794568263646902" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp;  Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp;  Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -570,7 +570,7 @@
                                                 </action>
                                                 <action id="-12" name="Subtract from" sid="774640509107090" type="Enemy">
                                                     <param id="0" name="Instance variable">Hp</param>
-                                                    <param id="1" name="Value">Krit*Function.Call(&quot;Phone_Krit&quot;)</param>
+                                                    <param id="1" name="Value">Krit*Function.Call(&quot;Phone_Krit&quot;)*DAMAGEMULTIPLAY</param>
                                                 </action>
                                                 <action id="0" name="Call function" sid="344993281101699" type="Function">
                                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -578,7 +578,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="569159132264863" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -592,7 +592,7 @@
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Play" sid="350570453858505" type="Audio">
-                                                    <param id="0" name="Audio file">fail</param>
+                                                    <param id="0" name="Audio file">down</param>
                                                     <param id="2" name="Loop">0</param>
                                                     <param id="3" name="Volume">0</param>
                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -637,7 +637,7 @@
                                             <actions>
                                                 <action id="-12" name="Subtract from" sid="368533374799137" type="Enemy">
                                                     <param id="0" name="Instance variable">Hp</param>
-                                                    <param id="1" name="Value">Function.Call(&quot;Friend_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;Friend_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
                                                 </action>
                                                 <action id="0" name="Call function" sid="398644980794802" type="Function">
                                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -653,7 +653,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="605893602642656" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;){###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                                 <action id="0" name="Play" sid="723700888039074" type="Audio">
                                                     <param id="0" name="Audio file">krit</param>
@@ -742,7 +742,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="694269632302029" type="Function">
                                             <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                            <param id="1" name="Parameter {n}">3+Player.Defence*2</param>
                                         </action>
                                         <action id="0" name="Play" sid="434007735911929" type="Audio">
                                             <param id="0" name="Audio file">up</param>
@@ -1038,7 +1038,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="400528352701146" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)</param>
+                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="115416559694637" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1079,7 +1079,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="589066830324596" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)</param>
+                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="192101247226154" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1116,7 +1116,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="306977467020293" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Papper_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Papper_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="306683650577651" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1207,7 +1207,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="627383070751143" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Phone_Krit&quot;,5)</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Phone_Krit&quot;,5)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="630951619500052" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1322,7 +1322,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="705971703499489" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Friend_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Friend_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="502828349121046" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -2404,7 +2404,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="736682193781099" type="Enemy">
                             <param id="0" name="Instance variable">DistructTurn</param>
-                            <param id="1" name="Value">ClockTime+3+Player.Defence*2</param>
+                            <param id="1" name="Value">ClockTime+Function.Param(0)</param>
                         </action>
                     </actions>
                 </event-block>

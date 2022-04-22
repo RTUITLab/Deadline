@@ -492,17 +492,11 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="777946682624536" speed="0">
-                    <frame duration="1" hotspotX="0.577657" hotspotY="0.858108" original-source="D:\Системные папки\Downloads\Джем\kenney_platformercharacters\PNG\Adventurer\Poses\adventurer_talk.png">
-                        <image-point name="TextSpawn" x="0.86921" y="0.5" />
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.856802" original-source="D:\Системные папки\Downloads\Джем\kenney_platformercharacters\PNG\Adventurer\Poses\adventurer_talk.png">
+                        <image-point name="TextSpawn" x="1.1685" y="0.529833" />
                     </frame>
-                    <frame duration="1" hotspotX="0.577657" hotspotY="0.858108">
-                        <image-point name="TextSpawn" x="0.13079" y="0.5" />
+                    <frame duration="1" hotspotX="0.480122" hotspotY="0.832976">
+                        <image-point name="TextSpawn" x="0.853211" y="0.501071" />
                         <collision-poly>
                             <point x="1" y="1" />
                             <point x="0" y="1" />
@@ -518,7 +512,14 @@
                             <point x="1" y="0" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.57772" hotspotY="0.857143" />
+                    <frame duration="1" hotspotX="0.535593" hotspotY="0.866667">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.577778" hotspotY="0.857778" />
                     <frame duration="1" hotspotX="0.473094" hotspotY="0.83945">
                         <collision-poly>

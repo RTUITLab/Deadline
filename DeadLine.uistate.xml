@@ -10,7 +10,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Zachet</layout>
+        <layout active="1" order="2">Zachet</layout>
         <layout order="4">Menu</layout>
         <layout order="5">Evil</layout>
         <layout order="6">Norm</layout>
@@ -21,7 +21,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="1">Fight</event-sheet>
         <event-sheet order="3">_Debug</event-sheet>
         <event-sheet order="9">_SaveLoad</event-sheet>
-        <event-sheet active="1" order="11">_End</event-sheet>
+        <event-sheet order="11">_End</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

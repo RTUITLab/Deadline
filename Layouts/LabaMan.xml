@@ -296,7 +296,7 @@
                     </properties>
                     <instance-variables>
                         <Type>Papper</Type>
-                        <Time>6</Time>
+                        <Time>5</Time>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -477,19 +477,19 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Hp>200</Hp>
+                        <Hp>100</Hp>
                         <Distruct>false</Distruct>
-                        <MaxHp>200</MaxHp>
+                        <MaxHp>100</MaxHp>
                         <DistructTurn>0</DistructTurn>
                         <NextTurn>550</NextTurn>
                         <WaitToAttack>10</WaitToAttack>
-                        <Damage>12</Damage>
+                        <Damage>8</Damage>
                         <MaxPractic>2</MaxPractic>
                         <MaxLab>4</MaxLab>
                         <CurrenPractic>0</CurrenPractic>
                         <CurrentLab>0</CurrentLab>
                         <PracticDamage>5</PracticDamage>
-                        <LabaDamage>10</LabaDamage>
+                        <LabaDamage>6</LabaDamage>
                         <UnVisits_Count>6</UnVisits_Count>
                         <RandomDistruct>10</RandomDistruct>
                         <UnVisitDamage>2</UnVisitDamage>
@@ -1208,7 +1208,7 @@
                     </properties>
                     <instance-variables>
                         <Type>Cry</Type>
-                        <Time>5</Time>
+                        <Time>2</Time>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1278,6 +1278,24 @@
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="Block" sid="480903532918034">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
         <layer name="Helper" sid="810835782830581">

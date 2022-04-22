@@ -3,23 +3,25 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Variables</name>
     <events>
-        <variable comment="Шанс списать со шпоры" constant="1" name="PAPPER_BASE_CHANCE" sid="737898115975858" static="0" type="number">15</variable>
-        <variable comment="Множитель урона со шпоры" constant="1" name="PAPPER_BASE_Krit" sid="145582583779229" static="0" type="number">2</variable>
-        <variable comment="Базовый шанс быть замеченным со шпорой" constant="1" name="PAPPER_BASE_Dungerous" sid="777724519968852" static="0" type="number">10</variable>
+        <variable comment="Шанс списать со шпоры" constant="1" name="PAPPER_BASE_CHANCE" sid="737898115975858" static="0" type="number">16</variable>
+        <variable comment="Множитель урона со шпоры" constant="1" name="PAPPER_BASE_KRIT" sid="145582583779229" static="0" type="number">0</variable>
+        <variable comment="Базовый шанс быть замеченным со шпорой" constant="1" name="PAPPER_BASE_DUNGEROUS" sid="777724519968852" static="0" type="number">20</variable>
         <comment></comment>
-        <variable comment="Шанс списать с телефона" constant="1" name="PHONE_BASE_CHANCE" sid="362546196725656" static="0" type="number">40</variable>
-        <variable comment="Множитель урона со шпоры" constant="1" name="PHONE_BASE_KRIT" sid="618702526364605" static="0" type="number">3</variable>
-        <variable comment="Базовый шанс быть замеченным с телефоном" constant="1" name="PHONE_BASE_DUNGEROUS" sid="785371224767865" static="0" type="number">50</variable>
+        <variable comment="Шанс списать с телефона" constant="1" name="PHONE_BASE_CHANCE" sid="362546196725656" static="0" type="number">28</variable>
+        <variable comment="Множитель урона со шпоры" constant="1" name="PHONE_BASE_KRIT" sid="618702526364605" static="0" type="number">2.5</variable>
+        <variable comment="Базовый шанс быть замеченным с телефоном" constant="1" name="PHONE_BASE_DUNGEROUS" sid="785371224767865" static="0" type="number">36</variable>
         <comment></comment>
         <variable comment="Шанс списать у соседа" constant="1" name="FRIEND_BASE_CHANCE" sid="825489213053189" static="0" type="number">10</variable>
-        <variable comment="Базовый урон от соседа" constant="1" name="Friend_BASE_KRIT" sid="990034984577005" static="0" type="number">5</variable>
+        <variable comment="Базовый урон от соседа" constant="1" name="FRIEND_BASE_KRIT" sid="990034984577005" static="0" type="number">4.5</variable>
         <variable comment="Базовый шанс быть замеченным на списывание у соседа" constant="1" name="FRIEND_BASE_DUNGEROUS" sid="271105679401614" static="0" type="number">40</variable>
         <comment></comment>
         <variable comment="Шанс отвлечь" constant="1" name="DISTRUCT_BASE_CHANCE" sid="694864218177699" static="0" type="number">10</variable>
         <comment></comment>
         <variable comment="Урон от практки" constant="1" name="PRACTIC_DAMAGE" sid="885727849858640" static="0" type="number">2</variable>
+        <variable constant="1" name="GlobalDamageMulti" sid="419965224946635" static="0" type="number">1.5</variable>
         <variable comment="Уровень лечения" constant="1" name="HEAL_DAMAGE" sid="173110917445281" static="0" type="number">10</variable>
         <comment></comment>
+        <variable comment="Уровень лечения" constant="1" name="DamageMultiplay" sid="329809891127705" static="0" type="number">1.5</variable>
         <comment></comment>
         <comment></comment>
         <variable constant="0" name="Damage" sid="991867382352258" static="0" type="number">1</variable>

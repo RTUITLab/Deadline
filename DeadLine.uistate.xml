@@ -10,16 +10,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Zachet</layout>
+        <layout active="1" order="2">Zachet</layout>
         <layout order="4">Menu</layout>
-        <layout order="5">CreatePerson</layout>
-        <layout order="8">Hab</layout>
+        <layout order="5">Evil</layout>
+        <layout order="6">Norm</layout>
+        <layout order="7">LabaMan</layout>
+        <layout order="8">PracticMan</layout>
+        <layout order="10">End</layout>
         <event-sheet order="0">Variables</event-sheet>
         <event-sheet order="1">Fight</event-sheet>
-        <event-sheet active="1" order="3">_Test</event-sheet>
-        <event-sheet order="6">_CP</event-sheet>
-        <event-sheet order="7">_AddSkil</event-sheet>
-        <event-sheet order="9">_Hab</event-sheet>
+        <event-sheet order="3">_Debug</event-sheet>
+        <event-sheet order="9">_SaveLoad</event-sheet>
+        <event-sheet order="11">_End</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,9 +37,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/UI/" />
         <folder expanded="1" path="layout-folder/" />
-        <folder expanded="0" path="layout-folder/Fight/" />
+        <folder expanded="1" path="layout-folder/Fight/" />
         <folder expanded="1" path="layout-folder/UI/" />
-        <folder expanded="0" path="event-folder/" />
+        <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
@@ -62,5 +64,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/MovingPanel/" />
         <folder expanded="1" path="animation-folder/HandQlue/" />
         <folder expanded="1" path="animation-folder/VIKA/" />
+        <folder expanded="1" path="animation-folder/DelayMask/" />
     </folders-expanded>
 </c2uistate>

@@ -364,6 +364,9 @@
             <object-type name="LocalStorage" sid="562560748127339">
                 <plugin id="LocalStorage" />
             </object-type>
+            <object-type name="Debug" sid="102126800300972">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-folder name="UI">
             <object-type name="DamageStatus" sid="528549244580646">
@@ -489,17 +492,11 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="777946682624536" speed="0">
-                    <frame duration="1" hotspotX="0.577657" hotspotY="0.858108" original-source="D:\Системные папки\Downloads\Джем\kenney_platformercharacters\PNG\Adventurer\Poses\adventurer_talk.png">
-                        <image-point name="TextSpawn" x="0.86921" y="0.5" />
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.856802" original-source="D:\Системные папки\Downloads\Джем\kenney_platformercharacters\PNG\Adventurer\Poses\adventurer_talk.png">
+                        <image-point name="TextSpawn" x="1.1685" y="0.529833" />
                     </frame>
-                    <frame duration="1" hotspotX="0.577657" hotspotY="0.858108">
-                        <image-point name="TextSpawn" x="0.13079" y="0.5" />
+                    <frame duration="1" hotspotX="0.480122" hotspotY="0.832976">
+                        <image-point name="TextSpawn" x="0.853211" y="0.501071" />
                         <collision-poly>
                             <point x="1" y="1" />
                             <point x="0" y="1" />
@@ -515,7 +512,14 @@
                             <point x="1" y="0" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.57772" hotspotY="0.857143" />
+                    <frame duration="1" hotspotX="0.535593" hotspotY="0.866667">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.577778" hotspotY="0.857778" />
                     <frame duration="1" hotspotX="0.473094" hotspotY="0.83945">
                         <collision-poly>
@@ -615,12 +619,24 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="513433371781099" speed="5">
-                    <frame duration="1" hotspotX="0.502" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="Keyboard" sid="599468698260687">
             <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="DelayMask" sid="480182216148238">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="type" sid="739205462712456" type="string" />
+                <instance-variable name="delay" sid="644259000671574" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="609503030922834" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -664,6 +680,7 @@
         <event-sheet>_End.xml</event-sheet>
         <event-sheet>_Menu.xml</event-sheet>
         <event-sheet>_SaveLoad.xml</event-sheet>
+        <event-sheet>_Debug.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="2">

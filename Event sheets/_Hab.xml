@@ -71,6 +71,12 @@
                             <param id="1" name="From">1</param>
                         </action>
                         <action behavior="EaseTween" id="13" name="Resume" sid="569042580399168" type="PlayerMove" />
+                        <action id="-5" name="Scroll to X" sid="999010513655186" type="System">
+                            <param id="0" name="X">PlayerMove.X</param>
+                        </action>
+                        <action id="-6" name="Scroll to Y" sid="512160649370398" type="System">
+                            <param id="0" name="Y">PlayerMove.Y-320</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="695166260698295">
@@ -88,6 +94,44 @@
                                     <param id="0" name="State">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="667878554655036">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="400683444363430" type="PlayerMove">
+                                            <param id="0" name="Object">MovingZOne</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="316784744846460">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="815155094917141" type="MovingZOne">
+                                                    <param id="0" name="Instance variable">autho</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="210075391685733" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="159015430978701">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="511686349092597" type="PlayerMove">
+                                                    <param id="0" name="Instance variable">position</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MovingZOne.type</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="830902121729663" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="606512058430430">
                             <conditions>
@@ -104,6 +148,44 @@
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="967389175141337">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="306917369406956" type="PlayerMove">
+                                            <param id="0" name="Object">MovingZOne</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="754837001414242">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="778032497605127" type="MovingZOne">
+                                                    <param id="0" name="Instance variable">autho</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="123963972199000" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="938319421410068">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="539842698734229" type="PlayerMove">
+                                                    <param id="0" name="Instance variable">position</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MovingZOne.type</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="583631406444243" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="887481243464707">
                             <conditions>
@@ -1090,6 +1172,125 @@
                     <param id="1" name="Tag (optional)">&quot;fon&quot;</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="506823682890972">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="213963062593290" type="PlayerMove">
+                    <param id="0" name="Object">ChangeDirection</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="907656422688067">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="920619786044959" type="ChangeDirection">
+                            <param id="0" name="Instance variable">autho</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="307202876985692" type="PlayerMove">
+                            <param id="0" name="Instance variable">position</param>
+                            <param id="1" name="Value">ChangeDirection.direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="586483546870848">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="873959110363917" type="ChangeDirection">
+                            <param id="0" name="Instance variable">autho</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="995694711351210">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="684494058704121" type="ChangeDirection">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;up&quot;</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="207706288210794" type="Touch">
+                                    <param id="0" name="Object">DirectionButton</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="545799709050109">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="167204789004157" type="DirectionButton">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="542868638530466" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;up&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="754053621823646">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="237159891124449" type="DirectionButton">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="628616721741134" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;horizontal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="800916880861352">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="568287256655371" type="ChangeDirection">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;down&quot;</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="952309331501208" type="Touch">
+                                    <param id="0" name="Object">DirectionButton</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="128428688682130">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="547107871914032" type="DirectionButton">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="954935837930894" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;down&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="198426472659497">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="184042621593714" type="DirectionButton">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="407567600999489" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;horizontal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

@@ -493,8 +493,8 @@
                                 </action>
                                 <action behavior="Fade" id="0" name="Restart fade" sid="904325107030223" type="HandQlue" />
                                 <action id="-3" name="Set position" sid="689712077671074" type="HandQlue">
-                                    <param id="0" name="X">192</param>
-                                    <param id="1" name="Y">704</param>
+                                    <param id="0" name="X">240</param>
+                                    <param id="1" name="Y">736</param>
                                 </action>
                                 <action id="11" name="Set collisions enabled" sid="168616618631805" type="Button">
                                     <param id="0" name="Collisions">1</param>
@@ -540,13 +540,13 @@
                                     <param id="0" name="Frame number">0</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="351393466709220" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
+                                    <param id="0" name="Seconds">0.1</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="206986400342744" type="HandQlue">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="707056693725085" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
+                                    <param id="0" name="Seconds">0.3</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="667986703799958" type="HandQlue">
                                     <param id="0" name="Frame number">0</param>
@@ -622,13 +622,13 @@
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="417757768505948" type="HandQlue">
-                                    <param id="0" name="Frame number">1</param>
+                                    <param id="0" name="Frame number">2</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="647277102216003" type="System">
                                     <param id="0" name="Seconds">0.2</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="216900434595727" type="HandQlue">
-                                    <param id="0" name="Frame number">2</param>
+                                    <param id="0" name="Frame number">3</param>
                                 </action>
                             </actions>
                         </event-block>

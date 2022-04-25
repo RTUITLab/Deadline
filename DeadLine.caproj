@@ -20,6 +20,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
@@ -28,7 +29,6 @@
         <behavior author="Scirra" id="PinPlus" version="1">PinPlus</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Yeremia AI (lunarray)" id="lunarray_Tween" version="1.600000024">EaseTween</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -115,6 +115,19 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
+                    <animation framecount="2" loop="0" name="background" pingpong="0" repeatcount="1" repeatto="0" sid="384252668420183" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                    <animation framecount="7" loop="0" name="Fon2" pingpong="0" repeatcount="1" repeatto="0" sid="921029301994342" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.000326052" hotspotY="0.999505" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="Flag" sid="603575610133857">
@@ -193,6 +206,18 @@
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="Back_It" sid="197803326234740">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Back_A" sid="674143611131151">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Back_A_floor" sid="496517523436434">
+                <plugin id="TiledBg" />
+                <texture />
             </object-type>
         </object-folder>
         <object-folder name="Buttons">
@@ -313,8 +338,9 @@
             <object-type name="DirectionButton" sid="329872096178977">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="972686984001128" speed="5">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="972686984001128" speed="0">
                         <frame duration="1" hotspotX="0.502564" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -534,12 +560,12 @@
         </object-type>
         <object-type name="PlayerMove" sid="578770179992982">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="position" sid="371507493643174" type="string" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="931914829697003">
                     <behavior id="EightDir" />
-                </behavior-type>
-                <behavior-type name="ScrollTo" sid="411165147072776">
-                    <behavior id="scrollto" />
                 </behavior-type>
                 <behavior-type name="EaseTween" sid="689630760410399">
                     <behavior id="lunarray_Tween" />
@@ -597,10 +623,11 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="312687923991377" speed="0">
-                    <frame duration="1" hotspotX="0.359375" hotspotY="0.390625" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="312687923991377" speed="0">
+                    <frame duration="1" hotspotX="0.929907" hotspotY="1" />
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.992647" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -652,6 +679,34 @@
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="186544569952824" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChangeDirection" sid="201759660665543">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="direction" sid="536932028517690" type="string" />
+                <instance-variable name="autho" sid="590099502737667" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="142791159709579" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MovingZOne" sid="220536188158017">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="fX" sid="986114130921655" type="number" />
+                <instance-variable name="fY" sid="681847232462925" type="number" />
+                <instance-variable name="sX" sid="288254323020154" type="number" />
+                <instance-variable name="sY" sid="367684018599318" type="number" />
+                <instance-variable name="type" sid="355460769706519" type="string" />
+                <instance-variable name="autho" sid="286962038195757" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="589158299323115" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>

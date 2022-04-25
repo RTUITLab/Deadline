@@ -10,17 +10,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">Zachet</layout>
-        <layout order="2">LabaMan</layout>
-        <layout order="3">Warning</layout>
-        <layout active="1" order="5">Menu</layout>
-        <layout order="6">Norm</layout>
-        <layout order="7">PracticMan</layout>
-        <layout order="8">BOSS</layout>
-        <layout order="9">Evil</layout>
+        <layout order="1">Menu</layout>
+        <layout order="2">End</layout>
+        <layout order="3">LabaMan</layout>
+        <layout active="1" order="4">Hab</layout>
         <event-sheet order="0">Fight</event-sheet>
-        <event-sheet order="4">_Warning</event-sheet>
-        <event-sheet order="10">Variables</event-sheet>
+        <event-sheet order="6">_Test</event-sheet>
+        <event-sheet order="5">_Hab</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -37,7 +33,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/UI/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="layout-folder/Fight/" />
-        <folder expanded="0" path="layout-folder/UI/" />
+        <folder expanded="1" path="layout-folder/UI/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
@@ -65,5 +61,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/VIKA/" />
         <folder expanded="1" path="animation-folder/DelayMask/" />
         <folder expanded="1" path="animation-folder/fireball/" />
+        <folder expanded="1" path="animation-folder/ChangeDirection/" />
+        <folder expanded="1" path="animation-folder/MovingZOne/" />
     </folders-expanded>
 </c2uistate>

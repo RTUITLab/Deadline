@@ -340,9 +340,12 @@
             <object-type name="DirectionButton" sid="329872096178977">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="972686984001128" speed="0">
+                    <animation framecount="2" loop="0" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="972686984001128" speed="0">
                         <frame duration="1" hotspotX="0.502564" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Pause" pingpong="0" repeatcount="1" repeatto="0" sid="935275378984189" speed="0">
+                        <frame duration="1" hotspotX="0.504983" hotspotY="0.501661" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -727,7 +730,7 @@
             <layout>LevelTest.xml</layout>
         </layout-folder>
         <layout-folder name="UI">
-            <layout>AddOneSkil.xml</layout>
+            <layout>AddOneSkill.xml</layout>
             <layout>UpdateSkill.xml</layout>
             <layout>CreatePerson.xml</layout>
             <layout>BeginScreen.xml</layout>
@@ -759,6 +762,7 @@
         <event-sheet>_SaveLoad.xml</event-sheet>
         <event-sheet>_Debug.xml</event-sheet>
         <event-sheet>_Warning.xml</event-sheet>
+        <event-sheet>_Pause.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="2">

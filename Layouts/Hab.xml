@@ -1339,8 +1339,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2912</x>
-                        <y>832</y>
+                        <x>4128</x>
+                        <y>480</y>
                         <z>0</z>
                         <width>181.057342529</width>
                         <height>260.480255127</height>
@@ -1565,6 +1565,34 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="ChangeDirection" uid="592">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <direction>up</direction>
+                        <autho>true</autho>
+                        <uidback>0</uidback>
+                        <uidfront>0</uidfront>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>3712</x>
+                        <y>448</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -1613,7 +1641,7 @@
                 <instance type="DirectionButton" uid="388">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>move</initial-animation>
                         <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -1635,7 +1663,7 @@
                 <instance type="DirectionButton" uid="389">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>move</initial-animation>
                         <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -1975,7 +2003,7 @@
                 <instance type="DirectionButton" uid="387">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>move</initial-animation>
                         <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -1997,7 +2025,7 @@
                 <instance type="DirectionButton" uid="509">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>move</initial-animation>
                         <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -2012,6 +2040,28 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DirectionButton" uid="591">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Pause</initial-animation>
+                        <initial-frame>1</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>360</x>
+                        <y>1088</y>
+                        <z>0</z>
+                        <width>-220.336624146</width>
+                        <height>-220.336608887</height>
+                        <depth>0</depth>
+                        <hotspotX>0.504983366</hotspotX>
+                        <hotspotY>0.501661122</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Fight</name>
     <events>
+        <include>_Pause</include>
         <include>_Debug</include>
         <include>_Unit</include>
         <variable constant="0" name="ClockTime" sid="708823125823368" static="0" type="number">540</variable>

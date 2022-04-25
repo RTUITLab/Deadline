@@ -119,12 +119,13 @@
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
-                    <animation framecount="7" loop="0" name="Fon2" pingpong="0" repeatcount="1" repeatto="0" sid="921029301994342" speed="0">
+                    <animation framecount="8" loop="0" name="Fon2" pingpong="0" repeatcount="1" repeatto="0" sid="921029301994342" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0.000326052" hotspotY="0.999505" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
@@ -687,6 +688,8 @@
             <instance-variables>
                 <instance-variable name="direction" sid="536932028517690" type="string" />
                 <instance-variable name="autho" sid="590099502737667" type="boolean" />
+                <instance-variable name="uidback" sid="541244625127225" type="number" />
+                <instance-variable name="uidfront" sid="516539624227532" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="142791159709579" speed="5">

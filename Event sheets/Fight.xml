@@ -217,7 +217,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="389378980871629" type="Player">
                             <param id="0" name="Instance variable">Hp</param>
-                            <param id="1" name="Value">45+Player.Heal*5</param>
+                            <param id="1" name="Value">Function.Call(&quot;Max_Hp&quot;)</param>
                         </action>
                         <action id="0" name="Call function" sid="175075663098957" type="Function">
                             <param id="0" name="Name">&quot;Refresh Player Hp&quot;</param>
@@ -1701,7 +1701,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="774514465707960" type="Function">
-                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;):Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;)) </param>
+                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+2*Player.Damage:Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+2*Player.Damage)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1714,7 +1714,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="388935862805306" type="Function">
-                                    <param id="0" name="Value">max(round(PAPPER_BASE_KRIT+2*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(4/8)*10)/10,1)</param>
+                                    <param id="0" name="Value">max(round(PAPPER_BASE_KRIT+3*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(5/8)*10)/10,1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1765,7 +1765,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="629056247524474" type="Function">
-                                    <param id="0" name="Value">round((PHONE_BASE_KRIT+Player.Stealth^(3/4))*10)/10</param>
+                                    <param id="0" name="Value">round((PHONE_BASE_KRIT+Player.Stealth^(4/4))*10)/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1827,7 +1827,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="925339002268387" type="Function">
-                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal^(1/2)</param>
+                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal^(2/2)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1915,7 +1915,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="326591357222520" type="Function">
-                                    <param id="0" name="Value">25</param>
+                                    <param id="0" name="Value">30</param>
                                 </action>
                             </actions>
                         </event-block>

@@ -339,6 +339,10 @@
                     <param id="0" name="Layer">&quot;Info&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="683458668657302" type="System">
+                    <param id="0" name="Layer">&quot;LabaWork&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="-12" name="Set group active" sid="182066595127100" type="System">
                     <param id="0" name="Group name">&quot;Hub_MovementPlayer&quot;</param>
                     <param id="1" name="State">1</param>
@@ -493,6 +497,58 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block any="1" sid="999881711458507">
+                    <conditions>
+                        <condition id="0" name="On function" sid="573000303474141" type="Function">
+                            <param id="0" name="Name">&quot;DamageToMoney&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="674451743639136" type="System">
+                            <param id="0" name="Variable">ClockTime</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Time&quot;)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="352644913302897" type="System">
+                            <param id="0" name="Variable">Money</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Money&quot;)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="991458389415827" type="Function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="684519269134625" type="Audio">
+                            <param id="0" name="Audio file">money</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="228897797640828">
+                    <conditions>
+                        <condition id="0" name="On function" sid="558135366309692" type="Function">
+                            <param id="0" name="Name">&quot;skill_money&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="731942993518468" type="System">
+                            <param id="0" name="Variable">ClockTime</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Time&quot;)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="546077119485531" type="System">
+                            <param id="0" name="Variable">Money</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Money&quot;)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="238009036425068" type="Function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="846721889300158" type="Audio">
+                            <param id="0" name="Audio file">money</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment></comment>
                 <comment></comment>
                 <comment></comment>
@@ -607,7 +663,7 @@
                     <actions>
                         <action id="-10" name="Add to" sid="251166827395781" type="System">
                             <param id="0" name="Variable">ClockTime</param>
-                            <param id="1" name="Value">10</param>
+                            <param id="1" name="Value">15</param>
                         </action>
                         <action id="0" name="Call function" sid="409782161285555" type="Function">
                             <param id="0" name="Name">&quot;RefreshTime&quot;</param>
@@ -646,7 +702,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="176135065485737">
+                                <event-block bookmark="1" sid="176135065485737">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="865580116585528" type="System">
                                             <param id="0" name="Variable">Rand</param>
@@ -1001,7 +1057,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="944214856361041" type="Function">
-                            <param id="0" name="Value">4*Heal</param>
+                            <param id="0" name="Value">3*Heal</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1017,17 +1073,87 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="673292473475076">
+                <event-block sid="994683540986867">
                     <conditions>
-                        <condition id="0" name="On function" sid="412925519628791" type="Function">
+                        <condition id="0" name="On function" sid="735567364409206" type="Function">
                             <param id="0" name="Name">&quot;TimeToMoney_Info&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="1" name="Set return value" sid="433911859757575" type="Function">
-                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60/Defence:60+10*Heal</param>
+                        <action id="1" name="Set return value" sid="346217431397202" type="Function">
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60/Defence:70+10*Heal</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="354118415544963">
+                    <conditions>
+                        <condition id="0" name="On function" sid="856702292785336" type="Function">
+                            <param id="0" name="Name">&quot;DamageToMoney_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="585677620273844" type="Function">
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60:40*Damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="538002899060563">
+                    <conditions>
+                        <condition id="0" name="On function" sid="477144822415762" type="Function">
+                            <param id="0" name="Name">&quot;MoneyToSceal_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="888467674676610" type="Function">
+                            <param id="0" name="Value">850-Stealth*50</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="889422616110029">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="637366371121299" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;MoneyToSceal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="344079586254829" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">cost</param>
+                                    <param id="1" name="Value">850-Stealth*50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="673292473475076">
+                    <conditions>
+                        <condition id="0" name="On function" sid="412925519628791" type="Function">
+                            <param id="0" name="Name">&quot;MoneyToRandomSceal_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="428559599303656" type="Function">
+                            <param id="0" name="Value">1500-Stealth*100</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="907613763254881">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="158869395352429" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;MoneyToRandomSceal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="411056577114209" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">cost</param>
+                                    <param id="1" name="Value">1500-Stealth*100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

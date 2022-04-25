@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Variables</name>
     <events>
-        <variable comment="Шанс списать со шпоры" constant="1" name="PAPPER_BASE_CHANCE" sid="737898115975858" static="0" type="number">16</variable>
+        <variable comment="Шанс списать со шпоры" constant="1" name="PAPPER_BASE_CHANCE" sid="737898115975858" static="0" type="number">20</variable>
         <variable comment="Множитель урона со шпоры" constant="1" name="PAPPER_BASE_KRIT" sid="145582583779229" static="0" type="number">0</variable>
         <variable comment="Базовый шанс быть замеченным со шпорой" constant="1" name="PAPPER_BASE_DUNGEROUS" sid="777724519968852" static="0" type="number">20</variable>
         <comment></comment>

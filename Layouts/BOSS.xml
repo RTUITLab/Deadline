@@ -483,16 +483,16 @@
                         <DistructTurn>0</DistructTurn>
                         <NextTurn>550</NextTurn>
                         <WaitToAttack>10</WaitToAttack>
-                        <Damage>24</Damage>
+                        <Damage>25</Damage>
                         <MaxPractic>4</MaxPractic>
                         <MaxLab>8</MaxLab>
                         <CurrenPractic>0</CurrenPractic>
                         <CurrentLab>0</CurrentLab>
-                        <PracticDamage>8</PracticDamage>
+                        <PracticDamage>10</PracticDamage>
                         <LabaDamage>6</LabaDamage>
                         <UnVisits_Count>8</UnVisits_Count>
                         <RandomDistruct>10</RandomDistruct>
-                        <UnVisitDamage>4</UnVisitDamage>
+                        <UnVisitDamage>5</UnVisitDamage>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ATAKE">

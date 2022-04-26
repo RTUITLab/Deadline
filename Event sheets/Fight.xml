@@ -394,7 +394,7 @@
                                 </action>
                                 <action id="-12" name="Subtract from" sid="382602744182278" type="Enemy">
                                     <param id="0" name="Instance variable">Hp</param>
-                                    <param id="1" name="Value">Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                    <param id="1" name="Value">Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY</param>
                                 </action>
                                 <action id="0" name="Call function" sid="212368193812159" type="Function">
                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -402,7 +402,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="117320167329149" type="Function">
                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1072,7 +1072,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="400528352701146" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="115416559694637" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1691,6 +1691,18 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="500485188797744">
+                            <conditions>
+                                <condition id="0" name="On function" sid="921229810137501" type="Function">
+                                    <param id="0" name="Name">&quot;Atack_Simple&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="160431957381833" type="Function">
+                                    <param id="0" name="Value">int(Function.Call(&quot;Atack_Damage&quot;)^(5/4)*10)/10</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment></comment>
                         <comment></comment>
                         <comment>Успех/неуспех списывания со шпоры</comment>
@@ -1903,7 +1915,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="435045371790396" type="Function">
-                                    <param id="0" name="Value">5*Player.Heal</param>
+                                    <param id="0" name="Value">3*Player.Heal+7</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1959,7 +1971,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="174905142172302" type="Function">
-                                    <param id="0" name="Value">7*Player.Heal+3</param>
+                                    <param id="0" name="Value">3*Player.Heal+7</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2164,10 +2176,10 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="360506391576510" type="ProgressBar">
-                                            <param id="0" name="Width">int(Enemy.Hp)/Function.Call(&quot;Max_Hp&quot;)*ProgressBar.MaxWight</param>
+                                            <param id="0" name="Width">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="515996222735382" type="Stats">
-                                            <param id="0" name="Text">int(Enemy.Hp)&amp;&quot;/&quot;&amp;Function.Call(&quot;Max_Hp&quot;)</param>
+                                            <param id="0" name="Text">0&amp;&quot;/&quot;&amp;int(Enemy.MaxHp)</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="591916411497449" type="System">
                                             <param id="0" name="Seconds">1.5</param>

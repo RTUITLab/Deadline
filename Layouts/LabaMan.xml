@@ -817,7 +817,7 @@
                         <initial-visibility>Visible</initial-visibility>
                         <font>Forte,-35,700,0</font>
                         <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Right</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
@@ -829,10 +829,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>224</x>
+                        <x>154</x>
                         <y>176</y>
                         <z>0</z>
-                        <width>96</width>
+                        <width>224</width>
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -1265,10 +1265,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>412</x>
+                        <x>500</x>
                         <y>176</y>
                         <z>0</z>
-                        <width>144</width>
+                        <width>320</width>
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>

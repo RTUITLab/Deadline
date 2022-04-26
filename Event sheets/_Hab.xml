@@ -1034,7 +1034,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="898274163251306" type="Function">
-                            <param id="0" name="Value">150/Damage</param>
+                            <param id="0" name="Value">70/Damage+30</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1046,7 +1046,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="925718426062471" type="Function">
-                            <param id="0" name="Value">200/Damage</param>
+                            <param id="0" name="Value">100/Damage+50</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1106,7 +1106,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="585677620273844" type="Function">
-                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60:40*Damage</param>
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60:50*Damage</param>
                         </action>
                     </actions>
                 </event-block>

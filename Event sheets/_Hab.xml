@@ -1199,6 +1199,12 @@
                     <param id="0" name="Name">&quot;SaveGame&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-5" name="Scroll to X" sid="304743603710866" type="System">
+                    <param id="0" name="X">PlayerMove.X</param>
+                </action>
+                <action id="-6" name="Scroll to Y" sid="922710976713451" type="System">
+                    <param id="0" name="Y">PlayerMove.Y-320</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="403501187342117">
@@ -1387,6 +1393,10 @@
                                                     <param id="0" name="Where">1</param>
                                                     <param id="1" name="Object">Decor</param>
                                                 </action>
+                                                <action id="-9" name="Set value" sid="647101539799732" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidback</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -1419,8 +1429,12 @@
                                             </conditions>
                                             <actions>
                                                 <action id="-29" name="Move to object" sid="563670844826079" type="PlayerMove">
-                                                    <param id="0" name="Where">0</param>
+                                                    <param id="0" name="Where">1</param>
                                                     <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="639298899522784" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidfront</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1478,6 +1492,10 @@
                                                     <param id="0" name="Where">1</param>
                                                     <param id="1" name="Object">Decor</param>
                                                 </action>
+                                                <action id="-9" name="Set value" sid="283090017142520" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidback</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -1510,8 +1528,12 @@
                                             </conditions>
                                             <actions>
                                                 <action id="-29" name="Move to object" sid="349916115783080" type="PlayerMove">
-                                                    <param id="0" name="Where">0</param>
+                                                    <param id="0" name="Where">1</param>
                                                     <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="216341139252633" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidfront</param>
                                                 </action>
                                             </actions>
                                         </event-block>

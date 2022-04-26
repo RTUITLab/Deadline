@@ -1037,7 +1037,7 @@
                         <direction>up</direction>
                         <autho>false</autho>
                         <uidback>487</uidback>
-                        <uidfront>572</uidfront>
+                        <uidfront>579</uidfront>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1065,7 +1065,7 @@
                         <direction>up</direction>
                         <autho>false</autho>
                         <uidback>487</uidback>
-                        <uidfront>572</uidfront>
+                        <uidfront>579</uidfront>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1093,15 +1093,15 @@
                         <direction>up</direction>
                         <autho>false</autho>
                         <uidback>564</uidback>
-                        <uidfront>564</uidfront>
+                        <uidfront>487</uidfront>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2848</x>
+                        <x>2912</x>
                         <y>800</y>
                         <z>0</z>
-                        <width>64</width>
+                        <width>96</width>
                         <height>128</height>
                         <depth>0</depth>
                         <hotspotX>1</hotspotX>
@@ -1253,7 +1253,7 @@
                         <direction>down</direction>
                         <autho>false</autho>
                         <uidback>572</uidback>
-                        <uidfront>572</uidfront>
+                        <uidfront>579</uidfront>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

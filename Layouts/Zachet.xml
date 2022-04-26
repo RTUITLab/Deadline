@@ -29,6 +29,273 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="Fon" uid="53">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>1</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>352</x>
+                        <y>480</y>
+                        <z>0</z>
+                        <width>826.922119141</width>
+                        <height>803.983886719</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50138694</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Player" uid="59">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>woman</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Hp>50</Hp>
+                        <Damage>1</Damage>
+                        <Defence>1</Defence>
+                        <Stealth>1</Stealth>
+                        <Heal>1</Heal>
+                        <Practic_Count>1</Practic_Count>
+                        <Laba_Count>1</Laba_Count>
+                        <Heal_count>1</Heal_count>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Atake">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseInOutElastic</function>
+                                <initial>current</initial>
+                                <target>200, 0</target>
+                                <duration>0.3</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Ping Pong Stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Relative</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>Atake</tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Take">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutElastic</function>
+                                <initial>current</initial>
+                                <target>-100, 0</target>
+                                <duration>0.3</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Ping Pong Stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Relative</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>Take</tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fall">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Angle</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>90, 100</target>
+                                <duration>1</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play and stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>144</x>
+                        <y>552</y>
+                        <z>0</z>
+                        <width>114</width>
+                        <height>193</height>
+                        <depth>0</depth>
+                        <hotspotX>0.552631557</hotspotX>
+                        <hotspotY>0.818652868</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Enemy" uid="68">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Hp>80</Hp>
+                        <Distruct>false</Distruct>
+                        <MaxHp>100</MaxHp>
+                        <DistructTurn>0</DistructTurn>
+                        <NextTurn>550</NextTurn>
+                        <WaitToAttack>10</WaitToAttack>
+                        <Damage>5</Damage>
+                        <MaxPractic>8</MaxPractic>
+                        <MaxLab>4</MaxLab>
+                        <CurrenPractic>7</CurrenPractic>
+                        <CurrentLab>3</CurrentLab>
+                        <PracticDamage>6</PracticDamage>
+                        <LabaDamage>8</LabaDamage>
+                        <UnVisits_Count>4</UnVisits_Count>
+                        <RandomDistruct>10</RandomDistruct>
+                        <UnVisitDamage>2</UnVisitDamage>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="ATAKE">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseInOutElastic</function>
+                                <initial>current</initial>
+                                <target>-200, 0</target>
+                                <duration>0.3</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Ping Pong Stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Relative</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>Atake</tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="TAKE">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseInOutElastic</function>
+                                <initial>current</initial>
+                                <target>50,0</target>
+                                <duration>0.4</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Ping Pong Stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Relative</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group>Take</tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="FALL">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Angle</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>90, 100</target>
+                                <duration>1</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play and stop</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>528</x>
+                        <y>560</y>
+                        <z>0</z>
+                        <width>150.808319092</width>
+                        <height>233.559463501</height>
+                        <depth>0</depth>
+                        <hotspotX>0.505494535</hotspotX>
+                        <hotspotY>0.856801927</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DamageStatus" uid="73">
+                    <properties>
+                        <text>Нашёл! 50</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-32,700,1</font>
+                        <color>255,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="EaseTween">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseInOutBack</function>
+                                <initial>current</initial>
+                                <target>0, -100</target>
+                                <duration>2</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Relative</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>1.5</wait-time>
+                                <fade-out-time>0.5</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-144</x>
+                        <y>320</y>
+                        <z>0</z>
+                        <width>320</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="UI" sid="951586997312745">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>1</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
                 <instance type="MovingPanel" uid="516">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -201,28 +468,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Fon" uid="53">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>1</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>352</x>
-                        <y>480</y>
-                        <z>0</z>
-                        <width>826.922119141</width>
-                        <height>803.983886719</height>
-                        <depth>0</depth>
-                        <hotspotX>0.50138694</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="ProgressBar" uid="54">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -322,88 +567,6 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Player" uid="59">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>woman</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <Hp>50</Hp>
-                        <Damage>1</Damage>
-                        <Defence>1</Defence>
-                        <Stealth>1</Stealth>
-                        <Heal>1</Heal>
-                        <Practic_Count>1</Practic_Count>
-                        <Laba_Count>1</Laba_Count>
-                        <Heal_count>1</Heal_count>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Atake">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseInOutElastic</function>
-                                <initial>current</initial>
-                                <target>200, 0</target>
-                                <duration>0.3</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Ping Pong Stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Relative</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group>Atake</tween-group>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Take">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseOutElastic</function>
-                                <initial>current</initial>
-                                <target>-100, 0</target>
-                                <duration>0.3</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Ping Pong Stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Relative</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group>Take</tween-group>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Fall">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Angle</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <initial>current</initial>
-                                <target>90, 100</target>
-                                <duration>1</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Play and stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Absolute</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group></tween-group>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>144</x>
-                        <y>552</y>
-                        <z>0</z>
-                        <width>114</width>
-                        <height>193</height>
-                        <depth>0</depth>
-                        <hotspotX>0.552631557</hotspotX>
-                        <hotspotY>0.818652868</hotspotY>
-                        <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -608,150 +771,6 @@
                         <z>0</z>
                         <width>316</width>
                         <height>78</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Enemy" uid="68">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <Hp>80</Hp>
-                        <Distruct>false</Distruct>
-                        <MaxHp>100</MaxHp>
-                        <DistructTurn>0</DistructTurn>
-                        <NextTurn>550</NextTurn>
-                        <WaitToAttack>10</WaitToAttack>
-                        <Damage>5</Damage>
-                        <MaxPractic>8</MaxPractic>
-                        <MaxLab>4</MaxLab>
-                        <CurrenPractic>7</CurrenPractic>
-                        <CurrentLab>3</CurrentLab>
-                        <PracticDamage>6</PracticDamage>
-                        <LabaDamage>8</LabaDamage>
-                        <UnVisits_Count>4</UnVisits_Count>
-                        <RandomDistruct>10</RandomDistruct>
-                        <UnVisitDamage>2</UnVisitDamage>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="ATAKE">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseInOutElastic</function>
-                                <initial>current</initial>
-                                <target>-200, 0</target>
-                                <duration>0.3</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Ping Pong Stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Relative</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group>Atake</tween-group>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="TAKE">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseInOutElastic</function>
-                                <initial>current</initial>
-                                <target>50,0</target>
-                                <duration>0.4</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Ping Pong Stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Relative</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group>Take</tween-group>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="FALL">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Angle</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <initial>current</initial>
-                                <target>90, 100</target>
-                                <duration>1</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Play and stop</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Absolute</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group></tween-group>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>528</x>
-                        <y>560</y>
-                        <z>0</z>
-                        <width>150.808319092</width>
-                        <height>233.559463501</height>
-                        <depth>0</depth>
-                        <hotspotX>0.505494535</hotspotX>
-                        <hotspotY>0.856801927</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="DamageStatus" uid="73">
-                    <properties>
-                        <text>Нашёл! 50</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-32,700,1</font>
-                        <color>255,0,0</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="EaseTween">
-                            <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseInOutBack</function>
-                                <initial>current</initial>
-                                <target>0, -100</target>
-                                <duration>2</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Play Once</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Relative</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group></tween-group>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>Yes</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>1.5</wait-time>
-                                <fade-out-time>0.5</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-144</x>
-                        <y>320</y>
-                        <z>0</z>
-                        <width>320</width>
-                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1217,6 +1236,36 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Stats" uid="70">
+                    <properties>
+                        <text>09:00</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Stencil,-64,700,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>Time</Type>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>352</x>
+                        <y>144</y>
+                        <z>0</z>
+                        <width>213.766220093</width>
+                        <height>142.510818481</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -1675,36 +1724,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Stats" uid="70">
-                    <properties>
-                        <text>09:00</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Stencil,-64,700,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <instance-variables>
-                        <Type>Time</Type>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>352</x>
-                        <y>144</y>
-                        <z>0</z>
-                        <width>213.766220093</width>
-                        <height>142.510818481</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
             </instances>
             <effects />
         </layer>
@@ -2055,7 +2074,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Ui" sid="200085509639092">
+        <layer name="Vika" sid="200085509639092">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

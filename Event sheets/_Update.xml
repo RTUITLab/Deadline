@@ -13,9 +13,8 @@
                     <param id="0" name="Property name">&quot;font-size&quot;</param>
                     <param id="1" name="Value">&quot;1em&quot;</param>
                 </action>
-                <action id="0" name="Set item" sid="557867481635041" type="LocalStorage">
+                <action id="5" name="Check item exists" sid="524152965012085" type="LocalStorage">
                     <param id="0" name="Key">&quot;Learn&quot;</param>
-                    <param id="1" name="Value">1</param>
                 </action>
                 <action id="0" name="Call function" sid="160954193616854" type="Function">
                     <param id="0" name="Name">&quot;Add Point&quot;</param>
@@ -74,6 +73,19 @@
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="721400189573578">
+            <conditions>
+                <condition id="10" name="On item missing" sid="222278785877512" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="557867481635041" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>

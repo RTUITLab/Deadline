@@ -74,6 +74,18 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="473973170177636">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="629187692435592" type="Warning">
+                            <param id="0" name="Animation">&quot;MainText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="193973767093540" type="Warning">
+                            <param id="0" name="Frame number">victorie-1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <event-block sid="767889531549939">

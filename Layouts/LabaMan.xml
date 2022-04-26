@@ -400,7 +400,7 @@
                     </properties>
                     <instance-variables>
                         <Type>Laba</Type>
-                        <Time>5</Time>
+                        <Time>1</Time>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1311,8 +1311,8 @@
                         <x>642</x>
                         <y>290</y>
                         <z>0</z>
-                        <width>55.425624847</width>
-                        <height>55.425624847</height>
+                        <width>62.577320099</width>
+                        <height>62.577320099</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1354,8 +1354,8 @@
                         <x>642</x>
                         <y>338</y>
                         <z>0</z>
-                        <width>55.425624847</width>
-                        <height>55.425624847</height>
+                        <width>62.577320099</width>
+                        <height>62.577320099</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

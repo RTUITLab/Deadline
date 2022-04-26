@@ -717,6 +717,21 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Warning" sid="850578204908193">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="MainText" pingpong="0" repeatcount="1" repeatto="0" sid="909717070244227" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502591" />
+                    <frame duration="1" hotspotX="0.500428" hotspotY="0.502591" />
+                    <frame duration="1" hotspotX="0.500431" hotspotY="0.502591" />
+                    <frame duration="1" hotspotX="0.500332" hotspotY="0.502591" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503226" />
+                </animation>
+                <animation framecount="1" loop="0" name="Pass" pingpong="0" repeatcount="1" repeatto="0" sid="387257845917665" speed="5">
+                    <frame duration="1" hotspotX="0.502262" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

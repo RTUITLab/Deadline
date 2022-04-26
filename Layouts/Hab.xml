@@ -985,6 +985,39 @@
                         <opacity>0.800000012</opacity>
                     </world>
                 </instance>
+                <instance type="HandQlue" uid="71">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>1</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>320</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>162.161392212</width>
+                        <height>189.440887451</height>
+                        <depth>0</depth>
+                        <hotspotX>0.929906547</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -5088,6 +5121,172 @@
                         <z>0</z>
                         <width>544</width>
                         <height>328</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Vika" sid="436982048744321">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="FloatWindow" uid="594">
+                    <properties>
+                        <left-margin>100</left-margin>
+                        <right-margin>100</right-margin>
+                        <top-margin>100</top-margin>
+                        <bottom-margin>100</bottom-margin>
+                        <edges>Stretch</edges>
+                        <fill>Stretch</fill>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                        <seams>Overlap</seams>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="ToScreen">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>120, 224</target>
+                                <duration>2.5</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="ToStart">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <initial>current</initial>
+                                <target>100, 100</target>
+                                <duration>2.5</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>64</x>
+                        <y>160</y>
+                        <z>0</z>
+                        <width>448</width>
+                        <height>288</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="VIKA" uid="595">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>1</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <stage>0</stage>
+                        <heal>true</heal>
+                        <stealt>true</stealt>
+                        <distruct>true</distruct>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="EaseTween">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>Linear</function>
+                                <initial>current</initial>
+                                <target>720, 560</target>
+                                <duration>0.5</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1088</x>
+                        <y>608</y>
+                        <z>0</z>
+                        <width>356.063140869</width>
+                        <height>356.063140869</height>
+                        <depth>0</depth>
+                        <hotspotX>1</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="InfoText" uid="596">
+                    <properties>
+                        <text>В университете есть разные активности. Используйте их, чтобы подготовиться к зачётам. И СЛЕДИТЕ ЗА ВРЕМЕНЕМ</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial Black,-32,900,1</font>
+                        <color>0,153,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>-10</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Type>Vika</Type>
+                        <Su_Text></Su_Text>
+                        <PreText></PreText>
+                        <Forfunction></Forfunction>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="PinPlus">
+                            <properties>
+                                <object-uid>17</object-uid>
+                                <pin-mode>Position only</pin-mode>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>96</x>
+                        <y>304</y>
+                        <z>0</z>
+                        <width>384</width>
+                        <height>256</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0.5</hotspotY>

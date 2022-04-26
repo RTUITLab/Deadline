@@ -101,6 +101,28 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="163817545145758">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="246244727039306" type="InfoText">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Enemy_Delay&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="342078779686371" type="Flag">
+                                            <param id="0" name="Animation">&quot;Atake&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="335004258808333" type="InfoText">
+                                            <param id="0" name="Text">max(Enemy.NextTurn-ClockTime,0)&amp; &quot; мин.&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="562979683442515" type="Flag">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="414934711811059">
                             <conditions>
@@ -2122,6 +2144,41 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="655143513970063">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="172979589078984" type="InfoText">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Enemy_Delay&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="785872018659411" type="InfoText">
+                                    <param id="0" name="Text">max(Enemy.NextTurn-ClockTime,0)&amp; &quot; мин.&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="810746655232551">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="875360733808286" type="System">
+                                            <param id="0" name="First value">Enemy.NextTurn-ClockTime</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="421068406402011" type="Flag">
+                                            <param id="0" name="Animation">&quot;Atake&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="507052340022986" type="Flag">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment></comment>
                 <comment>Обновить здоровье врага</comment>

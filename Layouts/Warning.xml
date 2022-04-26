@@ -192,6 +192,38 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="sf_a_white" uid="72">
+                    <properties>
+                        <character-width>80</character-width>
+                        <character-height>80</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя%</character-set>
+                        <text>Продолжить</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                        <char-width-json>{&quot;&quot;c2array&quot;&quot;:true,&quot;&quot;size&quot;&quot;:[2,37,1],&quot;&quot;data&quot;&quot;:[[[13],[16],[17],[18],[20],[22],[23],[26],[27],[28],[29],[30],[33],[34],[35],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[53],[54],[57],[58],[59],[60],[61],[62],[67]],[[&quot;&quot;&apos;|&quot;&quot;],[&quot;&quot;.,;:&quot;&quot;],[&quot;&quot;`°&quot;&quot;],[&quot;&quot;!*&quot;&quot;],[&quot;&quot;Iijl&quot;&quot;],[&quot;&quot;-&quot;&quot;],[&quot;&quot;1\&quot;&quot;&quot;&quot;],[&quot;&quot;_([]+=&lt;&gt;&quot;&quot;],[&quot;&quot;)&quot;&quot;],[&quot;&quot;fr~&quot;&quot;],[&quot;&quot;t\\/Г&quot;&quot;],[&quot;&quot;Lг&quot;&quot;],[&quot;&quot;EЕЁ&quot;&quot;],[&quot;&quot;Fz€&quot;&quot;],[&quot;&quot;Z&quot;&quot;],[&quot;&quot;7£&quot;&quot;],[&quot;&quot;TТт&quot;&quot;],[&quot;&quot;Hv5689?#&quot;&quot;],[&quot;&quot;BCDGJPRhn23$ВЗНПРСЧЭЯвзнпчэя&quot;&quot;],[&quot;&quot;OQSUVXabcdegkopqsuy0БОХЬабеёорсуь&quot;&quot;],[&quot;&quot;K&amp;&quot;&quot;],[&quot;&quot;AАКк&quot;&quot;],[&quot;&quot;NYx4ИЙЦийхц&quot;&quot;],[&quot;&quot;ъ&quot;&quot;],[&quot;&quot;Лл&quot;&quot;],[&quot;&quot;Дд&quot;&quot;],[&quot;&quot;У&quot;&quot;],[&quot;&quot;Ъ&quot;&quot;],[&quot;&quot;ФШш&quot;&quot;],[&quot;&quot;MМм&quot;&quot;],[&quot;&quot;Щщ&quot;&quot;],[&quot;&quot;ю&quot;&quot;],[&quot;&quot;Ыы&quot;&quot;],[&quot;&quot;Wm&quot;&quot;],[&quot;&quot;w@Юф&quot;&quot;],[&quot;&quot;ж&quot;&quot;],[&quot;&quot;Ж&quot;&quot;]]]}</char-width-json>
+                        <space-char-width>14</space-char-width>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>216</x>
+                        <y>512</y>
+                        <z>0</z>
+                        <width>598</width>
+                        <height>175</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>

@@ -212,7 +212,20 @@
                                         <action id="-15" name="Set visible" sid="170022664723033" type="Button_Actions">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
+                                        <action id="-15" name="Set visible" sid="780363470361429" type="HandQlue">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="628914250831998" type="HandQlue">
+                                            <param id="0" name="X">Button_Actions.X+184</param>
+                                            <param id="1" name="Y">Button_Actions.Y+184</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="150709232244289">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="612895026881382">
                                     <conditions>
@@ -225,6 +238,9 @@
                                     </conditions>
                                     <actions>
                                         <action id="-15" name="Set visible" sid="787257210112263" type="Button_Actions">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="112870378065600" type="HandQlue">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                     </actions>
@@ -575,6 +591,10 @@
                         <action id="0" name="Call function" sid="700526191555631" type="Function">
                             <param id="0" name="Name">&quot;GoFromHub&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;fgbvserxrbtxrbetrn&quot;</param>
+                        </action>
+                        <action id="0" name="Set item" sid="161656335955562" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -1544,6 +1564,135 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="549323547568693">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="798832697041781" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="893303867160620" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="937996331385535">
+            <conditions>
+                <condition id="9" name="On item exists" sid="675923022782198" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="539218453739003">
+                    <conditions>
+                        <condition id="12" name="Compare value" sid="817378604090593" type="LocalStorage">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="833378865923553" type="HandQlue" />
+                    </actions>
+                </event-block>
+                <event-block sid="525874602392221">
+                    <conditions>
+                        <condition id="12" inverted="1" name="Compare value" sid="739485395309906" type="LocalStorage">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="EaseTween" id="10" name="Start" sid="911297228602579" type="VIKA" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="974600327204294">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="626297207992694" type="System">
+                    <param id="0" name="Interval (seconds)">1.5</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="941190114154432" type="HandQlue" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="777999278177221" type="HandQlue">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="423687117189566" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="5" name="Set frame" sid="973907337147500" type="HandQlue">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="368204726398603" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="5" name="Set frame" sid="609550386993298" type="HandQlue">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878829421058023">
+            <conditions>
+                <condition behavior="EaseTween" id="4" name="On tween end" sid="800643620750541" type="VIKA" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="238242437095195">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="502678869146087" type="FloatWindow">
+                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="764497117972200" type="InfoText">
+                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="244553632609282" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="712672832652879" type="InfoText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="972159068554762" type="FloatWindow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="927314039202097" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="498049521576429">
+            <conditions>
+                <condition id="14" name="On tap" sid="253097450042415" type="Touch" />
+                <condition id="-7" name="Compare instance variable" sid="833084835096816" type="VIKA">
+                    <param id="0" name="Instance variable">stage</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-16" name="Is on layer" sid="598781977762875" type="FloatWindow">
+                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                </condition>
+                <condition id="-16" name="Is on layer" sid="661272335896135" type="InfoText">
+                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="EaseTween" id="11" name="Reverse" sid="962892027053170" type="VIKA">
+                    <param id="0" name="Reverse Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="675842436805847" type="InfoText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="370179225243422" type="FloatWindow">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

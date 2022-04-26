@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="DeX" id="SecureData" version="1">SecureData</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Chris Kent" id="SpriteFontPlus" version="1">SpriteFont+</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -146,6 +147,10 @@
                         <frame duration="1" hotspotX="1" hotspotY="0.5" />
                         <frame duration="1" hotspotX="1" hotspotY="0.5" />
                         <frame duration="1" hotspotX="1" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="Atake" pingpong="0" repeatcount="1" repeatto="0" sid="608203416530459" speed="0">
+                        <frame duration="1" hotspotX="0.501266" hotspotY="0.503497" />
+                        <frame duration="1" hotspotX="0.501266" hotspotY="0.503497" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -731,6 +736,10 @@
                     <frame duration="1" hotspotX="0.502262" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="sf_a_white" sid="517940946859900">
+            <plugin id="SpriteFontPlus" />
+            <texture original-source="C:\Users\дом\Desktop\HEZZL\PROJECTS\_утконос\font\white_78.png" />
         </object-type>
     </object-folder>
     <families />

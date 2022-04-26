@@ -47,40 +47,34 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="InfoText" uid="541">
+                <instance type="SF_White" uid="72">
                     <properties>
-                        <text>Второй Зачёт</text>
+                        <character-width>60</character-width>
+                        <character-height>80</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя% </character-set>
+                        <text>Четвёртый$Зачёт</text>
+                        <scale>1.8</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial Black,-91,900,0</font>
-                        <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <line-height>-10</line-height>
+                        <character-spacing>-28</character-spacing>
+                        <line-height>0</line-height>
+                        <char-width-json>{&quot;&quot;c2array&quot;&quot;:true,&quot;&quot;size&quot;&quot;:[2,37,1],&quot;&quot;data&quot;&quot;:[[[13],[16],[17],[18],[20],[22],[23],[26],[27],[28],[29],[30],[33],[34],[35],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[53],[54],[57],[58],[59],[60],[61],[62],[67]],[[&quot;&quot;&apos;|&quot;&quot;],[&quot;&quot;.,;:&quot;&quot;],[&quot;&quot;`°&quot;&quot;],[&quot;&quot;!*&quot;&quot;],[&quot;&quot;Iijl&quot;&quot;],[&quot;&quot;-&quot;&quot;],[&quot;&quot;\&quot;&quot;&quot;&quot;],[&quot;&quot;_([]+=&lt;&gt;&quot;&quot;],[&quot;&quot;$)&quot;&quot;],[&quot;&quot;fr~&quot;&quot;],[&quot;&quot;1t\\/Г&quot;&quot;],[&quot;&quot;Lга&quot;&quot;],[&quot;&quot;EЕЁ&quot;&quot;],[&quot;&quot;Fz€&quot;&quot;],[&quot;&quot; Z&quot;&quot;],[&quot;&quot;7£&quot;&quot;],[&quot;&quot;т2&quot;&quot;],[&quot;&quot;Hv5689?#ле&quot;&quot;],[&quot;&quot;BCDGJPRhnНРЭЯвзнпэячс4и&quot;&quot;],[&quot;&quot;3OQSUVXabcdegkopqsuy0БХЬабёоруь&quot;&quot;],[&quot;&quot;ТТK&amp;&quot;&quot;],[&quot;&quot;ВAКк&quot;&quot;],[&quot;&quot;ЗNYxИЙЦйхц&quot;&quot;],[&quot;&quot;ъ&quot;&quot;],[&quot;&quot;ПЛ&quot;&quot;],[&quot;&quot;СДд&quot;&quot;],[&quot;&quot;ОЧУ&quot;&quot;],[&quot;&quot;Ъы&quot;&quot;],[&quot;&quot;ФШш&quot;&quot;],[&quot;&quot;MМм&quot;&quot;],[&quot;&quot;Щщ&quot;&quot;],[&quot;&quot;ю&quot;&quot;],[&quot;&quot;Ы&quot;&quot;],[&quot;&quot;Wm&quot;&quot;],[&quot;&quot;w@Юф&quot;&quot;],[&quot;&quot;ж&quot;&quot;],[&quot;&quot;Ж&quot;&quot;]]]}</char-width-json>
+                        <space-char-width>14</space-char-width>
                     </properties>
                     <instance-variables>
-                        <Type>delay_Phone</Type>
-                        <Su_Text> мин</Su_Text>
-                        <PreText>-</PreText>
-                        <Forfunction>&quot;Time&quot;</Forfunction>
+                        <type>main</type>
                     </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="PinPlus">
-                            <properties>
-                                <object-uid>17</object-uid>
-                                <pin-mode>Position only</pin-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>360</x>
-                        <y>640</y>
+                        <y>512</y>
                         <z>0</z>
-                        <width>738</width>
-                        <height>128</height>
+                        <width>792</width>
+                        <height>175</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -88,78 +82,31 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="InfoText" uid="542">
+                <instance type="SF_White" uid="74">
                     <properties>
+                        <character-width>60</character-width>
+                        <character-height>80</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя%</character-set>
                         <text>Сдан</text>
+                        <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial Black,-48,900,0</font>
-                        <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <line-height>-10</line-height>
+                        <character-spacing>-13</character-spacing>
+                        <line-height>0</line-height>
+                        <char-width-json>{&quot;&quot;c2array&quot;&quot;:true,&quot;&quot;size&quot;&quot;:[2,37,1],&quot;&quot;data&quot;&quot;:[[[13],[16],[17],[18],[20],[22],[23],[26],[27],[28],[29],[30],[33],[34],[35],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[53],[54],[57],[58],[59],[60],[61],[62],[67]],[[&quot;&quot;&apos;|&quot;&quot;],[&quot;&quot;.,;:&quot;&quot;],[&quot;&quot;`°&quot;&quot;],[&quot;&quot;!*&quot;&quot;],[&quot;&quot;Iijl&quot;&quot;],[&quot;&quot;-&quot;&quot;],[&quot;&quot;\&quot;&quot;&quot;&quot;],[&quot;&quot;_([]+=&lt;&gt;&quot;&quot;],[&quot;&quot;$)&quot;&quot;],[&quot;&quot;fr~&quot;&quot;],[&quot;&quot;1t\\/Г&quot;&quot;],[&quot;&quot;Lга&quot;&quot;],[&quot;&quot;EЕЁ&quot;&quot;],[&quot;&quot;Fz€&quot;&quot;],[&quot;&quot; Z&quot;&quot;],[&quot;&quot;7£&quot;&quot;],[&quot;&quot;т2&quot;&quot;],[&quot;&quot;Hv5689?#ле&quot;&quot;],[&quot;&quot;BCDGJPRhnНРЭЯвзнпэячс4и&quot;&quot;],[&quot;&quot;3OQSUVXabcdegkopqsuy0БХЬабёоруь&quot;&quot;],[&quot;&quot;ТТK&amp;&quot;&quot;],[&quot;&quot;ВAКк&quot;&quot;],[&quot;&quot;ЗNYxИЙЦйхц&quot;&quot;],[&quot;&quot;ъ&quot;&quot;],[&quot;&quot;ПЛ&quot;&quot;],[&quot;&quot;СДд&quot;&quot;],[&quot;&quot;ОЧУ&quot;&quot;],[&quot;&quot;Ъы&quot;&quot;],[&quot;&quot;ФШш&quot;&quot;],[&quot;&quot;MМм&quot;&quot;],[&quot;&quot;Щщ&quot;&quot;],[&quot;&quot;ю&quot;&quot;],[&quot;&quot;Ы&quot;&quot;],[&quot;&quot;Wm&quot;&quot;],[&quot;&quot;w@Юф&quot;&quot;],[&quot;&quot;ж&quot;&quot;],[&quot;&quot;Ж&quot;&quot;]]]}</char-width-json>
+                        <space-char-width>14</space-char-width>
                     </properties>
                     <instance-variables>
-                        <Type>delay_Phone</Type>
-                        <Su_Text> мин</Su_Text>
-                        <PreText>-</PreText>
-                        <Forfunction>&quot;Time&quot;</Forfunction>
+                        <type></type>
                     </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="PinPlus">
-                            <properties>
-                                <object-uid>17</object-uid>
-                                <pin-mode>Position only</pin-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>360</x>
-                        <y>574</y>
-                        <z>0</z>
-                        <width>288</width>
-                        <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="InfoText" uid="543">
-                    <properties>
-                        <text>-14 Часов Осталось-</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-48,700,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>-10</line-height>
-                    </properties>
-                    <instance-variables>
-                        <Type>time</Type>
-                        <Su_Text> мин</Su_Text>
-                        <PreText>-</PreText>
-                        <Forfunction>&quot;Time&quot;</Forfunction>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="PinPlus">
-                            <properties>
-                                <object-uid>17</object-uid>
-                                <pin-mode>Position only</pin-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>360</x>
-                        <y>732</y>
+                        <y>423</y>
                         <z>0</z>
                         <width>720</width>
                         <height>128</height>
@@ -170,53 +117,34 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Warning" uid="593">
+                <instance type="SF_White" uid="83">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>3</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>360</x>
-                        <y>384</y>
-                        <z>0</z>
-                        <width>684</width>
-                        <height>103</height>
-                        <depth>0</depth>
-                        <hotspotX>0.500332236</hotspotX>
-                        <hotspotY>0.502590656</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="sf_a_white" uid="72">
-                    <properties>
-                        <character-width>80</character-width>
+                        <character-width>60</character-width>
                         <character-height>80</character-height>
-                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя%</character-set>
-                        <text>Продолжить</text>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя% </character-set>
+                        <text>-$14$Часов$Осталось$-</text>
                         <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-14</character-spacing>
                         <line-height>0</line-height>
-                        <char-width-json>{&quot;&quot;c2array&quot;&quot;:true,&quot;&quot;size&quot;&quot;:[2,37,1],&quot;&quot;data&quot;&quot;:[[[13],[16],[17],[18],[20],[22],[23],[26],[27],[28],[29],[30],[33],[34],[35],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[53],[54],[57],[58],[59],[60],[61],[62],[67]],[[&quot;&quot;&apos;|&quot;&quot;],[&quot;&quot;.,;:&quot;&quot;],[&quot;&quot;`°&quot;&quot;],[&quot;&quot;!*&quot;&quot;],[&quot;&quot;Iijl&quot;&quot;],[&quot;&quot;-&quot;&quot;],[&quot;&quot;1\&quot;&quot;&quot;&quot;],[&quot;&quot;_([]+=&lt;&gt;&quot;&quot;],[&quot;&quot;)&quot;&quot;],[&quot;&quot;fr~&quot;&quot;],[&quot;&quot;t\\/Г&quot;&quot;],[&quot;&quot;Lг&quot;&quot;],[&quot;&quot;EЕЁ&quot;&quot;],[&quot;&quot;Fz€&quot;&quot;],[&quot;&quot;Z&quot;&quot;],[&quot;&quot;7£&quot;&quot;],[&quot;&quot;TТт&quot;&quot;],[&quot;&quot;Hv5689?#&quot;&quot;],[&quot;&quot;BCDGJPRhn23$ВЗНПРСЧЭЯвзнпчэя&quot;&quot;],[&quot;&quot;OQSUVXabcdegkopqsuy0БОХЬабеёорсуь&quot;&quot;],[&quot;&quot;K&amp;&quot;&quot;],[&quot;&quot;AАКк&quot;&quot;],[&quot;&quot;NYx4ИЙЦийхц&quot;&quot;],[&quot;&quot;ъ&quot;&quot;],[&quot;&quot;Лл&quot;&quot;],[&quot;&quot;Дд&quot;&quot;],[&quot;&quot;У&quot;&quot;],[&quot;&quot;Ъ&quot;&quot;],[&quot;&quot;ФШш&quot;&quot;],[&quot;&quot;MМм&quot;&quot;],[&quot;&quot;Щщ&quot;&quot;],[&quot;&quot;ю&quot;&quot;],[&quot;&quot;Ыы&quot;&quot;],[&quot;&quot;Wm&quot;&quot;],[&quot;&quot;w@Юф&quot;&quot;],[&quot;&quot;ж&quot;&quot;],[&quot;&quot;Ж&quot;&quot;]]]}</char-width-json>
+                        <char-width-json>{&quot;&quot;c2array&quot;&quot;:true,&quot;&quot;size&quot;&quot;:[2,37,1],&quot;&quot;data&quot;&quot;:[[[13],[16],[17],[18],[20],[22],[23],[26],[27],[28],[29],[30],[33],[34],[35],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[53],[54],[57],[58],[59],[60],[61],[62],[67]],[[&quot;&quot;&apos;|&quot;&quot;],[&quot;&quot;.,;:&quot;&quot;],[&quot;&quot;`°&quot;&quot;],[&quot;&quot;!*&quot;&quot;],[&quot;&quot;Iijl&quot;&quot;],[&quot;&quot;-&quot;&quot;],[&quot;&quot;\&quot;&quot;&quot;&quot;],[&quot;&quot;_([]+=&lt;&gt;&quot;&quot;],[&quot;&quot;$)&quot;&quot;],[&quot;&quot;fr~&quot;&quot;],[&quot;&quot;1t\\/Г&quot;&quot;],[&quot;&quot;Lга&quot;&quot;],[&quot;&quot;EЕЁ&quot;&quot;],[&quot;&quot;Fz€&quot;&quot;],[&quot;&quot; Z&quot;&quot;],[&quot;&quot;7£&quot;&quot;],[&quot;&quot;т2&quot;&quot;],[&quot;&quot;Hv5689?#ле&quot;&quot;],[&quot;&quot;BCDGJPRhnНРЭЯвзнпэячс4и&quot;&quot;],[&quot;&quot;3OQSUVXabcdegkopqsuy0БХЬабёоруь&quot;&quot;],[&quot;&quot;ТТK&amp;&quot;&quot;],[&quot;&quot;ВAКк&quot;&quot;],[&quot;&quot;ЗNYxИЙЦйхц&quot;&quot;],[&quot;&quot;ъ&quot;&quot;],[&quot;&quot;ПЛ&quot;&quot;],[&quot;&quot;СДд&quot;&quot;],[&quot;&quot;ОЧУ&quot;&quot;],[&quot;&quot;Ъы&quot;&quot;],[&quot;&quot;ФШш&quot;&quot;],[&quot;&quot;MМм&quot;&quot;],[&quot;&quot;Щщ&quot;&quot;],[&quot;&quot;ю&quot;&quot;],[&quot;&quot;Ы&quot;&quot;],[&quot;&quot;Wm&quot;&quot;],[&quot;&quot;w@Юф&quot;&quot;],[&quot;&quot;ж&quot;&quot;],[&quot;&quot;Ж&quot;&quot;]]]}</char-width-json>
                         <space-char-width>14</space-char-width>
                     </properties>
+                    <instance-variables>
+                        <type>time</type>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>216</x>
-                        <y>512</y>
+                        <x>360</x>
+                        <y>608</y>
                         <z>0</z>
-                        <width>598</width>
-                        <height>175</height>
+                        <width>720</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

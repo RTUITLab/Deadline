@@ -62,15 +62,29 @@
                 </event-block>
                 <event-block sid="277129669902432">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="197803347481993" type="InfoText">
-                            <param id="0" name="Instance variable">Type</param>
+                        <condition id="-7" name="Compare instance variable" sid="197803347481993" type="SF_White">
+                            <param id="0" name="Instance variable">type</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;time&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="226552544723456" type="InfoText">
-                            <param id="0" name="Text">ClockTime&lt;1140?&quot;-&quot;&amp;int((1440-ClockTime)/60)&amp;&quot; Часов Осталось-&quot;:&quot;-&quot;&amp;int((1440-ClockTime)/5)*5&amp;&quot; Минут  Осталось-&quot;</param>
+                        <action id="0" name="Set text" sid="226552544723456" type="SF_White">
+                            <param id="0" name="Text">ClockTime&lt;1140?&quot;-$&quot;&amp;int((1440-ClockTime)/60)&amp;&quot;$Часов$Осталось$-&quot;:&quot;-$&quot;&amp;int((1440-ClockTime)/5)*5&amp;&quot;$Минут$Осталось$-&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="389553256971700">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="596731609828168" type="SF_White">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;main&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="711706416720999" type="SF_White">
+                            <param id="0" name="Text">(victorie=1?&quot;Первый&quot;:victorie=2?&quot;Второй&quot;:victorie=3? &quot;Третий&quot; :victorie=4?&quot;Четвёртый&quot;:&quot;Пятый&quot;)&amp;&quot;$Зачёт&quot;</param>
                         </action>
                     </actions>
                 </event-block>

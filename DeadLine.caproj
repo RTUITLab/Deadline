@@ -737,8 +737,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="sf_a_white" sid="517940946859900">
+        <object-type name="SF_White" sid="517940946859900">
             <plugin id="SpriteFontPlus" />
+            <instance-variables>
+                <instance-variable name="type" sid="930048342054280" type="string" />
+            </instance-variables>
             <texture original-source="C:\Users\дом\Desktop\HEZZL\PROJECTS\_утконос\font\white_78.png" />
         </object-type>
     </object-folder>

@@ -1138,7 +1138,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="888467674676610" type="Function">
-                            <param id="0" name="Value">850-Stealth*50</param>
+                            <param id="0" name="Value">max(850-Stealth*50,300)</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -1153,7 +1153,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="344079586254829" type="ButtonTrade">
                                     <param id="0" name="Instance variable">cost</param>
-                                    <param id="1" name="Value">850-Stealth*50</param>
+                                    <param id="1" name="Value">max(850-Stealth*50,300)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1167,7 +1167,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="428559599303656" type="Function">
-                            <param id="0" name="Value">1500-Stealth*100</param>
+                            <param id="0" name="Value">max(1500-Stealth*100,500)</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -1182,7 +1182,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="411056577114209" type="ButtonTrade">
                                     <param id="0" name="Instance variable">cost</param>
-                                    <param id="1" name="Value">1500-Stealth*100</param>
+                                    <param id="1" name="Value">max(1500-Stealth*100,500)</param>
                                 </action>
                             </actions>
                         </event-block>

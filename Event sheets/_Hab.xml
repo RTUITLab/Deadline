@@ -725,7 +725,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="458808771987203" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Не согласился(&quot;{###}Function.Call(&quot;Red&quot;)</param>
+                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Не удалось(&quot;{###}Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                         <action id="0" name="Play" sid="419765502445599" type="Audio">
                                             <param id="0" name="Audio file">down</param>
@@ -749,7 +749,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="906450240133880" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Сделал!&quot;{###}Function.Call(&quot;Green&quot;)</param>
+                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Сделали!&quot;{###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                         <action id="0" name="Play" sid="237054846839799" type="Audio">
                                             <param id="0" name="Audio file">up</param>
@@ -1054,7 +1054,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="898274163251306" type="Function">
-                            <param id="0" name="Value">70/Damage+30</param>
+                            <param id="0" name="Value">int((70/Damage+30)*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1066,7 +1066,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="925718426062471" type="Function">
-                            <param id="0" name="Value">100/Damage+50</param>
+                            <param id="0" name="Value">int((100/Damage+50)*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1102,7 +1102,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="767234171292742" type="Function">
-                            <param id="0" name="Value">300/(Defence+Heal)</param>
+                            <param id="0" name="Value">int((300/(Defence+Heal))*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1114,7 +1114,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="346217431397202" type="Function">
-                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60/Defence:70+10*Heal</param>
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?int((60/Defence)*10)/10:70+10*Heal</param>
                         </action>
                     </actions>
                 </event-block>

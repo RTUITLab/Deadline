@@ -697,7 +697,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="605893602642656" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; int((Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                                 <action id="0" name="Play" sid="723700888039074" type="Audio">
                                                     <param id="0" name="Audio file">krit</param>
@@ -784,16 +784,9 @@
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
                                             <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Где?&quot; {###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="319655301535150" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="557577275321200" type="Function">
-                                            <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Отвлечение успешно!&quot; {###}Function.Call(&quot;Green&quot;)</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="694269632302029" type="Function">
-                                            <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
-                                            <param id="1" name="Parameter {n}">3+Player.Defence*2+1</param>
+                                        <action id="-11" name="Add to" sid="686212540247381" type="Enemy">
+                                            <param id="0" name="Instance variable">NextTurn</param>
+                                            <param id="1" name="Value">Player.Defence+1</param>
                                         </action>
                                         <action id="0" name="Play" sid="434007735911929" type="Audio">
                                             <param id="0" name="Audio file">up</param>
@@ -801,13 +794,20 @@
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="-16" name="Wait" sid="319655301535150" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="694269632302029" type="Function">
+                                            <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
+                                            <param id="1" name="Parameter {n}">3+Player.Defence*2+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="557577275321200" type="Function">
+                                            <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Отвлечение успешно!&quot; {###}Function.Call(&quot;Green&quot;)</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="224051647406169" type="Function">
                                             <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;delay_Distruct&quot;{###}3+Player.Defence*2+1</param>
-                                        </action>
-                                        <action id="-11" name="Add to" sid="686212540247381" type="Enemy">
-                                            <param id="0" name="Instance variable">NextTurn</param>
-                                            <param id="1" name="Value">Player.Defence+1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2274,7 +2274,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="868407906930071" type="Function">
                                             <param id="0" name="Name">&quot;Stamp&quot;</param>
-                                            <param id="1" name="Parameter {n}">0</param>
+                                            <param id="1" name="Parameter {n}">0{###}1</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="405553062032741" type="System">
                                             <param id="0" name="Seconds">1.5</param>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_Pause</name>
+    <events>
+        <variable constant="0" name="Pause_State" sid="927631277630330" static="0" type="text">Horizontal</variable>
+        <variable constant="0" name="Pause_PlayerX" sid="842903995657162" static="0" type="number">4928</variable>
+        <variable constant="0" name="Pause_PlayerY" sid="680177121409762" static="0" type="number">1472</variable>
+        <variable constant="0" name="Pause_PlayerZ" sid="967494114458779" static="0" type="number">564</variable>
+        <event-block sid="173760221617956">
+            <conditions>
+                <condition id="17" name="On tap object" sid="298137025634127" type="Touch">
+                    <param id="0" name="Object">DirectionButton</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="316697623974709" type="DirectionButton">
+                    <param id="0" name="Animation">&quot;Pause&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="601200346054512" type="Function">
+                    <param id="0" name="Name">&quot;GoFromHub&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;AddOneSkill&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="153664531452558">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="532888483533936" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="459331496043011" type="PlayerMove">
+                    <param id="0" name="Instance variable">position</param>
+                    <param id="1" name="Value">Pause_State</param>
+                </action>
+                <action id="-3" name="Set position" sid="662076547041287" type="PlayerMove">
+                    <param id="0" name="X">Pause_PlayerX</param>
+                    <param id="1" name="Y">Pause_PlayerY</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="436219331174666">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="774786729643557" type="System">
+                            <param id="0" name="Object">Decor</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="115994981715364" type="System">
+                            <param id="0" name="First value">Decor.UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">Pause_PlayerZ</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="212250929664970" type="PlayerMove">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Decor</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="714125421226627">
+            <conditions>
+                <condition id="0" name="On function" sid="186990827635918" type="Function">
+                    <param id="0" name="Name">&quot;GoFromHub&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="256349061747005" type="System">
+                    <param id="0" name="Variable">Pause_PlayerX</param>
+                    <param id="1" name="Value">PlayerMove.X</param>
+                </action>
+                <action id="-9" name="Set value" sid="498560171617062" type="System">
+                    <param id="0" name="Variable">Pause_PlayerY</param>
+                    <param id="1" name="Value">PlayerMove.Y</param>
+                </action>
+                <action id="-9" name="Set value" sid="995330343233041" type="System">
+                    <param id="0" name="Variable">Pause_State</param>
+                    <param id="1" name="Value">PlayerMove.position</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="518361277395415" type="System">
+                    <param id="0" name="Layout">Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

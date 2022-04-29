@@ -19,9 +19,6 @@
                     <param id="0" name="Variable">UserName</param>
                     <param id="1" name="Value">TextBox.Text</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="327631396245615" type="System">
-                    <param id="0" name="Layout">Hab</param>
-                </action>
                 <action id="0" name="Play" sid="222591299480693" type="Audio">
                     <param id="0" name="Audio file">button (online-audio-converter.com)</param>
                     <param id="2" name="Loop">0</param>
@@ -29,6 +26,24 @@
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="665154127381268">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="327631396245615" type="System">
+                            <param id="0" name="Layout">Hab</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="556670378430267">
+                    <conditions />
+                    <actions>
+                        <action disabled="1" id="-37" name="Load" sid="458244350391115" type="System">
+                            <param id="0" name="Slot">&quot;prePause&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="796653052383026">
             <conditions>
@@ -39,7 +54,7 @@
                     <param id="0" name="Name">&quot;Show_Stats&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Set item" sid="179155474323657" type="LocalStorage">
+                <action disabled="1" id="0" name="Set item" sid="179155474323657" type="LocalStorage">
                     <param id="0" name="Key">&quot;Learn&quot;</param>
                     <param id="1" name="Value">1</param>
                 </action>

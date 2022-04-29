@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>_Hab</name>
     <events>
+        <include>_Pause</include>
         <include>_SaveLoad</include>
         <variable constant="0" name="victorie" sid="419106155212477" static="0" type="number">0</variable>
         <variable constant="0" name="Money" sid="125666609902652" static="0" type="number">900</variable>
@@ -64,6 +65,9 @@
                         <condition id="4" name="Is touching object" sid="761059977735098" type="Touch">
                             <param id="0" name="Object">DirectionButton</param>
                         </condition>
+                        <condition id="2" name="Is playing" sid="665739727382045" type="DirectionButton">
+                            <param id="0" name="Animation">&quot;move&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="100749304500103" type="PlayerMove">
@@ -71,6 +75,12 @@
                             <param id="1" name="From">1</param>
                         </action>
                         <action behavior="EaseTween" id="13" name="Resume" sid="569042580399168" type="PlayerMove" />
+                        <action id="-5" name="Scroll to X" sid="999010513655186" type="System">
+                            <param id="0" name="X">PlayerMove.X</param>
+                        </action>
+                        <action id="-6" name="Scroll to Y" sid="512160649370398" type="System">
+                            <param id="0" name="Y">PlayerMove.Y-320</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="695166260698295">
@@ -88,6 +98,82 @@
                                     <param id="0" name="State">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="667878554655036">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="400683444363430" type="PlayerMove">
+                                            <param id="0" name="Object">MovingZOne</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="316784744846460">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="815155094917141" type="MovingZOne">
+                                                    <param id="0" name="Instance variable">autho</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="210075391685733" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="864166921321932">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="383580808720300" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="764183223761282" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="310583995033780" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block any="1" sid="159015430978701">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="511686349092597" type="PlayerMove">
+                                                    <param id="0" name="Instance variable">position</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MovingZOne.type</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="830902121729663" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="964734145965661">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="944335382984413" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="235285823087976" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="715282768881724" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="606512058430430">
                             <conditions>
@@ -104,6 +190,82 @@
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="967389175141337">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="306917369406956" type="PlayerMove">
+                                            <param id="0" name="Object">MovingZOne</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="754837001414242">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="778032497605127" type="MovingZOne">
+                                                    <param id="0" name="Instance variable">autho</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="123963972199000" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="681982051949586">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="647499124567221" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="103442131236131" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="230665892853806" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block any="1" sid="938319421410068">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="539842698734229" type="PlayerMove">
+                                                    <param id="0" name="Instance variable">position</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MovingZOne.type</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="583631406444243" type="PlayerMove">
+                                                    <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="795049215375573">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="662932672666377" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="825382013177132" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="464431273574876" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="887481243464707">
                             <conditions>
@@ -126,7 +288,20 @@
                                         <action id="-15" name="Set visible" sid="170022664723033" type="Button_Actions">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
+                                        <action id="-15" name="Set visible" sid="780363470361429" type="HandQlue">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="628914250831998" type="HandQlue">
+                                            <param id="0" name="X">Button_Actions.X+184</param>
+                                            <param id="1" name="Y">Button_Actions.Y+184</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="150709232244289">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="612895026881382">
                                     <conditions>
@@ -139,6 +314,9 @@
                                     </conditions>
                                     <actions>
                                         <action id="-15" name="Set visible" sid="787257210112263" type="Button_Actions">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="112870378065600" type="HandQlue">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                     </actions>
@@ -257,6 +435,10 @@
                     <param id="0" name="Layer">&quot;Info&quot;</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
+                <action id="-4" name="Set layer visible" sid="683458668657302" type="System">
+                    <param id="0" name="Layer">&quot;LabaWork&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
                 <action id="-12" name="Set group active" sid="182066595127100" type="System">
                     <param id="0" name="Group name">&quot;Hub_MovementPlayer&quot;</param>
                     <param id="1" name="State">1</param>
@@ -337,6 +519,10 @@
                             <param id="0" name="Name">&quot;Add Point&quot;</param>
                             <param id="1" name="Parameter {n}">2</param>
                         </action>
+                        <action id="0" name="Call function" sid="896944901166483" type="Function">
+                            <param id="0" name="Name">&quot;GoFromHub&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;AddOneSkill&quot;</param>
+                        </action>
                         <action id="1" name="Set return value" sid="454391396512792" type="Function">
                             <param id="0" name="Value">1</param>
                         </action>
@@ -365,8 +551,9 @@
                             <param id="0" name="Variable">SkillPoints</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-2" name="Go to layout" sid="764043274062249" type="System">
-                            <param id="0" name="Layout">AddOneSkil</param>
+                        <action id="0" name="Call function" sid="579732800793697" type="Function">
+                            <param id="0" name="Name">&quot;GoFromHub&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;AddOneSkill&quot;</param>
                         </action>
                         <action id="1" name="Set return value" sid="271009080324741" type="Function">
                             <param id="0" name="Value">1</param>
@@ -411,6 +598,58 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block any="1" sid="999881711458507">
+                    <conditions>
+                        <condition id="0" name="On function" sid="573000303474141" type="Function">
+                            <param id="0" name="Name">&quot;DamageToMoney&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="674451743639136" type="System">
+                            <param id="0" name="Variable">ClockTime</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Time&quot;)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="352644913302897" type="System">
+                            <param id="0" name="Variable">Money</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Money&quot;)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="991458389415827" type="Function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="684519269134625" type="Audio">
+                            <param id="0" name="Audio file">money</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="228897797640828">
+                    <conditions>
+                        <condition id="0" name="On function" sid="558135366309692" type="Function">
+                            <param id="0" name="Name">&quot;skill_money&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="731942993518468" type="System">
+                            <param id="0" name="Variable">ClockTime</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Time&quot;)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="546077119485531" type="System">
+                            <param id="0" name="Variable">Money</param>
+                            <param id="1" name="Value">Function.Call(Function.Param(0)&amp;&quot;_Info&quot;,&quot;Money&quot;)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="238009036425068" type="Function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="846721889300158" type="Audio">
+                            <param id="0" name="Audio file">money</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment></comment>
                 <comment></comment>
                 <comment></comment>
@@ -424,6 +663,14 @@
                     <actions>
                         <action id="1" name="Set return value" sid="669232341194019" type="Function">
                             <param id="0" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="700526191555631" type="Function">
+                            <param id="0" name="Name">&quot;GoFromHub&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;fgbvserxrbtxrbetrn&quot;</param>
+                        </action>
+                        <action id="0" name="Set item" sid="161656335955562" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -525,7 +772,7 @@
                     <actions>
                         <action id="-10" name="Add to" sid="251166827395781" type="System">
                             <param id="0" name="Variable">ClockTime</param>
-                            <param id="1" name="Value">10</param>
+                            <param id="1" name="Value">15</param>
                         </action>
                         <action id="0" name="Call function" sid="409782161285555" type="Function">
                             <param id="0" name="Name">&quot;RefreshTime&quot;</param>
@@ -554,7 +801,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="458808771987203" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Не согласился(&quot;{###}Function.Call(&quot;Red&quot;)</param>
+                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Не удалось(&quot;{###}Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                         <action id="0" name="Play" sid="419765502445599" type="Audio">
                                             <param id="0" name="Audio file">down</param>
@@ -564,7 +811,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="176135065485737">
+                                <event-block bookmark="1" sid="176135065485737">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="865580116585528" type="System">
                                             <param id="0" name="Variable">Rand</param>
@@ -578,7 +825,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="906450240133880" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Сделал!&quot;{###}Function.Call(&quot;Green&quot;)</param>
+                                            <param id="1" name="Parameter {n}">PlayerMove.X{###}300{###}&quot;Сделали!&quot;{###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                         <action id="0" name="Play" sid="237054846839799" type="Audio">
                                             <param id="0" name="Audio file">up</param>
@@ -883,7 +1130,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="898274163251306" type="Function">
-                            <param id="0" name="Value">150/Damage</param>
+                            <param id="0" name="Value">int((70/Damage+30)*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
@@ -895,7 +1142,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="925718426062471" type="Function">
-                            <param id="0" name="Value">200/Damage</param>
+                            <param id="0" name="Value">int((100/Damage+50)*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
@@ -919,7 +1166,7 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="944214856361041" type="Function">
-                            <param id="0" name="Value">4*Heal</param>
+                            <param id="0" name="Value">3*Heal</param>
                         </action>
                     </actions>
                 </event-block>
@@ -931,21 +1178,91 @@
                     </conditions>
                     <actions>
                         <action id="1" name="Set return value" sid="767234171292742" type="Function">
-                            <param id="0" name="Value">300/(Defence+Heal)</param>
+                            <param id="0" name="Value">int((300/(Defence+Heal))*10)/10</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="673292473475076">
+                <event-block sid="994683540986867">
                     <conditions>
-                        <condition id="0" name="On function" sid="412925519628791" type="Function">
+                        <condition id="0" name="On function" sid="735567364409206" type="Function">
                             <param id="0" name="Name">&quot;TimeToMoney_Info&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="1" name="Set return value" sid="433911859757575" type="Function">
-                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60/Defence:60+10*Heal</param>
+                        <action id="1" name="Set return value" sid="346217431397202" type="Function">
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?int((60/Defence)*10)/10:70+10*Heal</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="354118415544963">
+                    <conditions>
+                        <condition id="0" name="On function" sid="856702292785336" type="Function">
+                            <param id="0" name="Name">&quot;DamageToMoney_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="585677620273844" type="Function">
+                            <param id="0" name="Value">Function.Param(0)=&quot;Time&quot;?60:50*Damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="538002899060563">
+                    <conditions>
+                        <condition id="0" name="On function" sid="477144822415762" type="Function">
+                            <param id="0" name="Name">&quot;MoneyToSceal_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="888467674676610" type="Function">
+                            <param id="0" name="Value">max(850-Stealth*50,300)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="889422616110029">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="637366371121299" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;MoneyToSceal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="344079586254829" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">cost</param>
+                                    <param id="1" name="Value">max(850-Stealth*50,300)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="673292473475076">
+                    <conditions>
+                        <condition id="0" name="On function" sid="412925519628791" type="Function">
+                            <param id="0" name="Name">&quot;MoneyToRandomSceal_Info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="428559599303656" type="Function">
+                            <param id="0" name="Value">max(1500-Stealth*100,500)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="907613763254881">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="158869395352429" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;MoneyToRandomSceal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="411056577114209" type="ButtonTrade">
+                                    <param id="0" name="Instance variable">cost</param>
+                                    <param id="1" name="Value">max(1500-Stealth*100,500)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -978,8 +1295,41 @@
                     <param id="0" name="Name">&quot;SaveGame&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-5" name="Scroll to X" sid="304743603710866" type="System">
+                    <param id="0" name="X">PlayerMove.X</param>
+                </action>
+                <action id="-6" name="Scroll to Y" sid="922710976713451" type="System">
+                    <param id="0" name="Y">PlayerMove.Y-320</param>
+                </action>
             </actions>
             <sub-events>
+                <event-block sid="117885487192680">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="309583838981695" type="PlayerMove">
+                            <param id="0" name="Object">MovingZOne</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="601690926816753">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="251832003650374" type="System">
+                                    <param id="0" name="Object">TiledBackground2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="301781548874116" type="System">
+                                    <param id="0" name="First value">TiledBackground2.UID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="186720041576421" type="TiledBackground2">
+                                    <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="403501187342117">
                     <conditions />
                     <actions>
@@ -1088,6 +1438,370 @@
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">-20</param>
                     <param id="1" name="Tag (optional)">&quot;fon&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="506823682890972">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="213963062593290" type="PlayerMove">
+                    <param id="0" name="Object">ChangeDirection</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="907656422688067">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="920619786044959" type="ChangeDirection">
+                            <param id="0" name="Instance variable">autho</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="307202876985692" type="PlayerMove">
+                            <param id="0" name="Instance variable">position</param>
+                            <param id="1" name="Value">ChangeDirection.direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="586483546870848">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="873959110363917" type="ChangeDirection">
+                            <param id="0" name="Instance variable">autho</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="995694711351210">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="684494058704121" type="ChangeDirection">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;up&quot;</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="207706288210794" type="Touch">
+                                    <param id="0" name="Object">DirectionButton</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="984883138589921" type="DirectionButton">
+                                    <param id="0" name="Animation">&quot;move&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="545799709050109">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="167204789004157" type="DirectionButton">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="542868638530466" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;up&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="442638377069445">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="377201815998652" type="System">
+                                                    <param id="0" name="Object">Decor</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="819675721749863" type="System">
+                                                    <param id="0" name="First value">Decor.UID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">ChangeDirection.uidback</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-29" name="Move to object" sid="920111263959882" type="PlayerMove">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="647101539799732" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidback</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="754053621823646">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="237159891124449" type="DirectionButton">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="628616721741134" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;horizontal&quot;</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="554594890786013" type="PlayerMove" />
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="405947253937105">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="688551916596261" type="System">
+                                                    <param id="0" name="Object">Decor</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="988205687928702" type="System">
+                                                    <param id="0" name="First value">Decor.UID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">ChangeDirection.uidfront</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-29" name="Move to object" sid="563670844826079" type="PlayerMove">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="639298899522784" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidfront</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="800916880861352">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="568287256655371" type="ChangeDirection">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;down&quot;</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="952309331501208" type="Touch">
+                                    <param id="0" name="Object">DirectionButton</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="790732832052902" type="DirectionButton">
+                                    <param id="0" name="Animation">&quot;move&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="128428688682130">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="547107871914032" type="DirectionButton">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="954935837930894" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;down&quot;</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="251187835383553" type="PlayerMove">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">ChangeDirection</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="976149868725705">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="526151659127180" type="System">
+                                                    <param id="0" name="Object">Decor</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="697763614348175" type="System">
+                                                    <param id="0" name="First value">Decor.UID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">ChangeDirection.uidback</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-29" name="Move to object" sid="423804295203981" type="PlayerMove">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="283090017142520" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidback</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="198426472659497">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="184042621593714" type="DirectionButton">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Height">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="407567600999489" type="PlayerMove">
+                                            <param id="0" name="Instance variable">position</param>
+                                            <param id="1" name="Value">&quot;horizontal&quot;</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="195119181779083" type="PlayerMove" />
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="383259277813175">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="904844659232744" type="System">
+                                                    <param id="0" name="Object">Decor</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="898915815577382" type="System">
+                                                    <param id="0" name="First value">Decor.UID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">ChangeDirection.uidfront</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-29" name="Move to object" sid="349916115783080" type="PlayerMove">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Object">Decor</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="216341139252633" type="System">
+                                                    <param id="0" name="Variable">Pause_PlayerZ</param>
+                                                    <param id="1" name="Value">ChangeDirection.uidfront</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="549323547568693">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="798832697041781" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="893303867160620" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="937996331385535">
+            <conditions>
+                <condition id="9" name="On item exists" sid="675923022782198" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="539218453739003">
+                    <conditions>
+                        <condition id="12" name="Compare value" sid="817378604090593" type="LocalStorage">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="833378865923553" type="HandQlue" />
+                    </actions>
+                </event-block>
+                <event-block sid="525874602392221">
+                    <conditions>
+                        <condition id="12" inverted="1" name="Compare value" sid="739485395309906" type="LocalStorage">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="EaseTween" id="10" name="Start" sid="911297228602579" type="VIKA" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="974600327204294">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="626297207992694" type="System">
+                    <param id="0" name="Interval (seconds)">1.5</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="941190114154432" type="HandQlue" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="777999278177221" type="HandQlue">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="423687117189566" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="5" name="Set frame" sid="973907337147500" type="HandQlue">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="368204726398603" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="5" name="Set frame" sid="609550386993298" type="HandQlue">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878829421058023">
+            <conditions>
+                <condition behavior="EaseTween" id="4" name="On tween end" sid="800643620750541" type="VIKA" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="238242437095195">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="502678869146087" type="FloatWindow">
+                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="764497117972200" type="InfoText">
+                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="244553632609282" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="712672832652879" type="InfoText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="972159068554762" type="FloatWindow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="927314039202097" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="498049521576429">
+            <conditions>
+                <condition id="14" name="On tap" sid="253097450042415" type="Touch" />
+                <condition id="-7" name="Compare instance variable" sid="833084835096816" type="VIKA">
+                    <param id="0" name="Instance variable">stage</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-16" name="Is on layer" sid="598781977762875" type="FloatWindow">
+                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                </condition>
+                <condition id="-16" name="Is on layer" sid="661272335896135" type="InfoText">
+                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="EaseTween" id="11" name="Reverse" sid="962892027053170" type="VIKA">
+                    <param id="0" name="Reverse Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="675842436805847" type="InfoText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="370179225243422" type="FloatWindow">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="195509971579050" type="VIKA">
+                    <param id="0" name="Instance variable">stage</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="0" name="Set item" sid="373814548749326" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Learn&quot;</param>
+                    <param id="1" name="Value">2</param>
                 </action>
             </actions>
         </event-block>

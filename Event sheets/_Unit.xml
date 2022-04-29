@@ -12,7 +12,7 @@
             <actions>
                 <action id="-3" name="Create object" sid="459331221319111" type="System">
                     <param id="0" name="Object to create">Stamp</param>
-                    <param id="1" name="Layer">0</param>
+                    <param id="1" name="Layer">Function.Param(1)</param>
                     <param id="2" name="X">720/4+random(0,720/2)</param>
                     <param id="3" name="Y">1280/4+random(0,1280/2)</param>
                 </action>
@@ -34,10 +34,10 @@
                     </conditions>
                     <actions>
                         <action behavior="EaseTween" id="19" name="Set target X" sid="684157063392688" type="Stamp">
-                            <param id="0" name="Target X">450</param>
+                            <param id="0" name="Target X">900</param>
                         </action>
                         <action behavior="EaseTween" id="20" name="Set target Y" sid="675080853204410" type="Stamp">
-                            <param id="0" name="Target Y">240</param>
+                            <param id="0" name="Target Y">480</param>
                         </action>
                     </actions>
                 </event-block>

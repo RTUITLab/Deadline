@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_Warning</name>
+    <events>
+        <comment></comment>
+        <event-block sid="943320045289531">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="304288196843560" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="361647869179569" type="Audio">
+                    <param id="0" name="Tag">&quot;victory&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="319433308412143" type="Audio">
+                    <param id="0" name="Audio file">bah_bah</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">40</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="140364957545375" type="System">
+                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="725948514190856">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="555278867561061" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="462353467728354" type="System">
+                            <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="1" name="Opacity">90</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="547651165371140">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="684689750118666" type="System">
+                                    <param id="0" name="Tag">&quot;toHub&quot;</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="751990662504326" type="System">
+                                    <param id="0" name="Layout">Hab</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="302218962779870">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="271991691670076" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-42" name="Signal" sid="530505621625642" type="System">
+                                    <param id="0" name="Tag">&quot;toHub&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="277129669902432">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="197803347481993" type="SF_White">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;time&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="226552544723456" type="SF_White">
+                            <param id="0" name="Text">ClockTime&lt;1140?&quot;-$&quot;&amp;int((1440-ClockTime)/60)&amp;&quot;$Часов$Осталось$-&quot;:&quot;-$&quot;&amp;int((1440-ClockTime)/5)*5&amp;&quot;$Минут$Осталось$-&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="389553256971700">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="596731609828168" type="SF_White">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;main&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="711706416720999" type="SF_White">
+                            <param id="0" name="Text">(victorie=1?&quot;Первый&quot;:victorie=2?&quot;Второй&quot;:victorie=3? &quot;Третий&quot; :victorie=4?&quot;Четвёртый&quot;:&quot;Пятый&quot;)&amp;&quot;$Зачёт&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="473973170177636">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="629187692435592" type="Warning">
+                            <param id="0" name="Animation">&quot;MainText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="193973767093540" type="Warning">
+                            <param id="0" name="Frame number">victorie-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="767889531549939">
+            <conditions>
+                <condition id="14" name="On tap" sid="159584039079376" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-42" name="Signal" sid="795567620772135" type="System">
+                    <param id="0" name="Tag">&quot;toHub&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="181171582566612">
+            <conditions>
+                <condition id="-17" name="Compare opacity" sid="489517150837825" type="System">
+                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">100</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="172051085797467" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="374329026604656" type="System">
+                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                    <param id="1" name="Opacity">LayerOpacity(&quot;Layer 0&quot;)-1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

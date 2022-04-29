@@ -10,18 +10,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Zachet</layout>
-        <layout order="4">Menu</layout>
-        <layout order="5">Evil</layout>
-        <layout order="6">Norm</layout>
-        <layout order="7">LabaMan</layout>
-        <layout order="8">PracticMan</layout>
-        <layout order="10">End</layout>
-        <event-sheet order="0">Variables</event-sheet>
-        <event-sheet active="1" order="1">Fight</event-sheet>
-        <event-sheet order="3">_Debug</event-sheet>
-        <event-sheet order="9">_SaveLoad</event-sheet>
-        <event-sheet order="11">_End</event-sheet>
+        <layout order="0">Hab</layout>
+        <layout active="1" order="3">Menu</layout>
+        <layout order="5">Zachet</layout>
+        <layout order="7">End</layout>
+        <event-sheet order="1">_Hab</event-sheet>
+        <event-sheet order="2">_Pause</event-sheet>
+        <event-sheet order="4">Variables</event-sheet>
+        <event-sheet order="6">_Unit</event-sheet>
+        <event-sheet order="8">_Test</event-sheet>
+        <event-sheet order="9">Fight</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -65,5 +63,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/HandQlue/" />
         <folder expanded="1" path="animation-folder/VIKA/" />
         <folder expanded="1" path="animation-folder/DelayMask/" />
+        <folder expanded="1" path="animation-folder/fireball/" />
+        <folder expanded="1" path="animation-folder/ChangeDirection/" />
+        <folder expanded="1" path="animation-folder/MovingZOne/" />
+        <folder expanded="1" path="animation-folder/Warning/" />
     </folders-expanded>
 </c2uistate>

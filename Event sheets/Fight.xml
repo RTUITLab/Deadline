@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Fight</name>
     <events>
+        <include>_Pause</include>
         <include>_Debug</include>
         <include>_Unit</include>
         <variable constant="0" name="ClockTime" sid="708823125823368" static="0" type="number">540</variable>
@@ -100,6 +101,28 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="163817545145758">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="246244727039306" type="InfoText">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Enemy_Delay&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="342078779686371" type="Flag">
+                                            <param id="0" name="Animation">&quot;Atake&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="335004258808333" type="InfoText">
+                                            <param id="0" name="Text">max(Enemy.NextTurn-ClockTime,0)&amp; &quot; мин.&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="562979683442515" type="Flag">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="414934711811059">
                             <conditions>
@@ -217,7 +240,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="389378980871629" type="Player">
                             <param id="0" name="Instance variable">Hp</param>
-                            <param id="1" name="Value">45+Player.Heal*5</param>
+                            <param id="1" name="Value">Function.Call(&quot;Max_Hp&quot;)</param>
                         </action>
                         <action id="0" name="Call function" sid="175075663098957" type="Function">
                             <param id="0" name="Name">&quot;Refresh Player Hp&quot;</param>
@@ -393,7 +416,7 @@
                                 </action>
                                 <action id="-12" name="Subtract from" sid="382602744182278" type="Enemy">
                                     <param id="0" name="Instance variable">Hp</param>
-                                    <param id="1" name="Value">Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                    <param id="1" name="Value">Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY</param>
                                 </action>
                                 <action id="0" name="Call function" sid="212368193812159" type="Function">
                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -401,7 +424,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="117320167329149" type="Function">
                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;int((Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -474,7 +497,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="329320651871257" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;+&quot;&amp;int((Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -502,7 +525,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="794568263646902" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp;  Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Удалось скатать!&quot; &amp; newline&amp; &quot;+&quot;&amp;  int((Function.Call(&quot;Papper_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -594,7 +617,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="569159132264863" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Скатал!&quot; &amp; newline&amp; &quot;+&quot;&amp; Function.Call(&quot;Phone_Krit&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Удалось скатать!&quot; &amp; newline&amp; &quot;+&quot;&amp; int((Function.Call(&quot;Phone_Krit&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -658,7 +681,7 @@
                                             <actions>
                                                 <action id="-12" name="Subtract from" sid="368533374799137" type="Enemy">
                                                     <param id="0" name="Instance variable">Hp</param>
-                                                    <param id="1" name="Value">Function.Call(&quot;Friend_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                                    <param id="1" name="Value">int((Function.Call(&quot;Friend_Krit&quot;)*Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY)*10)/10</param>
                                                 </action>
                                                 <action id="0" name="Call function" sid="398644980794802" type="Function">
                                                     <param id="0" name="Name">&quot;Refresh Enemy Hp&quot;</param>
@@ -674,7 +697,7 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="605893602642656" type="Function">
                                                     <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;)*DAMAGEMULTIPLAY{###}Function.Call(&quot;Red&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###} &quot;+&quot;&amp; int((Function.Call(&quot;Atack_Damage&quot;)*Function.Call(&quot;Friend_Krit&quot;)*DAMAGEMULTIPLAY)*10)/10{###}Function.Call(&quot;Red&quot;)</param>
                                                 </action>
                                                 <action id="0" name="Play" sid="723700888039074" type="Audio">
                                                     <param id="0" name="Audio file">krit</param>
@@ -757,19 +780,30 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="557577275321200" type="Function">
+                                        <action id="0" name="Call function" sid="142276012012513" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Отвлечён!&quot; {###}Function.Call(&quot;Green&quot;)</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Где?&quot; {###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="694269632302029" type="Function">
-                                            <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
-                                            <param id="1" name="Parameter {n}">3+Player.Defence*2+1</param>
+                                        <action id="-11" name="Add to" sid="686212540247381" type="Enemy">
+                                            <param id="0" name="Instance variable">NextTurn</param>
+                                            <param id="1" name="Value">Player.Defence+1</param>
                                         </action>
                                         <action id="0" name="Play" sid="434007735911929" type="Audio">
                                             <param id="0" name="Audio file">up</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="319655301535150" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="694269632302029" type="Function">
+                                            <param id="0" name="Name">&quot;Distruct_Enemy&quot;</param>
+                                            <param id="1" name="Parameter {n}">3+Player.Defence*2+1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="557577275321200" type="Function">
+                                            <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Отвлечение успешно!&quot; {###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                         <action id="0" name="Call function" sid="224051647406169" type="Function">
                                             <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
@@ -845,7 +879,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="404686479421389" type="Function">
                                             <param id="0" name="Name">&quot;SpawnTextOfAtack&quot;</param>
-                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Разжалобил!&quot; {###}Function.Call(&quot;Green&quot;)</param>
+                                            <param id="1" name="Parameter {n}">Enemy.ImagePointX(1){###}Enemy.ImagePointY(1){###}&quot;Бедняжка!&quot; {###}Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="253581107339080" type="System">
                                             <param id="0" name="Seconds">0.1</param>
@@ -1071,7 +1105,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="400528352701146" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; int(Function.Call(&quot;Atack_Simple&quot;)*DAMAGEMULTIPLAY*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="115416559694637" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1112,7 +1146,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="589066830324596" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс +&quot; &amp; int(Function.Call(&quot;Atack_Damage&quot;)*DAMAGEMULTIPLAY*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="192101247226154" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1129,7 +1163,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="621532467239716" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; Function.Call(&quot;Papper_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; int(Function.Call(&quot;Papper_Chance&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="762143900640898" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1149,7 +1183,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="306977467020293" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Papper_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; int(Function.Call(&quot;Papper_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="306683650577651" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1169,7 +1203,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="758240500940493" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; Function.Call(&quot;Papper_Dungerous&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; int(Function.Call(&quot;Papper_Dungerous&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="776745437388313" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1220,7 +1254,7 @@
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
                                         </action>
                                         <action id="0" name="Set text" sid="718055917961902" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; Function.Call(&quot;Phone_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс Скатать &quot; &amp; int(Function.Call(&quot;Phone_Chance&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="668636719292017" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1240,7 +1274,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="627383070751143" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Phone_Krit&quot;,5)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; int(Function.Call(&quot;Phone_Krit&quot;,5)*DAMAGEMULTIPLAY*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="630951619500052" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1260,7 +1294,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="301006152936648" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; Function.Call(&quot;Phone_Dungerous&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс спалиться &quot; &amp; int(Function.Call(&quot;Phone_Dungerous&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="734366173612250" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1315,7 +1349,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="834310664830380" type="InfoText">
-                                            <param id="0" name="Text">&quot;Урон от препода +&quot; &amp; Function.Call(&quot;Friend_Self_Damage&quot;)</param>
+                                            <param id="0" name="Text">&quot;Урон от препода +&quot; &amp; int(Function.Call(&quot;Friend_Self_Damage&quot;)*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="447591535790578" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1335,7 +1369,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="432783823781034" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс договориться &quot; &amp; Function.Call(&quot;Friend_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс договориться &quot; &amp; int(Function.Call(&quot;Friend_Chance&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="213913218070551" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1355,7 +1389,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="705971703499489" type="InfoText">
-                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; Function.Call(&quot;Friend_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY</param>
+                                            <param id="0" name="Text">&quot;Прогресс за скатывание +&quot; &amp; int(Function.Call(&quot;Friend_Krit&quot;,5)*Function.Call(&quot;Atack_Damage&quot;,5)*DAMAGEMULTIPLAY*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="502828349121046" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1386,7 +1420,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="855608112732382" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс отвлечь &quot; &amp; Function.Call(&quot;Distruct_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс отвлечь &quot; &amp; int(Function.Call(&quot;Distruct_Chance&quot;,5)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="843309382761093" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1406,7 +1440,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="311471421219889" type="InfoText">
-                                            <param id="0" name="Text">&quot;Длительность отвлечения &quot; &amp; 3+Player.Defence*2 &amp;&quot; минут&quot;</param>
+                                            <param id="0" name="Text">&quot;Длительность отвлечения &quot; &amp; int((3+Player.Defence*2)*10)/10 &amp;&quot; минут&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="956437395958128" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
@@ -1426,13 +1460,33 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="295022424549772" type="InfoText">
-                                            <param id="0" name="Text">&quot;Уменьшение шанса спалиться на &quot; &amp; Player.Defence*4&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Уменьшение шанса спалиться на &quot; &amp;int(( Player.Defence*4)*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="822866827269262" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="613557758017674" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="550792705293401">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="865399212114456" type="InfoText">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;info4&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="862773573460963" type="InfoText">
+                                            <param id="0" name="Text">&quot;Отсрочить удар на &quot; &amp; int((Player.Defence)*10)/10 &amp;&quot; минут&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="269484451805249" type="InfoText">
+                                            <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="693475212895811" type="InfoText">
+                                            <param id="0" name="Color">Function.Call(&quot;Red&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1630,7 +1684,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="229619788459728" type="InfoText">
-                                            <param id="0" name="Text">&quot;Восстановление авторитета + &quot; &amp; Function.Call(&quot;Heal_Cry&quot;,5)</param>
+                                            <param id="0" name="Text">&quot;Восстановление авторитета + &quot; &amp; int((Function.Call(&quot;Heal_Cry&quot;,5))*10)/10</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="681965767151119" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1647,7 +1701,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="977467149494033" type="InfoText">
-                                            <param id="0" name="Text">&quot;Шанс разжалобить &quot; &amp; Function.Call(&quot;Cry_Chance&quot;,5)&amp;&quot;%&quot;</param>
+                                            <param id="0" name="Text">&quot;Шанс разжалобить &quot; &amp; int((Function.Call(&quot;Cry_Chance&quot;,5))*10)/10&amp;&quot;%&quot;</param>
                                         </action>
                                         <action id="4" name="Set font color" sid="250398354249185" type="InfoText">
                                             <param id="0" name="Color">Function.Call(&quot;Green&quot;)</param>
@@ -1690,6 +1744,18 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="500485188797744">
+                            <conditions>
+                                <condition id="0" name="On function" sid="921229810137501" type="Function">
+                                    <param id="0" name="Name">&quot;Atack_Simple&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="160431957381833" type="Function">
+                                    <param id="0" name="Value">int(Function.Call(&quot;Atack_Damage&quot;)^(5/4)*10)/10</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment></comment>
                         <comment></comment>
                         <comment>Успех/неуспех списывания со шпоры</comment>
@@ -1701,7 +1767,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="774514465707960" type="Function">
-                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;):Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+Function.Call(&quot;Atack_Damage&quot;)) </param>
+                                    <param id="0" name="Value">Function.Param(0) &gt;0?PAPPER_BASE_CHANCE+2*Player.Damage:Function.Call(&quot;Random_Event&quot;,PAPPER_BASE_CHANCE+2*Player.Damage)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1714,7 +1780,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="388935862805306" type="Function">
-                                    <param id="0" name="Value">max(round(PAPPER_BASE_KRIT+2*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(4/8)*10)/10,1)</param>
+                                    <param id="0" name="Value">max(round(PAPPER_BASE_KRIT+3*max(0,Function.Call(&quot;Atack_Damage&quot;)+Player.Stealth-2*abs(Player.Stealth-Player.Damage))^(5/8)*10)/10,1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1765,7 +1831,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="629056247524474" type="Function">
-                                    <param id="0" name="Value">round((PHONE_BASE_KRIT+Player.Stealth^(3/4))*10)/10</param>
+                                    <param id="0" name="Value">round((PHONE_BASE_KRIT+Player.Stealth^(4/4))*10)/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1827,7 +1893,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="925339002268387" type="Function">
-                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal^(1/2)</param>
+                                    <param id="0" name="Value">FRIEND_BASE_KRIT+Player.Heal^(2/2)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1874,7 +1940,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="721167678026782" type="Function">
-                                    <param id="0" name="Value">max(Function.Param(0)-Player.Defence/4+0.25,Function.Param(0)*0.1)</param>
+                                    <param id="0" name="Value">max(Function.Param(0)-Player.Defence*0.3+0.3,Function.Param(0)*0.1)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1902,7 +1968,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="435045371790396" type="Function">
-                                    <param id="0" name="Value">5*Player.Heal</param>
+                                    <param id="0" name="Value">3*Player.Heal+7</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1915,7 +1981,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="326591357222520" type="Function">
-                                    <param id="0" name="Value">25</param>
+                                    <param id="0" name="Value">30</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1958,7 +2024,7 @@
                             </conditions>
                             <actions>
                                 <action id="1" name="Set return value" sid="174905142172302" type="Function">
-                                    <param id="0" name="Value">7*Player.Heal+3</param>
+                                    <param id="0" name="Value">3*Player.Heal+7</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2109,6 +2175,41 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="655143513970063">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="172979589078984" type="InfoText">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Enemy_Delay&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="785872018659411" type="InfoText">
+                                    <param id="0" name="Text">max(Enemy.NextTurn-ClockTime,0)&amp; &quot; мин.&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="810746655232551">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="875360733808286" type="System">
+                                            <param id="0" name="First value">Enemy.NextTurn-ClockTime</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="421068406402011" type="Flag">
+                                            <param id="0" name="Animation">&quot;Atake&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="507052340022986" type="Flag">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment></comment>
                 <comment>Обновить здоровье врага</comment>
@@ -2163,17 +2264,17 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="360506391576510" type="ProgressBar">
-                                            <param id="0" name="Width">int(Enemy.Hp)/Function.Call(&quot;Max_Hp&quot;)*ProgressBar.MaxWight</param>
+                                            <param id="0" name="Width">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="515996222735382" type="Stats">
-                                            <param id="0" name="Text">int(Enemy.Hp)&amp;&quot;/&quot;&amp;Function.Call(&quot;Max_Hp&quot;)</param>
+                                            <param id="0" name="Text">0&amp;&quot;/&quot;&amp;int(Enemy.MaxHp)</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="591916411497449" type="System">
                                             <param id="0" name="Seconds">1.5</param>
                                         </action>
                                         <action id="0" name="Call function" sid="868407906930071" type="Function">
                                             <param id="0" name="Name">&quot;Stamp&quot;</param>
-                                            <param id="1" name="Parameter {n}">0</param>
+                                            <param id="1" name="Parameter {n}">0{###}1</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="405553062032741" type="System">
                                             <param id="0" name="Seconds">1.5</param>
@@ -2197,7 +2298,7 @@
                                             <param id="0" name="Audio file">victory</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                            <param id="1" name="Tag (optional)">&quot;victory&quot;</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -2389,6 +2490,14 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="699650517367847" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;delay_Papper&quot;{###}5</param>
+                        </action>
+                        <action id="0" name="Call function" sid="753152893519507" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;delay_Phone&quot;{###}5</param>
+                        </action>
                         <action id="-12" name="Set group active" sid="257847345869729" type="System">
                             <param id="0" name="Group name">&quot;EnemyAttack&quot;</param>
                             <param id="1" name="State">1</param>
@@ -2408,14 +2517,6 @@
                         </action>
                         <action id="-42" name="Signal" sid="776730126530265" type="System">
                             <param id="0" name="Tag">&quot;Fail&quot;</param>
-                        </action>
-                        <action id="0" name="Call function" sid="699650517367847" type="Function">
-                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;delay_Papper&quot;{###}5</param>
-                        </action>
-                        <action id="0" name="Call function" sid="753152893519507" type="Function">
-                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;delay_Phone&quot;{###}5</param>
                         </action>
                     </actions>
                 </event-block>
@@ -2491,8 +2592,8 @@
                         <condition id="-9" name="Layer is visible" sid="158494738162212" type="System">
                             <param id="0" name="Layer">&quot;Helper&quot;</param>
                         </condition>
-                        <condition id="-16" inverted="1" name="Is on layer" sid="442335611110313" type="InfoText">
-                            <param id="0" name="Layer">&quot;Block&quot;</param>
+                        <condition id="-16" name="Is on layer" sid="442335611110313" type="InfoText">
+                            <param id="0" name="Layer">&quot;Helper&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -2539,8 +2640,8 @@
                                 <condition id="4" name="Is touching object" sid="503756742294043" type="Touch">
                                     <param id="0" name="Object">Button</param>
                                 </condition>
-                                <condition id="-16" inverted="1" name="Is on layer" sid="377013532052407" type="InfoText">
-                                    <param id="0" name="Layer">&quot;Block&quot;</param>
+                                <condition id="-16" name="Is on layer" sid="635661636647084" type="InfoText">
+                                    <param id="0" name="Layer">&quot;Helper&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -2663,16 +2764,20 @@
                                                         <condition id="-12" name="Repeat" sid="425295543924726" type="System">
                                                             <param id="0" name="Count">Enemy.MaxPractic-Enemy.CurrenPractic</param>
                                                         </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="599737815298299" type="fireball">
+                                                            <param id="0" name="Instance variable">isPractic</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-16" name="Wait" sid="435232001673109" type="System">
                                                             <param id="0" name="Seconds">loopindex*0.4</param>
                                                         </action>
-                                                        <action id="0" name="Play" sid="525705470835598" type="Audio">
-                                                            <param id="0" name="Audio file">blow</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">0</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        <action behavior="EaseTween" id="21" name="Group Start" sid="589685799028183" type="fireball">
+                                                            <param id="0" name="Force Mode">1</param>
+                                                            <param id="1" name="Group">&quot;P&quot;</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="123615896777299" type="fireball">
+                                                            <param id="0" name="Visibility">1</param>
                                                         </action>
                                                         <action id="5" name="Set frame" sid="127184070156347" type="Flag">
                                                             <param id="0" name="Frame number">1</param>
@@ -2692,8 +2797,17 @@
                                                         <action id="-16" name="Wait" sid="980127821971173" type="System">
                                                             <param id="0" name="Seconds">0.2</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="525705470835598" type="Audio">
+                                                            <param id="0" name="Audio file">blow</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
                                                         <action id="5" name="Set frame" sid="434830710399782" type="Flag">
                                                             <param id="0" name="Frame number">0</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="799575603033426" type="fireball">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2809,10 +2923,17 @@
                                                         <condition id="-12" name="Repeat" sid="247005106315900" type="System">
                                                             <param id="0" name="Count">Enemy.MaxLab-Enemy.CurrentLab</param>
                                                         </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="797902235774237" type="fireball">
+                                                            <param id="0" name="Instance variable">isPractic</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-16" name="Wait" sid="158213901662344" type="System">
                                                             <param id="0" name="Seconds">loopindex*0.4</param>
+                                                        </action>
+                                                        <action behavior="EaseTween" id="24" name="Force Start" sid="257042001573705" type="fireball" />
+                                                        <action id="-15" name="Set visible" sid="285881119229183" type="fireball">
+                                                            <param id="0" name="Visibility">1</param>
                                                         </action>
                                                         <action id="0" name="Play" sid="453003965827697" type="Audio">
                                                             <param id="0" name="Audio file">blow</param>
@@ -2840,6 +2961,9 @@
                                                         </action>
                                                         <action id="5" name="Set frame" sid="749239972094546" type="Flag">
                                                             <param id="0" name="Frame number">0</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="749205863300716" type="fireball">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3174,12 +3298,84 @@
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                         <action id="-16" name="Wait" sid="914394900233769" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="-42" name="Signal" sid="469914754494941" type="System">
-                                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                            <param id="0" name="Seconds">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="737003551788030">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="470637427491998" type="System">
+                                                    <param id="0" name="Variable">ClockTime</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">Enemy.NextTurn</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-42" name="Signal" sid="469914754494941" type="System">
+                                                    <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="285359954365362" type="Function">
+                                                    <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="709408116748201">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="213782157532864" type="System">
+                                                    <param id="0" name="Variable">ClockTime</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">Enemy.NextTurn</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="769943837179110" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="303936211196346" type="Enemy">
+                                                    <param id="0" name="Instance variable">NextTurn</param>
+                                                    <param id="1" name="Value">Enemy.WaitToAttack</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="193873992028047" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-12" name="Set group active" sid="363738595471023" type="System">
+                                                    <param id="0" name="Group name">&quot;EnemyAttack&quot;</param>
+                                                    <param id="1" name="State">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="607863097676132" type="Function">
+                                                    <param id="0" name="Name">&quot;EnemyAttack&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Function.Call(&quot;CustomAttack&quot;)</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="711967708536985" type="Function">
+                                                    <param id="0" name="Name">&quot;RefreshDelay&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="963918723836322">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="456284053827015" type="InfoText">
+                                                            <param id="0" name="Instance variable">Type</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;Enemy_Delay&quot;</param>
+                                                        </condition>
+                                                        <condition id="2" name="Is playing" sid="745210957103629" type="Flag">
+                                                            <param id="0" name="Animation">&quot;Atake&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="582438578097419" type="InfoText">
+                                                            <param id="0" name="Text">max(Enemy.NextTurn-ClockTime,0)&amp; &quot; мин.&quot;</param>
+                                                        </action>
+                                                        <action id="5" name="Set frame" sid="616135043234748" type="Flag">
+                                                            <param id="0" name="Frame number">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="639015537576416">
                                     <conditions />
@@ -3205,6 +3401,24 @@
         </event-group>
         <event-group description="" sid="380407515578473" title="Delay">
             <sub-events>
+                <event-block sid="902541972749547">
+                    <conditions>
+                        <condition id="0" name="On function" sid="998758208390760" type="Function">
+                            <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="306803990863886" type="DelayMask">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="996634290686402" type="DelayMask">
+                            <param id="0" name="Instance variable">delay</param>
+                            <param id="1" name="Value">ClockTime+Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="149184262371038">
                     <conditions>
                         <condition id="0" name="On function" sid="760034253717112" type="Function">
@@ -3296,21 +3510,772 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="902541972749547">
+        <event-group description="" sid="849651047627597" title="Learn">
+            <sub-events>
+                <event-block sid="276273881737726">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="163086649209044" type="Keyboard">
+                            <param id="0" name="Key">82</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Remove item" sid="838160538176987" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="517837396093753">
+                    <conditions>
+                        <condition id="0" name="On function" sid="760261891491558" type="Function">
+                            <param id="0" name="Name">&quot;disableColision&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="931983376031565" type="Button">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="187346334512601">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="790666085712659" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="EaseTween" id="1" name="Set duration" sid="717702024047511" type="MovingPanel">
+                            <param id="0" name="Duration">0.5</param>
+                        </action>
+                        <action behavior="EaseTween" id="10" name="Start" sid="933808771167241" type="MovingPanel" />
+                        <action id="-13" name="Set boolean" sid="449115070412777" type="VIKA">
+                            <param id="0" name="Instance variable">heal</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="839473240359128" type="VIKA">
+                            <param id="0" name="Instance variable">stealt</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="731061008527490" type="VIKA">
+                            <param id="0" name="Instance variable">distruct</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="353348352918680" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="732147221829020" type="System">
+                            <param id="0" name="Group name">&quot;Learn&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="772004972794005">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="637686645986641" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="360150163754146">
+                            <conditions />
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="144803103385119" type="Button">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="892936484255235" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action behavior="EaseTween" id="10" name="Start" sid="334639112049616" type="VIKA" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="463706338344861">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-41" name="Wait for signal" sid="329051780452473" type="System">
+                                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="21" name="Group Start" sid="723023766175161" type="MovingPanel">
+                                            <param id="0" name="Force Mode">0</param>
+                                            <param id="1" name="Group">&quot;Cry&quot;</param>
+                                        </action>
+                                        <action id="-11" name="Add to" sid="710211552944415" type="VIKA">
+                                            <param id="0" name="Instance variable">stage</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="837737313585748">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-41" name="Wait for signal" sid="459858489095075" type="System">
+                                            <param id="0" name="Tag">&quot;FinishDamage&quot;</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="21" name="Group Start" sid="281865964738607" type="MovingPanel">
+                                            <param id="0" name="Force Mode">0</param>
+                                            <param id="1" name="Group">&quot;Actions&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="828190159479320" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="10" name="Start" sid="861037942144761" type="VIKA" />
+                                        <action id="-10" name="Set value" sid="128593391313752" type="VIKA">
+                                            <param id="0" name="Instance variable">stage</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="596082474842809">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-41" name="Wait for signal" sid="310260985020891" type="System">
+                                            <param id="0" name="Tag">&quot;AttackEnd&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="209400142474799" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-41" name="Wait for signal" sid="406614278567290" type="System">
+                                            <param id="0" name="Tag">&quot;PracticaAttack&quot;</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="21" name="Group Start" sid="820929998265697" type="MovingPanel">
+                                            <param id="0" name="Force Mode">0</param>
+                                            <param id="1" name="Group">&quot;Practic&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="138429908317140">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-41" name="Wait for signal" sid="957946601365557" type="System">
+                                            <param id="0" name="Tag">&quot;Fail&quot;</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="21" name="Group Start" sid="319559406366827" type="MovingPanel">
+                                            <param id="0" name="Force Mode">0</param>
+                                            <param id="1" name="Group">&quot;Distruction&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="384581986764848">
+                    <conditions>
+                        <condition behavior="EaseTween" id="0" name="Is active" sid="445023054757099" type="MovingPanel" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="137042996801794">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="561891735265499" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Actions&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="648929934287443">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="673899328565334" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Friend&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="533448789459385" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Phone&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="317096714045276" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Papper&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="878226440921246" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="309045309840564">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="430144664969939" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Distruction&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="606603651119789">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="764908821028674" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Distruct&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="145203653377395" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="709884175159911">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="884257736849783" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Cry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="822093555104423">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="464772324545458" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Cry&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="752373759155400" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="323658679808221">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="702768738902923" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Practic&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="563496492205236">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="912238372977686" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Practic&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="988584426459075" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Laba&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="884587362655691" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Heal&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="946905087101282" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;PracticCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="987464843521317" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;LabCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="865623398907913" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;HealCount&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="611646903641804" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="366406302110102" type="Stats">
+                                            <param id="0" name="X">MovingPanel.X+128</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="103101345166568">
+                    <conditions>
+                        <condition behavior="EaseTween" id="4" name="On tween end" sid="834470230626220" type="MovingPanel" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="476725755020781">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="860671168033076" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Actions&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="872559944408827">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="478931623257284" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Friend&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="937261531227449" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Phone&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="868423267837691" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Papper&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="604111650532142" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="135177028844316">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="440789153869052" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Distruction&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="131505703760437">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="796931668885761" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Distruct&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="777807409447177" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="306327239084594">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="854052259878118" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Cry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="147000709741778">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="360105158788559" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Cry&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="176531752806813" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="150479010631875">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="176220518022905" type="MovingPanel">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Practic&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="112013314220626">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="409590327391781" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Practic&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="589133281323938" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Laba&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="923098911041086" type="Button">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Heal&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="536498288593783" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;PracticCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="952502083404047" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;LabCount&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="607059793627238" type="Stats">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;HealCount&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="159417464514974" type="Button">
+                                            <param id="0" name="X">MovingPanel.X</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="565497225266318" type="Stats">
+                                            <param id="0" name="X">MovingPanel.X+128</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="470592933963177">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="483267002138378" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="299520680624267" type="MovingPanel" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="815547172977136">
+                    <conditions>
+                        <condition behavior="EaseTween" id="4" name="On tween end" sid="243897022413272" type="VIKA" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="180728349827619">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="317383280319493" type="FloatWindow">
+                                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="457945458910872" type="InfoText">
+                                    <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="703995730244946" type="VIKA">
+                                    <param id="0" name="Instance variable">stage</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="232682253833450" type="VIKA">
+                                    <param id="0" name="Instance variable">stage</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="456278942160639" type="InfoText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="974941833476923" type="FloatWindow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="522884355330635" type="HandQlue" />
+                                <action id="-3" name="Set position" sid="750271330450496" type="HandQlue">
+                                    <param id="0" name="X">240</param>
+                                    <param id="1" name="Y">736</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="720113021462332" type="Button">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="424414653574687">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="731949543800775" type="VIKA">
+                                            <param id="0" name="Instance variable">stage</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="315941340278847" type="InfoText">
+                                            <param id="0" name="Text">&quot;Чтобы узнать информацию о действии, зажмите кнопку.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="576546220856703">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="249271888053850" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="457356624359655">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="906401644846507" type="System">
+                                    <param id="0" name="Interval (seconds)">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="913735686533078" type="HandQlue">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="359699219330246" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="511958501303075" type="HandQlue">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="563445856068607" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="389760995251437" type="HandQlue">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="380059665471690">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="325095742408748" type="Touch">
+                                    <param id="0" name="Object">Button</param>
+                                </condition>
+                                <condition id="11" name="Collisions enabled" sid="753958991263596" type="Button" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="164720827441586" type="VIKA">
+                                    <param id="0" name="Instance variable">stage</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="EaseTween" id="11" name="Reverse" sid="687025294853725" type="VIKA">
+                                    <param id="0" name="Reverse Mode">0</param>
+                                </action>
+                                <action disabled="1" id="-16" name="Set opacity" sid="980539747023494" type="HandQlue">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="762518643105934" type="HandQlue">
+                                    <param id="0" name="X">-192</param>
+                                    <param id="1" name="Y">-704</param>
+                                </action>
+                                <action id="0" name="Call function" sid="789684179796196" type="Function">
+                                    <param id="0" name="Name">&quot;disableColision&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="918458176458689">
+                                    <conditions>
+                                        <condition id="-16" name="Is on layer" sid="475551827391509" type="FloatWindow">
+                                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="570811382388546" type="InfoText">
+                                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="889652044792543" type="InfoText">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="791943158559946" type="FloatWindow">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="515652390493494">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="473137249835073" type="VIKA">
+                            <param id="0" name="Instance variable">stage</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition behavior="EaseTween" id="0" inverted="1" name="Is active" sid="557875644175952" type="VIKA" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="479856796323399">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="398806602741076" type="System">
+                                    <param id="0" name="Interval (seconds)">0.4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="184261200664779" type="HandQlue">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="530038904884348" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="951207119285703" type="HandQlue">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="622501103245195">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="505733613402845" type="Touch">
+                                    <param id="0" name="Object">Button</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="103692398565748" type="VIKA">
+                                    <param id="0" name="Instance variable">stage</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="EaseTween" id="11" name="Reverse" sid="920952723697551" type="VIKA">
+                                    <param id="0" name="Reverse Mode">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="903155921567434" type="HandQlue">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="891054148549360" type="HandQlue">
+                                    <param id="0" name="X">-192</param>
+                                    <param id="1" name="Y">-704</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="646235011275649">
+                                    <conditions>
+                                        <condition id="-16" name="Is on layer" sid="280977428412631" type="FloatWindow">
+                                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="901224899371640" type="InfoText">
+                                            <param id="0" name="Layer">&quot;Vika&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="869155355236022" type="InfoText">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="943189528162502" type="FloatWindow">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="996535562247588">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="139316756131346" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Check item exists" sid="217171488680078" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="966848251338743">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="152213059535854" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="563284701512346" type="Button" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="816176939544725">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="797883748852763" type="Button">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Distruct&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="797513397692328" type="VIKA">
+                                    <param id="0" name="Instance variable">distruct</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="831934262041667">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="154559087203623" type="Button">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Cry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="218389151408125" type="VIKA">
+                                    <param id="0" name="Instance variable">heal</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="260038503065099">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="169023027502131" type="Button">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Phone&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="662360543361263" type="Button">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Papper&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="184835477978176">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="597636003434526" type="Enemy">
+                                            <param id="0" name="Instance variable">Distruct</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="401535283104352" type="VIKA">
+                                            <param id="0" name="Instance variable">stealt</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="159495287366241">
             <conditions>
-                <condition id="0" name="On function" sid="998758208390760" type="Function">
-                    <param id="0" name="Name">&quot;SetupDelayAction&quot;</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="306803990863886" type="DelayMask">
-                    <param id="0" name="Instance variable">type</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">Function.Param(0)</param>
-                </condition>
+                <condition id="-3" name="On end of layout" sid="899146109913311" type="System" />
             </conditions>
             <actions>
-                <action id="-10" name="Set value" sid="996634290686402" type="DelayMask">
-                    <param id="0" name="Instance variable">delay</param>
-                    <param id="1" name="Value">ClockTime+Function.Param(1)</param>
+                <action id="-12" name="Set group active" sid="958879996162522" type="System">
+                    <param id="0" name="Group name">&quot;Learn&quot;</param>
+                    <param id="1" name="State">1</param>
                 </action>
             </actions>
         </event-block>

@@ -73,6 +73,36 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="482554440025536">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="745186090076299" type="System">
+                            <param id="0" name="Variable">victorie</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="587170866648705" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="299083257208579">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="994479704996554" type="System">
+                            <param id="0" name="Variable">victorie</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="326121863686939" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Learn&quot;</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
     </events>

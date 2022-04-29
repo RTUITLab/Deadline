@@ -16,5 +16,49 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="926237499238723">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="834066513560009" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="197426560206914">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="868315589323297" type="Button">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Cry&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="386431579158021" type="Button">
+                            <param id="0" name="Animation">&quot;NA&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="713254595511219" type="Button">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="247097049667132">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="159796267361666" type="Button">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Heal&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="319492594441275" type="Button">
+                            <param id="0" name="Animation">&quot;NA&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="266293909356679" type="Button">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

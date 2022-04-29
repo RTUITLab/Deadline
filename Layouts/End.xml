@@ -52,7 +52,7 @@
                                 <tweened-property>Size(Pixel)</tweened-property>
                                 <function>EaseOutQuint</function>
                                 <initial>current</initial>
-                                <target>291, 167</target>
+                                <target>654,375</target>
                                 <duration>0.7</duration>
                                 <wait>0,0</wait>
                                 <playback-mode>Play Once</playback-mode>
@@ -66,14 +66,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-288</x>
-                        <y>480</y>
+                        <x>-644</x>
+                        <y>423</y>
                         <z>0</z>
-                        <width>548.154785156</width>
-                        <height>313.838348389</height>
+                        <width>1000</width>
+                        <height>573</height>
                         <depth>0</depth>
-                        <hotspotX>0.500553727</hotspotX>
-                        <hotspotY>0.500967145</hotspotY>
+                        <hotspotX>0.500999987</hotspotX>
+                        <hotspotY>0.500872612</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

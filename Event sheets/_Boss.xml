@@ -16,5 +16,16 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="951577553023162">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="826757740214142" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="884897500618824" type="Button">
+                    <param id="0" name="Animation">Button.Type</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

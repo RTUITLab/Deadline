@@ -2017,7 +2017,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>4288</x>
-                        <y>1696</y>
+                        <y>1856</y>
                         <z>0</z>
                         <width>327.609527588</width>
                         <height>327.609527588</height>
@@ -2042,7 +2042,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>3424</x>
-                        <y>192</y>
+                        <y>224</y>
                         <z>0</z>
                         <width>327.609527588</width>
                         <height>327.609527588</height>
@@ -2092,7 +2092,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512</x>
-                        <y>1024</y>
+                        <y>1152</y>
                         <z>0</z>
                         <width>327.609527588</width>
                         <height>327.609527588</height>
@@ -2117,7 +2117,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>4512</x>
-                        <y>1024</y>
+                        <y>1120</y>
                         <z>0</z>
                         <width>327.609527588</width>
                         <height>327.609527588</height>
@@ -2142,7 +2142,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>2592</x>
-                        <y>1056</y>
+                        <y>1248</y>
                         <z>0</z>
                         <width>327.609527588</width>
                         <height>327.609527588</height>
@@ -2166,7 +2166,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>7232</x>
+                        <x>7136</x>
                         <y>1760</y>
                         <z>0</z>
                         <width>327.609527588</width>
@@ -2656,7 +2656,7 @@
                         <x>5376</x>
                         <y>2176</y>
                         <z>0</z>
-                        <width>768</width>
+                        <width>1920</width>
                         <height>1024</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2782,7 +2782,7 @@
                         <y>736</y>
                         <z>0</z>
                         <width>512</width>
-                        <height>320</height>
+                        <height>512</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -2987,7 +2987,7 @@
                         <y>2208</y>
                         <z>0</z>
                         <width>864</width>
-                        <height>800</height>
+                        <height>832</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>1</hotspotY>
@@ -6738,12 +6738,6 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances>
-        <instance type="SecureData" uid="514">
-            <properties>
-                <secure-key>AaBbCcDd</secure-key>
-            </properties>
-        </instance>
-    </nonworld-instances>
+    <nonworld-instances />
     <effects />
 </c2layout>

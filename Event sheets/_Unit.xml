@@ -34,10 +34,10 @@
                     </conditions>
                     <actions>
                         <action behavior="EaseTween" id="19" name="Set target X" sid="684157063392688" type="Stamp">
-                            <param id="0" name="Target X">450</param>
+                            <param id="0" name="Target X">900</param>
                         </action>
                         <action behavior="EaseTween" id="20" name="Set target Y" sid="675080853204410" type="Stamp">
-                            <param id="0" name="Target Y">240</param>
+                            <param id="0" name="Target Y">480</param>
                         </action>
                     </actions>
                 </event-block>

@@ -118,6 +118,25 @@
                                                     <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="864166921321932">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="383580808720300" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="764183223761282" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="310583995033780" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block any="1" sid="159015430978701">
                                             <conditions>
@@ -132,6 +151,25 @@
                                                     <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="379040569075753">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="501078392752482" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="150058633906226" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="349461113078143" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -172,6 +210,25 @@
                                                     <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="829477271324462">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="155621663589840" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="248194750337142" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="705985924369832" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block any="1" sid="938319421410068">
                                             <conditions>
@@ -186,6 +243,25 @@
                                                     <param id="0" name="Y">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(MovingZOne.sY-MovingZOne.fY)+MovingZOne.fY,MovingZOne.sY,MovingZOne.fY)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="926568436037584">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="564092070827966" type="System">
+                                                            <param id="0" name="Object">TiledBackground2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="406555907150578" type="System">
+                                                            <param id="0" name="First value">TiledBackground2.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">MovingZOne.SolidOpacityUID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="379128900708496" type="TiledBackground2">
+                                                            <param id="0" name="Opacity">clamp((PlayerMove.X-MovingZOne.fX)/(MovingZOne.sX-MovingZOne.fX)*(200)-100,0,100)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>

@@ -4,8 +4,8 @@
     <name>_Pause</name>
     <events>
         <variable constant="0" name="Pause_State" sid="927631277630330" static="0" type="text">Horizontal</variable>
-        <variable constant="0" name="Pause_PlayerX" sid="842903995657162" static="0" type="number">4128</variable>
-        <variable constant="0" name="Pause_PlayerY" sid="680177121409762" static="0" type="number">480</variable>
+        <variable constant="0" name="Pause_PlayerX" sid="842903995657162" static="0" type="number">4928</variable>
+        <variable constant="0" name="Pause_PlayerY" sid="680177121409762" static="0" type="number">1472</variable>
         <variable constant="0" name="Pause_PlayerZ" sid="967494114458779" static="0" type="number">564</variable>
         <event-block sid="173760221617956">
             <conditions>

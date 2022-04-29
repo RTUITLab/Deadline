@@ -10,28 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">Menu</layout>
-        <layout order="3">End</layout>
-        <layout order="4">Hab</layout>
-        <layout order="7">Warning</layout>
-        <layout order="8">Zachet</layout>
-        <layout order="9">Norm</layout>
-        <layout order="11">BeginScreen</layout>
-        <layout order="14">LabaMan</layout>
-        <layout order="15">PracticMan</layout>
-        <layout order="16">BOSS</layout>
-        <layout order="17">Evil</layout>
-        <layout order="19">UpdateSkill</layout>
-        <event-sheet order="0">Fight</event-sheet>
-        <event-sheet order="1">Variables</event-sheet>
-        <event-sheet order="5">_Hab</event-sheet>
-        <event-sheet order="6">_Pause</event-sheet>
-        <event-sheet order="10">_Update</event-sheet>
-        <event-sheet order="12">_Warning</event-sheet>
-        <event-sheet order="13">_Test</event-sheet>
-        <event-sheet order="18">_End</event-sheet>
-        <event-sheet order="20">_AOS</event-sheet>
-        <event-sheet active="1" order="21">_Unit</event-sheet>
+        <layout active="1" order="0">Hab</layout>
+        <event-sheet order="1">_Hab</event-sheet>
+        <event-sheet order="2">_Pause</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -42,7 +23,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Decor/" />
+        <folder expanded="0" path="object-folder/Decor/" />
         <folder expanded="1" path="object-folder/Buttons/" />
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/UI/" />

@@ -30,6 +30,7 @@
         <behavior author="Scirra" id="PinPlus" version="1">PinPlus</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Yeremia AI (lunarray)" id="lunarray_Tween" version="1.600000024">EaseTween</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -120,15 +121,42 @@
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
-                    <animation framecount="8" loop="0" name="Fon2" pingpong="0" repeatcount="1" repeatto="0" sid="921029301994342" speed="0">
+                    <animation framecount="21" loop="0" name="Fon2" pingpong="0" repeatcount="1" repeatto="0" sid="921029301994342" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.000326052" hotspotY="0.999505" />
+                        <frame duration="1" hotspotX="0" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="-0.0029656" hotspotY="0.66375" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.500659" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.500378" hotspotY="0.500509" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
                         <frame duration="1" hotspotX="0" hotspotY="1" />
-                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.500473" hotspotY="1" />
+                        <frame duration="1" hotspotX="1" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -715,6 +743,7 @@
                 <instance-variable name="sY" sid="367684018599318" type="number" />
                 <instance-variable name="type" sid="355460769706519" type="string" />
                 <instance-variable name="autho" sid="286962038195757" type="boolean" />
+                <instance-variable name="SolidOpacityUID" sid="957221480951191" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="589158299323115" speed="5">
@@ -743,6 +772,31 @@
                 <instance-variable name="type" sid="930048342054280" type="string" />
             </instance-variables>
             <texture original-source="C:\Users\дом\Desktop\HEZZL\PROJECTS\_утконос\font\white_78.png" />
+        </object-type>
+        <object-type name="TiledBackground" sid="432920732719513">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground2" sid="409403303637338">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="803880968276458">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground3" sid="131463186127028">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground4" sid="582462675978797">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground5" sid="544184791122514">
+            <plugin id="TiledBg" />
+            <texture />
         </object-type>
     </object-folder>
     <families />
